@@ -116,6 +116,6 @@
 	<%= link_to "previous", :action=>'list',:next=>@next.to_i-2 %>&nbsp;&nbsp;
 	<% end %>
 	<% if @topics.size > @next*30 then %>
-	<%= link_to ("next",:action=>'list',:next=>@next) %>
+	<%= link_to "next",{:action=>'list',:next=>@next} %>
 	<% end %></font>
 </div>
