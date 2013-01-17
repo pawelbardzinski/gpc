@@ -1,0 +1,150 @@
+<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+<div style="float:right" id="hello_world" class='listalista'>		
+<%= link_to("chart",:controller=>'topics',:action=>'chart') %>&nbsp;&nbsp;
+<%= link_to("news",:controller=>'topics',:action=>'list') %>&nbsp;&nbsp;
+<%= link_to("videos",:controller=>'topics',:action=>'videos') %>&nbsp;&nbsp;
+<%= link_to("contact",:controller=>'topics',:action=>'contact')%>
+&nbsp;&nbsp;&nbsp;
+</div>
+<br>
+<div style="float:center" id="hello_world" class='listalista'>
+<font size="1pt">
+<% if session[:login] == nil %>
+	<%= link_to("login/create account",:controller=>'topics',:action=>'login') %>&nbsp;
+<% else %>
+	<%= link_to("logut",:controller=>'topics',:action=>'logout') %>
+	<%= link_to("add thread",:controller=>'topics',:action=>'new')%>
+	<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
+<% end %></style>
+
+<% login = session[:login] %>
+<% if login == nil then login="a" end %>
+
+<%= link_to("add thread",:controller=>'topics',:action=>'new') if session[:login] == nil %>&nbsp;
+<hr>
+</div>
+
+<font color=#383235>
+<% if !params[:notice].blank? %>
+	<div class="notice">
+		<%= params[:notice] %>
+	</div>
+<% end %>
+
+<div class="backlink">
+	<font size="1px"><%= link_to("<< back", :controller=>'topics',:action=>'list')%></font>
+</div>
+<br>
+
+<% comments_with_replies = Array.new %>
+<% all_comments = Array.new %>
+	<table summary="Comment form fields" class="header_text">
+			<tr>
+				<td>
+					<% topic = Topic.find(params[:topic_id]) %>
+						<!--%= topic.subject %-->
+					<% if topic.text != '' %>
+						<pre>Commenting on:<br> <%= word_wrap topic.text %></pre>
+					<% end %>
+					<% if topic.url != '' %>
+						<pre>Commenting on:<br> <%= link_to(topic.subject,topic.url,:target=>'_blank') %></pre>
+					<% end %>
+				</td>
+			</tr>
+			<%=form_for(:comment, :url=>{:action => 'create',:topic_id=>topic.id,:reply=>'false'}) do |f| %>
+			<tr>
+				<td><%= f.text_area(:comment, :size=>"65x10")%></td>
+			</tr>	
+		</table>
+		<div class="form-buttons">
+			<%= submit_tag("add comment")%>
+		</div>
+<% end %>		<br><br><br><br>
+		<% @comments.each_with_index do |comment,iterator| %>
+		<table class="comments listing" summary="comments list" rowa>
+			<tr>
+				<td><% comment.tab.times do %>&nbsp;&nbsp;&nbsp;<% end %></td>
+				<td>
+				<style type="text/css">
+				.result8790974 {
+					text-align: left;
+				  width: 480px;
+				  margin: 0px 0 0 0px;
+				  }
+				.result8790974 > div.boxtop {
+				  background: url(boxtop76375405.png) no-repeat top;
+				  height: 11px;
+				  }
+				.result8790974 > div.boxtext {
+				  margin: 0px;
+				  padding: 5px 15px 1px 15px;
+				  background: url(boxmid43048230.png) repeat-y top;
+				  font-family:Verdana,"Helvetica Neue",Helvetica,sans-serif;
+				  }				
+				.result8790974 > div.boxtext p { margin-top: 100; }
+				.result8790974 > div.boxbot {
+				  margin: 0px;
+				  height: 11px;
+				  background: url(boxbot62495260.png) no-repeat bottom;
+				  }
+				</style>
+				<div class="result8790974">
+					<div class="boxtop"></div>
+					<div class="boxtext">
+						<!--font size=2em-->
+						<font size = 1em class="index_text">
+						<p style="text-align: left;">
+							<!--span style="font-size: 10pt;"-->
+							<%= simple_format(comment.comment) %><!--/span--></p></font><!--% 95.times do%-->&nbsp;<!--% end %--><!--font size=4pt color="silver" face="myFont"--><!--font size = 0.7em class="index_text"><%= comment.points %></font-->			
+					</div>
+					<div class="boxbot"></div>
+				</div>
+				</td>
+			</tr>
+			<tr>
+			<td><% comment.tab.times do %>&nbsp;<% end %></td>				
+			<td>			
+			<!--font size="1em"-->
+			<font class="subject_list_text">
+			by <%= User.find(comment.user_id).login %>
+			<% @blob = ((Time.now.to_i - comment.created_at.strftime("%s").to_i)/60) %>
+				 <% @text = "minutes ago"%>
+				 <% if @blob > 120 then @blob = @blob/60; @text="hours ago"; end %> 
+				 <% if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end %> 
+				 <% if @blob > 730 && @text=="days ago" then @blob = @blob/365; @text="years ago"; end %> 
+				 <%= @blob %> <%= @text %>
+				 <% if session[:user_id] == nil %>
+						<font class="subject_list_app">
+						<%= link_to ("upvote",:action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!")%>
+						</font>
+						<!--%= link_to (image_tag "upvote_arrow.png",:title=>'upvote'), :action=>'upvote', :id=>comment.id, :onMouseover=>"alert('hello')" %-->
+				 <% elsif session[:user_id] != comment.user_id && !(comment.upvoted_by.include? session[:login] if comment.upvoted_by != nil) %>
+						<font class="subject_list_app">
+						<%= link_to ("upvote", :action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!") %>
+						</font>
+				 <% end %>
+				<% cp=comment.points.to_i %>
+				<% if cp!=1 %>
+					<%= cp %> points
+				<% else %> 
+					<%= cp %> point 
+				<% end %>
+					<font size = 1em class="subject_list_app">
+					<%= link_to ('reply', :action=>'reply', :id=>comment.id) %>
+					</font>
+				<!--% comments_with_replies.each do |cwr| %-->
+					<!--% if comment.id == cwr %--> 
+						<% if comment.user_id == session[:user_id] %>
+							<font size = 1em class="subject_list_app">
+							<%= link_to ('edit', :action=>'edit', :id=>comment.id) %>
+							<%= link_to ('delete', :action=>'delete', :id=>comment.id, :topic_id=>params[:topic_id]) %>
+							</font>
+						<% end %>
+					<!--% end %-->
+				<!--% end %-->
+			</font></td></tr>	
+		</table>
+		<br><br>
+		<% end %>
+</div>
+</font>

@@ -1,0 +1,68 @@
+<% @page_title = "Live Gold Chart & News" %>
+<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+<div style="float:right" id="hello_world" class='listalista'>		
+<%= link_to("chart",:action=>'chart') %>&nbsp;&nbsp;
+<%= link_to("news",:action=>'list') %>&nbsp;&nbsp;
+<%= link_to("videos",:action=>'videos') %>&nbsp;&nbsp;
+<%= link_to("contact", :action=>'contact')%>
+&nbsp;&nbsp;&nbsp;
+</div>
+<br>
+<div style="float:center" id="hello_world" class='listalista'>
+<font size="1pt">
+<% if session[:login] == nil %>
+	<%= link_to("login/create account",:action=>'login') %>&nbsp;
+<% else %>
+	<%= link_to("logut", :action=>'logout') %>
+	<%= link_to("add thread",:action=>'new')%>
+	<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
+<% end %></style>
+
+<% login = session[:login] %>
+<% if login == nil then login="a" end %>
+
+<%= link_to("add thread",:action=>'new') if session[:login] == nil %>&nbsp;
+<%= link_to("guidelines", :action=>'guidelines')%>&nbsp;<hr>
+</div>
+
+<% if !params[:notice].blank? %>
+	<div class="notice">
+		<%= params[:notice] %>
+	</div>
+<% end %>
+
+<div class="backlink">
+<font size="1px"><%= link_to("<< back", :back)%></font>
+</div>
+<div class="guidelines">
+	<h4>Guidelines:</h4>
+
+	1. sh1ny.com is available for the free exchange of ideas and discussion by users of all
+	nationalities, religions, and ethnicities.<br>
+	2. Behavior on sh1ny.com should be conducted in a civil fashion, to allow all users to engage
+	in challenging and creative discussions.<br>
+	3. sh1ny.com is committed to providing an environment free of censorship for all users, as
+	long as they abide by these simple rules.<br>
+
+	<h4>General Prohibitions:</h4>
+
+	1. Derogatory comments of a racial, religious, or sexual nature.<br>
+	2. Media or links which contain pornography or nudity.<br>
+	3. Spamming or the repeated posting of similar content.<br>
+	4. Off-topic posting. Please post in the appropriate forum.<br>
+	5. Copyright violations or theft of intellectual property.<br>
+	6. Fraud or attempts to defraud others.<br>
+	7. Use of the site to advertise or sell products/services without prior approval by the
+	Administrators. A site sponsorship program and trading area are under development.<br>
+	8. Threats of violence or advocating illegal activities. This includes threats against life, harm to
+	government officials, or the violent overthrow of government. This includes links with this type
+	of content.<br>
+	9. Posting another person’s personal contact information, such as home addresses, phone
+	numbers, etc. This is not a prohibition of posting publicly available work information, such as the
+	mailing address or office location of an elected official.<br><br>
+
+
+	<h5>Users that violate sh1ny.com rules may have their posts edited, accounts temporarily locked, or
+	accounts deleted depending on the severity and frequency of violation. Administrators and Moderators
+	may take these corrective actions at their discretion.<br><br><h5>
+</div>

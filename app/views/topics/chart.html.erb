@@ -1,0 +1,50 @@
+<% @page_title = "Live Gold Chart & News" %>
+
+<font size="14" face="myFont">sh<font color="red">1</font>ny<font size="5"   color="#black">&nbsp;&nbsp;&nbsp;&nbsp;Gold Price Chart -- </font><font size="5" color="#black">Live Gold Spot Prices<!--live gold price & chart--> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--gold news, done right! --></font></font>
+<div style="float:right" id="hello_world" class='listalista'>		
+<%= link_to("chart",:action=>'chart') %>&nbsp;&nbsp;
+<%= link_to("news",:action=>'list') %>&nbsp;&nbsp;
+<%= link_to("videos",:action=>'videos') %>&nbsp;&nbsp;
+<%= link_to("contact", :action=>'contact_c')%>
+&nbsp;&nbsp;&nbsp;
+</div>
+<br>
+</div>
+<!--font size="3pt" align="center">This highly advanced customizable Chart updates gold prices automatically every 2 minutes in 26 currencies:<br-->
+
+<!--font size="3.0" >The best interactive Gold Chart on the Web! Click for Forum & News below</font-->
+<!--div class="fb-like" data-href="http://www.sh1ny.com" data-send="false" data-width="450" data-show-faces="false" data-font="lucida grande"></div><br
+
+document.write('<iframe src="http://www.sh1ny.com:3001/alive5/Alive6_HighRes/" id="chartframe" name="chartframe" border=\'7\' frameborder=\'7\' width=\'980\' class="iframe" scrolling="no" frameborder="0" lwft="0" height="780" bordercolor="black" align="center"></iframe>');
+exit;
+
+-->
+<style="text-align: right; background: #C4AD29;"></style>
+<br>
+<SCRIPT language="JavaScript">
+<!--
+if ((screen.width<=1280) && (screen.height<=800))
+{
+document.write('<iframe src="http://www.sh1ny.com:3001/alive5/Alive6_LowRes/" id="chartframe" name="chartframe" border=\'7\' frameborder=\'7\' width=\'650\' class="iframe" scrolling="no" frameborder="0" lwft="0" height="510" bordercolor="black" align="center"></iframe>');
+exit;
+}
+if ((screen.width>=1600) && (screen.height>=1200))
+{
+	document.write('<iframe src="http://localhost:8400/alive5/Alive5-debug/Alive6.swf" id="chartframe" name="chartframe" border=\'7\' frameborder=\'7\' width=\'980\' class="iframe" scrolling="no" frameborder="0" lwft="0" height="780" bordercolor="black" align="center"></iframe>');
+	exit;
+}
+document.write('<iframe src="http://www.sh1ny.com:3001/alive5/Alive6_MedRes/" id="chartframe" name="chartframe" border=\'7\' frameborder=\'7\' width=\'800\' class="iframe" scrolling="no" frameborder="0" lwft="0" height="610" bordercolor="black" align="center"></iframe>');
+//-->
+</SCRIPT>
+<noscript>
+	<iframe src="http://www.sh1ny.com:3001/alive5/Alive6_MedRes/" id="chartframe" name="chartframe" border=\'7\' frameborder=\'7\' width=\'800\' class="iframe" scrolling="no" frameborder="0" lwft="0" height="610" bordercolor="black" align="center"></iframe>
+</noscript>
+<br><br>
+<font size = 2>
+Latest News:<br>
+<% @topics.each_with_index do |topic,i| %>
+	<%= link_to(topic.subject,topic.url,:target=>'_blank')%>
+	<br>
+<% end %>
+<%= link_to('>> more news in the News section...',:action=>'list',:target=>'_blank')%>
+<br>

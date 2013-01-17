@@ -1,0 +1,20 @@
+<table summary="Topic from fields">
+	<tr>
+		<th>title</th>
+		<td><%= f.text_field(:subject, :size=>90) %></td>
+	</tr>
+	<tr>
+		<td><br></td>
+	</tr>
+	<tr>
+		<th>url </th>
+		<td><%= f.url_field(:url, :size=>90) %></td>
+	</tr>	
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>--- or ---</b>
+<table>
+	<tr>
+		<th>text </th>
+		<td><%= f.text_area(:text, :size=>"65x10")%></td>
+	</tr>	
+</table>

@@ -1,0 +1,40 @@
+<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+<div style="float:right" id="hello_world" class='listalista'>		
+<%= link_to("chart",:controller=>'topics',:action=>'chart') %>&nbsp;&nbsp;
+<%= link_to("news",:controller=>'topics',:action=>'list') %>&nbsp;&nbsp;
+<%= link_to("videos",:controller=>'topics',:action=>'videos') %>&nbsp;&nbsp;
+<%= link_to("contact",:controller=>'topics',:action=>'contact')%>
+&nbsp;&nbsp;&nbsp;
+</div>
+<br>
+<div style="float:center" id="hello_world" class='listalista'>
+<font size="1pt">
+<% if session[:login] == nil %>
+	<%= link_to("login/create account",:controller=>'topics',:action=>'login') %>&nbsp;
+<% else %>
+	<%= link_to("logut", :controller=>'topics',:action=>'logout') %>
+	<%= link_to("add thread",:controller=>'topics',:action=>'new')%>
+	<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
+<% end %></style>
+
+<% login = session[:login] %>
+<% if login == nil then login="a" end %>
+
+<%= link_to("add thread",:controller=>'topics',:action=>'new') if session[:login] == nil %>&nbsp;
+<hr>
+</div>
+<div class="backlink"><%= link_to("<< back", :back)%></div>
+<br>
+<div class="guidelines">
+	<h3>delete</h3>
+	
+	<%= form_for(:comment, :url => {:action=>'destroy', :id=>@comment.id, :topic_id=>@comment.topic_id}) do |f| %>
+		
+		<p>are you sure you want to permanently destroy this comment?</p>
+		
+		<p class="reference-name"><%= @comment.comment %></p>
+</div>
+	<%= submit_tag("Delete")%>
+<% end %>
+<br>
+<br>

@@ -1,0 +1,44 @@
+<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+<div style="float:right" id="hello_world" class='listalista'>		
+<%= link_to("chart",:action=>'chart') %>&nbsp;&nbsp;
+<%= link_to("videos",:action=>'videos') %>&nbsp;&nbsp;
+<%= link_to("contact", :action=>'contact')%>
+&nbsp;&nbsp;&nbsp;
+</div>
+<br>
+<div style="float:center" id="hello_world" class='listalista'>
+<font size="1pt">
+<% if session[:login] == nil %>
+	<%= link_to("login/create account",:action=>'login') %>&nbsp;
+<% else %>
+	<%= link_to("logut", :action=>'logout') %>
+	<%= link_to("add thread",:action=>'new')%>
+	<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
+<% end %></style>
+
+<% login = session[:login] %>
+<% if login == nil then login="a" end %>
+
+<%= link_to("add thread",:action=>'new') if session[:login] == nil %>&nbsp;
+<%= link_to("guidelines", :action=>'guidelines')%>&nbsp;<hr>
+</div>
+</font>
+<% if !params[:notice].blank? %>
+	<div class="notice">
+		<%= params[:notice] %>
+	</div>
+<% end %>
+<div class="back_link"><%= link_to("<< back", :back)%></div>
+<div class="table_text">
+	<h4>delete</h4>
+	
+	<%= form_for(:topic, :url => {:action=>'destroy', :id=>@topic.id}) do |f| %>
+		
+		<p>are you sure you want to permanently destroy this post?</p>
+		
+		<p class="reference-name"><%= @topic.subject %></p>
+		
+		<%= submit_tag("Delete")%>
+		
+	<% end %>
+</div>

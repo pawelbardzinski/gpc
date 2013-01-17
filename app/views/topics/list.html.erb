@@ -1,0 +1,121 @@
+<% @page_title = "Live Gold Chart & News" %>
+
+
+<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+	<div style="float:right" id="hello_world" class='listalista'>		
+	<%= link_to("chart",:action=>'chart') %>&nbsp;&nbsp;
+	<%= link_to("news",:action=>'list',:class=>'listalista_red') %>&nbsp;&nbsp;
+	<%= link_to("videos",:action=>'videos') %>&nbsp;&nbsp;
+	<%= link_to("contact", :action=>'contact')%>
+	&nbsp;&nbsp;&nbsp;
+	</div>
+	<br>
+	<div style="float:center" id="hello_world" class='listalista'>
+	<font size="1pt">
+	<% if session[:login] == nil %>
+		<%= link_to("login/create account",:action=>'login',:notice=>'e-mail not required to create an account.') %>&nbsp;
+	<% else %>
+		<%= link_to("logut", :action=>'logout') %>
+		<%= link_to("add thread",:action=>'new')%>
+		<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
+	<% end %></style>
+	
+	<% login = session[:login] %>
+	<% if login == nil then login="a" end %>
+	
+	<%= link_to("add thread",:action=>'new') if session[:login] == nil %>&nbsp;
+	<%= link_to("guidelines", :action=>'guidelines')%>&nbsp;<hr>
+	</div>
+	</font>
+	<% if !params[:notice].blank? %>
+		<div class="notice">
+			<%= params[:notice] %>
+		</div>
+	<% end %>
+	<!--table class="listing" summary="news list"-->
+		<% if @topics.size > @next*30 then end_step=@next*30 else end_step=@topics.size end %>
+		<% for i in @next*30-29..end_step do %>
+		<br>
+		<% j = i-1 %>
+		<% topic = @topics[j] %>
+		<% noEditNoDelete = false %>
+		<% if Comment.where(:topic_id=>topic.id).size > 0 then noEditNoDelete = true end %>
+				<font size = 1em>
+				<font class="subject_list_text">
+				<%=	i %>.
+				</font>
+				<% if (session[:user_id] != topic.user_id && !(topic.upvoted_by.include? login if topic.upvoted_by != nil)) || session[:user_id] == nil %>
+					<%= link_to image_tag("upvote2.png", :border => "0", :onmouseover => "this.src='/assets/upvote3.png'", :onmouseout => "this.src='/assets/upvote2.png'"),:action=>'upvote',:id=>topic.id %>
+				<% else %>&nbsp;&nbsp;&nbsp;&nbsp;
+				<% end %>
+				
+				<% if topic.url != '' %>
+					<b><%= link_to(topic.subject,topic.url,:target=>'_blank') %>&nbsp;</b>
+				<% else %>          
+					<b><%= link_to(topic.subject,:controller=>'comments',:topic_id=>topic.id) %>&nbsp;</b>
+				<% end %>
+				<% cs = Comment.where(:topic_id=>topic.id).size %>
+			 	<% if session[:user_id] %>
+					<% if cs==0 %>
+					</div>
+					<font size =0.5em class="subject_list_app">
+						<%= link_to("discuss",:controller=>'comments',:action=>'index',:topic_id=>topic.id,:style=>"font-size:0.5em") %>
+					</font>
+					<% else %>
+						<% if cs==1 %>
+							<font size = 1em class="subject_list_app">
+							<%= link_to(cs.to_s+" comment",:controller=>'comments',:topic_id=>topic.id,:style=>"font-size: 1em") %>
+							</font>
+						<% else %>
+							<font size =1em class="subject_list_app">
+							<%= link_to(cs.to_s+" comments",:controller=>'comments',:topic_id=>topic.id,:style=>"font-size: 1em") %>
+							</font>
+						<% end %>
+					<% end %>
+				<% else %>
+					<% if cs==0 %>
+						<font size = 1em class="subject_list_app">
+						<%= link_to("discuss",:controller=>'comments',:action=>'index',:style=>"font-size: 1em",:topic_id=>topic.id) %>						
+						</font>
+					<% else %>
+						<font size = 1em class="subject_list_app">
+						<%= link_to(cs.to_s+" comments",:controller=>'comments',:action=>'index',:topic_id=>topic.id,:style=>"font-size: 1em;") %>
+						</font>
+					<% end %>
+				<% end %>&nbsp;&nbsp;&nbsp;
+				<% if session[:user_id] == topic.user_id && topic.points < 2 && noEditNoDelete == false %> 
+					<%= link_to image_tag("Edit2.png", :border => "0", :onmouseover => "this.src='/assets/Edit3.png'", :onmouseout => "this.src='/assets/Edit2.png'"), :action=>'edit', :id=>topic.id  %>
+					<%= link_to image_tag("Delete2.png", :border => "0", :onmouseover => "this.src='/assets/Delete3.png'", :onmouseout => "this.src='/assets/Delete2.png'"), :action=>'delete', :id=>topic.id  %>
+					<br>&nbsp;&nbsp;
+				<% else %>			
+				<br>&nbsp;&nbsp;
+				<% end %>
+					<% if i>9 %>
+					&nbsp;
+					<% end %>
+					<% if i>99 %>
+					&nbsp;
+					<% end %>
+					<% if i>999 %>
+					&nbsp;
+					<% end %>
+				<font class="subject_list_text">
+				<%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %>&nbsp;
+				by <%= User.where(:id => topic.user_id).first.login %>&nbsp;
+				<% @blob = ((Time.now.to_i - topic.created_at.strftime("%s").to_i)/60) %>
+					 <% @text = "minutes ago"%>
+					 <% if @blob > 120 then @blob = @blob/60; @text="hours ago"; end %> 
+					 <% if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end %> 
+					 <% if @blob > 730 && @text=="days ago" then @blob = @blob/365; @text="years ago"; end %> 
+					<%= @blob %> <%= @text %>
+					</font>
+		<% end %>
+	<!--/table-->
+	<br>
+	<% if @next>1 then %>
+	<%= link_to "previous", :action=>'list',:next=>@next.to_i-2 %>&nbsp;&nbsp;
+	<% end %>
+	<% if @topics.size > @next*30 then %>
+	<%= link_to ("next",:action=>'list',:next=>@next) %>
+	<% end %></font>
+</div>

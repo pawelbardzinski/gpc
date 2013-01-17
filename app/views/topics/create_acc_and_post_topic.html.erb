@@ -1,0 +1,73 @@
+<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+<div style="float:right" id="hello_world" class='listalista'>		
+<%= link_to("chart",:action=>'chart') %>&nbsp;&nbsp;
+<%= link_to("news",:action=>'list') %>&nbsp;&nbsp;
+<%= link_to("videos",:action=>'videos') %>&nbsp;&nbsp;
+<%= link_to("contact", :action=>'contact')%>
+&nbsp;&nbsp;&nbsp;
+</div>
+<br>
+<div style="float:center" id="hello_world" class='listalista'>
+<font size="1pt">
+<% if session[:login] == nil %>
+	<%= link_to("login/create account",:controller=>'topics',:action=>'login') %>&nbsp;
+<% else %>
+	<%= link_to("logut", :action=>'logout') %>
+	<%= link_to("add thread",:action=>'new')%>
+	<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
+<% end %></style>
+
+<%= link_to("add thread",:action=>'new') if session[:login] == nil %>&nbsp;
+</div>
+</font>
+<hr height="1">
+<% if !params[:notice].blank? %>
+	<div class="notice">
+		<%= params[:notice] %>
+	</div>
+<% end %>
+
+<div class="back_link"><%= link_to("<< back", :back)%></div>
+<% @page_title = "Create Account Page" %>
+<h4>to add your thread: </h4>
+	<% t1 = Topic.new(params[:topic])%>
+	<pre><%= "Subject: "+t1.subject %></pre>
+	<pre><%= "URL: "+t1.url if t1.url!='' %></pre>
+	<pre><%= "Text: "+t1.text if t1.text!='' %></pre>
+
+
+<div class="guidelines">
+	<% flash[:notice] = "" %>
+	<h4>create an account:</h4>
+	<%= form_tag(:controller=>'topics',:action => 'create_account',:topic=>params[:topic]) do %>
+	<table>
+		<tr>
+			<td><%= label_tag(:username) %></td>
+			<td><%= text_field_tag(:login)%></td>
+		</tr>
+		<tr>
+			<td><%= label_tag(:password) %></td>
+			<td><%= password_field_tag(:password) %></td>
+		</tr>
+	</table>
+	<%= submit_tag("create account")%> 
+	<% end %>
+</div>
+<br>
+	<h4>or login:</h4>
+	<%= form_tag(:controller=>'topics',:action => 'attempt_login',:topic=>params[:topic]) do %>
+	<table>
+		<tr>
+			<td><%= label_tag(:username) %></td>
+			<td><%= text_field_tag(:login)%></td>
+		</tr>
+		<tr>
+			<td><%= label_tag(:password) %></td>
+			<td><%= password_field_tag(:password) %></td>
+		</tr>
+	</table>
+	<%= submit_tag("login")%> 
+	<% end %>
+</div>
+<br>
+<br>
