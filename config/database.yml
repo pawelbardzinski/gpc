@@ -32,11 +32,10 @@ test:
   socket: /private/tmp/mysql.sock
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: sh1nyV1_production
+  adapter: postgresql
+  encoding: unicode
+  database: sh1ny_production
+  host: localhost
   pool: 5
   username: sh1ny
   password: "sh1nyGRANT!"
-  socket: /var/run/mysqld/mysqld.sock
