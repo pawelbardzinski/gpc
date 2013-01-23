@@ -1,0 +1,56 @@
+
+body {
+
+	background: url('images/bg.png') ;
+}
+
+.box.white {
+
+	
+
+}
+
+.box.white  .top {
+	height: 13px;
+	overflow: hidden;
+	background: url(images/box_white-top-left.png) 0% 0% no-repeat;
+}
+
+.box.white  .top  .top {
+	background: url(images/box_white-top-right.png) 100% 0% no-repeat;
+}
+
+.box.white  .top  .top  .top {
+	margin: 0 14px;
+	background: url(images/box_white-top.png) 0% 0% repeat-x;
+}
+
+.box.white .middle {
+	margin: 0;
+	height-min: 119px;
+	background: url(images/box-white-middle-left.png) 0% 0% repeat-y;
+}
+
+.box.white .middle .middle {
+	background: url(images/box-white-middle-right.png) 100% 0% repeat-y;
+}
+
+.box.white .middle  .middle .middle {
+	margin: 0 6px;
+	background: #ffffff;
+}
+
+.box.white  .bottom {
+	height: 13px;
+	overflow: hidden;
+	background: url(images/box_white-bottom-left.png) 0% 100% no-repeat;
+}
+
+.box.white  .bottom  .bottom {
+	background: url(images/box_white-bottom-right.png) 100% 100% no-repeat;
+}
+
+.box.white  .bottom  .bottom  .bottom {
+	margin: 0 14px;
+	background: url(images/box_white-bottom.png) 0% 100% repeat-x;
+}
