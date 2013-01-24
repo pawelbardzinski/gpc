@@ -115,12 +115,12 @@
 				 <%= @blob %> <%= @text %>
 				 <% if session[:user_id] == nil %>
 						<font class="subject_list_app">
-						<%= link_to ("upvote",:action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!")%>
+						<%= link_to("upvote",:action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!")%>
 						</font>
-						<!--%= link_to (image_tag "upvote_arrow.png",:title=>'upvote'), :action=>'upvote', :id=>comment.id, :onMouseover=>"alert('hello')" %-->
+						<!--%= link_to(image_tag "upvote_arrow.png",:title=>'upvote'), :action=>'upvote', :id=>comment.id, :onMouseover=>"alert('hello')" %-->
 				 <% elsif session[:user_id] != comment.user_id && !(comment.upvoted_by.include? session[:login] if comment.upvoted_by != nil) %>
 						<font class="subject_list_app">
-						<%= link_to ("upvote", :action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!") %>
+						<%= link_to("upvote", :action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!") %>
 						</font>
 				 <% end %>
 				<% cp=comment.points.to_i %>
@@ -130,14 +130,14 @@
 					<%= cp %> point 
 				<% end %>
 					<font size = 1em class="subject_list_app">
-					<%= link_to ('reply', :action=>'reply', :id=>comment.id) %>
+					<%= link_to('reply', :action=>'reply', :id=>comment.id) %>
 					</font>
 				<!--% comments_with_replies.each do |cwr| %-->
 					<!--% if comment.id == cwr %--> 
 						<% if comment.user_id == session[:user_id] %>
 							<font size = 1em class="subject_list_app">
-							<%= link_to ('edit', :action=>'edit', :id=>comment.id) %>
-							<%= link_to ('delete', :action=>'delete', :id=>comment.id, :topic_id=>params[:topic_id]) %>
+							<%= link_to('edit', :action=>'edit', :id=>comment.id) %>
+							<%= link_to('delete', :action=>'delete', :id=>comment.id, :topic_id=>params[:topic_id]) %>
 							</font>
 						<% end %>
 					<!--% end %-->
