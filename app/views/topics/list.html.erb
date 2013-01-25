@@ -1,6 +1,12 @@
 <% @page_title = "Live Gold Chart & News" %>
 
-
+<div class="box white">
+	<div class="top">
+		<div class="top"><div class="top">&nbsp;</div></div>
+	</div>
+	<div class="middle">
+		<div class="middle"><div class="middle">
+<!--
 <font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
 	<div style="float:right" id="hello_world" class='listalista'>		
 	<%= link_to("chart",:action=>'chart') %>&nbsp;&nbsp;
@@ -26,7 +32,7 @@
 	<%= link_to("add thread",:action=>'new') if session[:login] == nil %>&nbsp;
 	<%= link_to("guidelines", :action=>'guidelines')%>&nbsp;<hr>
 	</div>
-	</font>
+	</font>-->
 	<% if !params[:notice].blank? %>
 		<div class="notice">
 			<%= params[:notice] %>
@@ -57,7 +63,7 @@
 				<% cs = Comment.where(:topic_id=>topic.id).size %>
 			 	<% if session[:user_id] %>
 					<% if cs==0 %>
-					</div>
+	<!--				</div>-->
 					<font size =0.5em class="subject_list_app">
 						<%= link_to("discuss",:controller=>'comments',:action=>'index',:topic_id=>topic.id,:style=>"font-size:0.5em") %>
 					</font>
@@ -118,4 +124,10 @@
 	<% if @topics.size > @next*30 then %>
 	<%= link_to "next",{:action=>'list',:next=>@next} %>
 	<% end %></font>
+
+</div></div>
+</div>
+<div class="bottom">
+<div class="bottom"><div class="bottom">&nbsp;</div></div>
+</div>
 </div>

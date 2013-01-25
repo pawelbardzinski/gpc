@@ -54,3 +54,9 @@ body {
 	margin: 0 14px;
 	background: url(images/box_white-bottom.png) 0% 100% repeat-x;
 }
+
+
+.box .middle .middle .middle {
+	width: 600px;
+}
+	

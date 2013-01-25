@@ -1,0 +1,90 @@
+#content { padding-left: 100px; padding-right: 100px; }
+#content h2 { width: 760px; text-align: left; }
+
+.login form {font:1.0em Verdana; margin: 100px 250px; }
+.menu .identity {text-align: left; }
+.menu ul { margin: 1em 150px; list-style: none; }
+.menu ul li { margin-bottom: 1em; }
+
+
+
+/* a - opis linka - bez podkreslenia, kolor czarny
+a: hover: - opis linka po najechaniu na niego kursorem - bialy napis na czarnym tle
+a:visited - opis linka, na ktorego kliknales juz wczesniej - taki sam, jak a:
+a:active - opis linka, ktory jest aktywny - 
+color: #000;
+
+*/
+
+a:link { text-decoration: none;
+	 	color: black} 
+
+a:hover { 
+	
+color: red;
+text-decoration: none;
+background-color: white;
+background-image: none; 
+}
+
+a:visited {
+
+text-decoration: none;
+}
+
+
+a:active {
+
+text-decoration: none;
+}
+
+
+
+
+
+
+
+/*a:hover { text-decoration: underline; }*/
+/*
+a.action {float: left; padding: 2px 5px; margin: 0 0 1em 1em; background: #94b26f; color: #4c2516; border: 1px solid #4c2516; text-decoration: none; font-size: 1.2em; text-align: left; }
+a.action:hover { background: #b6d491; }
+
+.actions { width: 280px; }
+.actions a.action { float: left; min-width: 3.5em; padding: 1px 2px; margin: 2px 5px; font-size: 0.7em; }
+
+*/
+
+
+.footer { font-size: 16px; text-align: right; color: #000; vertical-align: bottom}
+.copyright { font-size: 16px; text-align: right; color: #000; vertical-align: bottom}
+
+
+/*.notice { height: 16px; padding-right: 5px; text-align: center; background: #383235; color: yellow; } */
+.notice { height: 1.25em; padding: 0.5em; text-align: center; background: #EBEBEB; color: grey; }
+.back-link { font-size: 10px; margin-bottom: 1em; }
+
+
+.form-buttons { font-size: 12px ; text-align: left; padding-left: 12px; }
+
+.list table { clear: both; max-width: 950px; }
+.list table tr td { border: 0px solid #666666; }
+.show table { clear: both; margin: 0 200px; width: 100px; }
+.show table.wide { width: 100px; margin: 0 50px; }
+.show table tr th { white-space: nowrap; padding-left: 5px; }
+.show table tr td { border: 0px solid #666666; }
+
+.odd { background: #e5ce69; }
+.even { background: none; }
+
+.section + .section { padding-top: 0.8em; margin-top: 0.8em; border-top: 1px dotted #666666; }
+
+.fieldWithErrors { display: table; padding: 2px; background-color: #aa0000; }
+#errorExplanation { width: 400px; padding: 0; margin: 0 auto 1.5em; border: 1px solid #aa0000; background-color: #ffffff; font-size: 12px; }
+#errorExplanation h2 { font-weight: bold; font-size: 12px; padding: 5px 5px 5px 15px; margin: 0; width: 380px; background-color: #aa0000; color: #ffffff; }
+#errorExplanation p { color: #333333; margin: 0; padding: 3px 0.5em; }
+#errorExplanation ul { margin-top: 0; }
+
+.link {
+
+}#errorExplanation ul li { list-style: square; }
+
