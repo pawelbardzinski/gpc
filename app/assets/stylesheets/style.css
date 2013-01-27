@@ -5,9 +5,7 @@ body {
 }
 
 .box.white {
-
-	
-
+	width: 970px;
 }
 
 .box.white  .top {
@@ -54,3 +52,130 @@ body {
 	margin: 0 14px;
 	background: url(box_white-bottom.png) 0% 100% repeat-x;
 }
+
+table.topics {
+	width: 100%;
+}
+
+table.topics td {
+	padding: 10px 0;
+	border-bottom: 1px solid #efece4;
+}
+
+table.topics td.no {
+	border-right: 1px solid #efece4;
+	width: 40px;
+	text-align: center;
+	vertical-align: middle;
+	color: #4c4a32;
+}
+
+table.topics td.vote {
+	border-right: 1px solid #efece4;
+	width: 46px;
+	text-align: center;
+	vertical-align: middle;
+	color: #a09d8c;
+	font-family: arial;
+	font-size: 10px;
+}
+
+table.topics td.topic {
+	text-align: left;
+	vertical-align: middle;
+	height:	34px;
+	width: auto;
+	padding-left: 16px;
+}
+
+table.topics td.comments_count {
+	width: 80px;
+	text-align: right;
+	vertical-align: middle;
+	color: #9f9e8e;
+}
+
+table.topics td.discuss {
+	width: 100px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+span.no {
+	font-family: arial;
+	font-size: 16px;
+}
+
+span.topic {
+	display: block;
+}
+
+span.points {
+	display: block;
+	float: left;
+	width: 62px;
+	color: #a09d90;
+	font-family: arial;
+	font-size: 12px;
+}
+
+span.date {
+	display: block;
+	float: left;
+	width: 76px;
+	color: #a09d90;
+	font-family: arial;
+	font-size: 12px;
+}
+
+span.by {
+	display: block;
+	float: left;
+/*	width: 76px;*/
+	color: #a09d90;
+	font-family: arial;
+	font-size: 12px;
+}
+
+
+span.vote {
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url(button/vote.png) 0px -1px no-repeat;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+span.vote:hover {
+	background-position: 0px -19px;
+}
+
+span.vote a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-indent: -3000px;
+}
+
+span.discuss {
+	display: block;
+	width: 97px;
+	height: 25px;
+	background: url(button/discuss.png) 0px -1px no-repeat;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+span.discuss:hover {
+	background-position: 0px -28px;
+}
+
+span.discuss a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-indent: 3000px;
+}
+
+

@@ -6,6 +6,56 @@
 	</div>
 	<div class="middle">
 		<div class="middle"><div class="middle">
+			<table class="topics">
+				<% if @topics.size > @next*30 then end_step=@next*30 else end_step=@topics.size end %>
+				<% for i in @next*30-29..end_step do %>
+				<% topic = @topics[i-1] %>
+				<tr>	
+					<td class="no"><span class="no"><%= i %></span></td>
+					<td class="vote">
+						<% if (session[:user_id] != topic.user_id && !(topic.upvoted_by.include? login if topic.upvoted_by != nil)) || session[:user_id] == nil %>
+							<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic.id}, :class => "vote" %></span>
+							vote
+						<% else %> 
+						<% end %>
+					</td>
+					<td class="topic">
+						<span class="topic">
+						<% if topic.url != '' %>
+							<%= link_to(topic.subject,topic.url,:target=>'_blank') %>&nbsp;
+						<% else %>          
+							<%= link_to(topic.subject,:controller=>'comments',:topic_id=>topic.id) %>&nbsp;
+						<% end %>
+						</span>
+						<span class="points"><%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %></span>
+						<span class="date">
+						<% 
+							@blob = ((Time.now.to_i - topic.created_at.strftime("%s").to_i)/60) 
+							@text = "minutes ago"
+							if @blob > 120 then @blob = @blob/60; @text="hours ago"; end
+							if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end
+							if @blob > 730 && @text=="days ago" then @blob = @blob/365; @text="years ago"; end 
+						%>
+						<%= @blob %> <%= @text %>
+						</span>
+						<span class="by">by <%= User.where(:id => topic.user_id).first.login %></span>
+					</td>
+					<td class="comments_count">
+						<% cs = Comment.where(:topic_id=>topic.id).size %>
+						<%= cs %>
+						<% if cs <= 1 %>
+							comment
+						<% else %>
+							comments
+						<% end %>
+					</td>
+					<td class="discuss">
+						<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic.id}, :class => "discuss" %></span>
+					</td>
+				</tr>
+				<% end %>
+			</table>
+				
 <!--
 <font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
 	<div style="float:right" id="hello_world" class='listalista'>		
@@ -32,13 +82,13 @@
 	<%= link_to("add thread",:action=>'new') if session[:login] == nil %>&nbsp;
 	<%= link_to("guidelines", :action=>'guidelines')%>&nbsp;<hr>
 	</div>
-	</font>-->
+	</font>- ->
 	<% if !params[:notice].blank? %>
 		<div class="notice">
 			<%= params[:notice] %>
 		</div>
 	<% end %>
-	<!--table class="listing" summary="news list"-->
+	<!--table class="listing" summary="news list"- ->
 		<% if @topics.size > @next*30 then end_step=@next*30 else end_step=@topics.size end %>
 		<% for i in @next*30-29..end_step do %>
 		<br>
@@ -63,7 +113,7 @@
 				<% cs = Comment.where(:topic_id=>topic.id).size %>
 			 	<% if session[:user_id] %>
 					<% if cs==0 %>
-	<!--				</div>-->
+	<!--				</div>- ->
 					<font size =0.5em class="subject_list_app">
 						<%= link_to("discuss",:controller=>'comments',:action=>'index',:topic_id=>topic.id,:style=>"font-size:0.5em") %>
 					</font>
@@ -116,14 +166,14 @@
 					<%= @blob %> <%= @text %>
 					</font>
 		<% end %>
-	<!--/table-->
+	<!--/table- ->
 	<br>
 	<% if @next>1 then %>
 	<%= link_to "previous", :action=>'list',:next=>@next.to_i-2 %>&nbsp;&nbsp;
 	<% end %>
 	<% if @topics.size > @next*30 then %>
 	<%= link_to "next",{:action=>'list',:next=>@next} %>
-	<% end %></font>
+	<% end %></font>-->
 
 </div></div>
 </div>
