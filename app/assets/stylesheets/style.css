@@ -38,6 +38,10 @@ body {
 	background: #ffffff;
 }
 
+.box .content {
+	margin: 0 10px;
+}
+
 .box.white  .bottom {
 	height: 13px;
 	overflow: hidden;
@@ -55,6 +59,7 @@ body {
 
 table.topics {
 	width: 100%;
+	border-collapse:collapse;
 }
 
 table.topics td {
@@ -86,6 +91,16 @@ table.topics td.topic {
 	height:	34px;
 	width: auto;
 	padding-left: 16px;
+}
+
+table.topics td.topic span a {
+	color: #494a3a;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+table.topics td.topic span a:hover {
+	color: #007a5d;
 }
 
 table.topics td.comments_count {
@@ -178,4 +193,278 @@ span.discuss a {
 	text-indent: 3000px;
 }
 
+div.header {
+	width: 100%;
+	height: 60px;
+	background: url(header.png) 0% 100% repeat-x;
+}
 
+div.footer {
+	width: 100%;
+	height: 60px;
+	background: url(footer.png) 0% 0% repeat-x;
+}
+
+
+div.rightBox {
+	width: 162px;
+	height: 60px;
+	float: right;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+div.header div.rightBox {
+	background-image: url(header_right.png);
+}
+
+div.footer div.rightBox {
+	background-image: url(footer_right.png);
+}
+
+
+div.rightBox div.in {
+	height: 60px;
+	width: auto;
+	margin: 0;
+	background-position: 100% -124px;
+	background-repeat: no-repeat;
+}
+
+div.header div.rightBox div.in {
+	background-image: url(header_right.png);
+}
+
+div.footer div.rightBox div.in {
+	background-image: url(footer_right.png);
+}
+
+
+div.rightBox div.in div.in {
+	margin: 0 4px;
+	height: 60px;
+	width: auto;
+	background-position: 100% -62px;
+	background-repeat: repeat-x;
+	text-align: center;
+	vertical-align: middle;
+}
+
+div.header div.rightBox div.in div.in {
+	background-image: url(header_right.png);
+}
+
+div.footer div.rightBox div.in div.in {
+	background-image: url(footer_right.png);
+}
+
+
+span.add_thread {
+	display: block;
+	padding-top: 18px;
+}
+
+a.add_thread {
+	display: block;
+	width: 132px;
+	height: 28px;
+	text-indent: -3000px;
+	overflow: hidden;
+	background: url(button/add_thread.png) 0 -2px no-repeat;
+	margin: 0 auto;
+}
+
+a.add_thread:hover {
+	background-position: 0 -34px;
+}
+
+div.h1 {
+	font-weight: bold;
+	font-size: 14px;
+	font-family: Arial;
+	display: block;
+	margin: 0;
+	padding: 8px 0 2px 12px;
+}
+
+div.search_string {
+	float: left;
+	height: 30px;
+	padding: 0;
+	margin: 20px 0 0 12px;
+	background: url(search/search.png) 0 0 no-repeat;
+}
+
+div.search_string div.in {
+	height: 30px;
+	background: url(search/search.png) 100% -64px no-repeat;
+}
+
+div.search_string div.in div.in {
+	min-width: 30px;
+	height: 30px;
+	margin: 0 4px 0 26px;
+	background: url(search/search.png) 0 -32px repeat-x;
+}
+
+div.search_string input[type="text"] {
+	display: block;
+	float: left;
+	width: 140px;
+	height: 26px;
+	border: solid 0px; 
+	background: none;
+	margin: 2px 0;
+	padding: 0;
+	vertical-align: middle;
+	outline: 0px none;
+}
+
+div.search_string input[type="submit"] {
+	display: block;
+	float: right;
+	width: 22px;
+	height: 24px;
+	border: solid 0px; 
+	background: none;
+	margin: 3px 0;
+	padding: 0;
+	vertical-align: middle;
+	outline: 0px none;
+	text-indent: -3000px;
+	overflow: hidden;
+	background: url(button/search.png) 0 0 no-repeat;
+	cursor: pointer;
+}
+
+div.search_string input[type="submit"]:hover {
+	background-position: 0 -24px;
+}
+
+div.header div.sort {
+	color: #a09d8e;
+	font-size: 12px;
+	float: left;
+	width: 288px;
+	margin: 21px 0 0 18px;
+	background: url(search/separator.png) 100% 100% no-repeat;
+}
+
+div.sort span {
+	float: left;
+	display: block;
+	margin: 0 6px 0 0;
+	line-height: 26px;
+}
+
+div.sort a.sort {
+	float: left;
+	display: block;
+	font-weight: bold;
+	color: #13120e;
+	width: 110px;
+	height: 26px;
+	background: url(button/order.png) 0 0 no-repeat;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	line-height: 26px;
+}
+
+div.sort a.sort.left {
+	background-position: 0 0;
+}
+
+div.sort a.sort.left:hover,
+div.sort a.sort.left.current {
+	background-position: 0 -28px;
+}
+
+div.sort a.sort.right {
+	background-position: -110px 0;
+}
+
+div.sort a.sort.right:hover,
+div.sort a.sort.right.current {
+	background-position: -110px -28px;
+}
+
+div.pagination {
+	float: left;
+	height: 32px;
+	padding: 9px 0 0 14px;
+}
+
+div.pagination div.step {
+	float: left;
+	margin-top: 6px;
+	min-height: 20px;
+}
+
+div.pagination div.next {
+	width: 90px;
+}
+
+div.pagination div.previous {
+	width: 110px;
+}
+
+div.pagination div.step a {
+	display: block;
+	height: 20px;
+	color: #007a60;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: arial;
+	line-height: 20px;
+}
+
+div.pagination div.next a {
+	padding: 0 0 0 24px;
+	background: url(button/next.png) 0 -1px no-repeat;
+}
+
+div.pagination div.next a:hover {
+	background-position: 0 -23px;
+	color: #029c7e;
+}
+
+
+div.pagination div.previous a {
+	text-align: right;
+	padding: 0 24px 0 0 ;
+	background: url(button/prev.png) 100% -1px no-repeat;
+}
+
+div.pagination div.previous a:hover {
+	background-position: 100% -23px;
+	color: #029c7e;
+}
+
+div.pagination div.pages {
+	float: left;
+}
+
+div.pagination div.pages a {
+	display: block;
+	float: left;
+	width: 32px;
+	height: 32px;
+	overflow: hidden;
+	background: url(button/page.png) 0 -1px no-repeat;
+	text-align: center;
+	line-height: 32px;
+	margin: 0 1px;
+	color: #484936;
+	text-decoration: none;
+	font-family: arial;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+div.pagination div.pages a:hover,
+div.pagination div.pages a.current {
+	color: #007a5b;
+	background-position: 0 -35px;
+}
