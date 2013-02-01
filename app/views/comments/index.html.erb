@@ -1,3 +1,70 @@
+<% topic = Topic.find(params[:topic_id]) %>
+<div class="box white">
+	<div class="top">
+		<div class="top"><div class="top">&nbsp;</div></div>
+	</div>
+	<div class="middle">
+		<div class="middle"><div class="middle">
+			<div class="content">
+				<div class="h1">Commenting on</div>
+
+				<div class="header">
+					<div class="vote">
+						<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic.id} %></span>
+						vote
+					</div>
+
+					<div class="topic">
+						<span class="topic"><%= topic.subject %></span>
+						<span class="points"><%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %></span>
+						<span class="date">
+							<% 
+								@blob = ((Time.now.to_i - topic.created_at.strftime("%s").to_i)/60) 
+								@text = "minutes ago"
+								if @blob > 120 then @blob = @blob/60; @text="hours ago"; end
+								if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end
+								if @blob > 730 && @text=="days ago" then @blob = @blob/365; @text="years ago"; end 
+							%>
+							<%= @blob %> <%= @text %>
+						</span>
+						<span class="by">by <%= User.where(:id => topic.user_id).first.login %></span>
+					</div>
+
+					<div class="rightBox">
+						<div class="in">
+							<div class="in">
+								<span class="go_back"><%= link_to "go back", {:controller=>'topics',:action=>'list'} %></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<% if topic.text != '' %>
+					<div class="topic text"><%= word_wrap topic.text %></div>
+				<% end %>
+				<% if topic.url != '' %>
+					<div class="topic url"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
+				<% end %>
+
+				<%=form_for(:comment, :url=>{:action => 'create',:topic_id=>topic.id,:reply=>'false'}) do |f| %>
+
+				<%= f.text_area(:comment, :size=>"65x10")%>
+
+				<%= submit_tag("add comment")%>
+
+				<% end %>
+			</div>
+		</div></div>
+	</div>
+<div class="bottom"><div class="bottom"><div class="bottom">&nbsp;</div></div></div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
 <font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> ggg </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
 <div style="float:right" id="hello_world" class='listalista'>		
 <%= link_to("chart",:controller=>'topics',:action=>'chart') %>&nbsp;&nbsp;
@@ -54,7 +121,8 @@
 			<%=form_for(:comment, :url=>{:action => 'create',:topic_id=>topic.id,:reply=>'false'}) do |f| %>
 			<tr>
 				<td><%= f.text_area(:comment, :size=>"65x10")%></td>
-			</tr>	
+			</tr>
+
 		</table>
 		<div class="form-buttons">
 			<%= submit_tag("add comment")%>

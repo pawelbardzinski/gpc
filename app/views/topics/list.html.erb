@@ -49,9 +49,9 @@
 						<td class="topic">
 							<span class="topic">
 							<% if topic.url != '' %>
-								<%= link_to(topic.subject,topic.url,:target=>'_blank') %>&nbsp;
+								<%= link_to(topic.subject,topic.url,:target=>'_blank') %>
 							<% else %>          
-								<%= link_to(topic.subject,:controller=>'comments',:topic_id=>topic.id) %>&nbsp;
+								<%= link_to(topic.subject,:controller=>'comments',:topic_id=>topic.id) %>
 							<% end %>
 							</span>
 							<span class="points"><%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %></span>
