@@ -16,8 +16,14 @@
 					<div class="search_string">
 						<div class="in">
 							<div class="in">
+								<%= form_tag topics_path do %>
+									<%= text_field_tag :search_string %>
+									<%= submit_tag "Search" %>
+								<% end %>
+<!--
 								<input name="string" type="text" />
 								<input name="Search" type="submit"/>
+-->
 							</div>
 						</div>
 					</div>
@@ -27,7 +33,7 @@
 						<a class="sort left">Popularity</a>
 						<a class="sort right">Date</a>
 					</div>
-				
+
 					<div class="rightBox">
 						<div class="in">
 							<div class="in">
@@ -40,24 +46,41 @@
 					<% if @topics.size > @next*$per_page then end_step=@next*$per_page else end_step=@topics.size end %>
 					<% for i in @next*$per_page-($per_page-1)..end_step do %>
 					<% topic = @topics[i-1] %>
+					<% if defined?(topic.id) %>
+						<% topic_id = topic.id %>
+						<% topic_url = topic.url %>
+						<% topic_user_id = topic.user_id %>
+						<% topic_subject = topic.subject %>
+						<% topic_points = topic.points %>
+						<% topic_created_at = topic.created_at %>
+						<% topic_upvoted_by = topic.upvoted_by %>
+					<% else %>
+						<% topic_id = topic["id"].to_i %>
+						<% topic_url = topic["url"] %>
+						<% topic_user_id = topic["user_id"].to_i %>
+						<% topic_subject = topic["subject"] %>
+						<% topic_points = topic["points"].to_i %>
+						<% topic_created_at = topic["created_at"].to_date %>
+						<% topic_upvoted_by = topic["upvoted_by"] %>
+					<% end %>
 					<tr>	
 						<td class="no"><span class="no"><%= i %></span></td>
 						<td class="vote">
-							<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic.id}, :class => "vote" %></span>
+							<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic_id}, :class => "vote" %></span>
 							vote
 						</td>
 						<td class="topic">
 							<span class="topic">
-							<% if topic.url != '' %>
-								<%= link_to(topic.subject,topic.url,:target=>'_blank') %>
+							<% if topic_url != '' %>
+								<%= link_to(topic_subject,topic_url,:target=>'_blank') %>
 							<% else %>          
-								<%= link_to(topic.subject,:controller=>'comments',:topic_id=>topic.id) %>
+								<%= link_to(topic_subject,:controller=>'comments',:topic_id=>topic_id) %>
 							<% end %>
 							</span>
-							<span class="points"><%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %></span>
+							<span class="points"><%= tp=topic_points %> <% if tp==1 %> point <% else %> points <% end %></span>
 							<span class="date">
 							<% 
-								@blob = ((Time.now.to_i - topic.created_at.strftime("%s").to_i)/60) 
+								@blob = ((Time.now.to_i - topic_created_at.strftime("%s").to_i)/60) 
 								@text = "minutes ago"
 								if @blob > 120 then @blob = @blob/60; @text="hours ago"; end
 								if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end
@@ -65,10 +88,10 @@
 							%>
 							<%= @blob %> <%= @text %>
 							</span>
-							<span class="by">by <%= User.where(:id => topic.user_id).first.login %></span>
+							<span class="by">by <%= User.where(:id => topic_user_id).first.login %></span>
 						</td>
 						<td class="comments_count">
-							<% cs = Comment.where(:topic_id=>topic.id).size %>
+							<% cs = Comment.where(:topic_id=>topic_id).size %>
 							<%= cs %>
 							<% if cs <= 1 %>
 								comment
@@ -77,7 +100,7 @@
 							<% end %>
 						</td>
 						<td class="discuss">
-							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic.id}, :class => "discuss" %></span>
+							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic_id}, :class => "discuss" %></span>
 						</td>
 					</tr>
 					<% end %>
@@ -99,7 +122,7 @@
 
 							<% begin %>
 
-				
+
 								<% 
 									$class = '';
 									if (@next.to_i - 1) == $i then $class = 'current' end
@@ -152,10 +175,10 @@
 		<%= link_to("add thread",:action=>'new')%>
 		<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
 	<% end %></style>
-	
+
 	<% login = session[:login] %>
 	<% if login == nil then login="a" end %>
-	
+
 	<%= link_to("add thread",:action=>'new') if session[:login] == nil %>&nbsp;
 	<%= link_to("guidelines", :action=>'guidelines')%>&nbsp;<hr>
 	</div>
@@ -172,53 +195,53 @@
 		<% j = i-1 %>
 		<% topic = @topics[j] %>
 		<% noEditNoDelete = false %>
-		<% if Comment.where(:topic_id=>topic.id).size > 0 then noEditNoDelete = true end %>
+		<% if Comment.where(:topic_id=>topic_id).size > 0 then noEditNoDelete = true end %>
 				<font size = 1em>
 				<font class="subject_list_text">
 				<%=	i %>.
 				</font>
-				<% if (session[:user_id] != topic.user_id && !(topic.upvoted_by.include? login if topic.upvoted_by != nil)) || session[:user_id] == nil %>
-					<%= link_to image_tag("upvote2.png", :border => "0", :onmouseover => "this.src='/assets/upvote3.png'", :onmouseout => "this.src='/assets/upvote2.png'"),:action=>'upvote',:id=>topic.id %>
+				<% if (session[:user_id] != topic_user_id && !(topic_upvoted_by.include? login if topic_upvoted_by != nil)) || session[:user_id] == nil %>
+					<%= link_to image_tag("upvote2.png", :border => "0", :onmouseover => "this.src='/assets/upvote3.png'", :onmouseout => "this.src='/assets/upvote2.png'"),:action=>'upvote',:id=>topic_id %>
 				<% else %>&nbsp;&nbsp;&nbsp;&nbsp;
 				<% end %>
-				
-				<% if topic.url != '' %>
-					<b><%= link_to(topic.subject,topic.url,:target=>'_blank') %>&nbsp;</b>
+
+				<% if topic_url != '' %>
+					<b><%= link_to(topic_subject,topic_url,:target=>'_blank') %>&nbsp;</b>
 				<% else %>          
-					<b><%= link_to(topic.subject,:controller=>'comments',:topic_id=>topic.id) %>&nbsp;</b>
+					<b><%= link_to(topic_subject,:controller=>'comments',:topic_id=>topic_id) %>&nbsp;</b>
 				<% end %>
-				<% cs = Comment.where(:topic_id=>topic.id).size %>
+				<% cs = Comment.where(:topic_id=>topic_id).size %>
 			 	<% if session[:user_id] %>
 					<% if cs==0 %>
 	<!--				</div>-->
 					<font size =0.5em class="subject_list_app">
-						<%= link_to("discuss",:controller=>'comments',:action=>'index',:topic_id=>topic.id,:style=>"font-size:0.5em") %>
+						<%= link_to("discuss",:controller=>'comments',:action=>'index',:topic_id=>topic_id,:style=>"font-size:0.5em") %>
 					</font>
 					<% else %>
 						<% if cs==1 %>
 							<font size = 1em class="subject_list_app">
-							<%= link_to(cs.to_s+" comment",:controller=>'comments',:topic_id=>topic.id,:style=>"font-size: 1em") %>
+							<%= link_to(cs.to_s+" comment",:controller=>'comments',:topic_id=>topic_id,:style=>"font-size: 1em") %>
 							</font>
 						<% else %>
 							<font size =1em class="subject_list_app">
-							<%= link_to(cs.to_s+" comments",:controller=>'comments',:topic_id=>topic.id,:style=>"font-size: 1em") %>
+							<%= link_to(cs.to_s+" comments",:controller=>'comments',:topic_id=>topic_id,:style=>"font-size: 1em") %>
 							</font>
 						<% end %>
 					<% end %>
 				<% else %>
 					<% if cs==0 %>
 						<font size = 1em class="subject_list_app">
-						<%= link_to("discuss",:controller=>'comments',:action=>'index',:style=>"font-size: 1em",:topic_id=>topic.id) %>						
+						<%= link_to("discuss",:controller=>'comments',:action=>'index',:style=>"font-size: 1em",:topic_id=>topic_id) %>						
 						</font>
 					<% else %>
 						<font size = 1em class="subject_list_app">
-						<%= link_to(cs.to_s+" comments",:controller=>'comments',:action=>'index',:topic_id=>topic.id,:style=>"font-size: 1em;") %>
+						<%= link_to(cs.to_s+" comments",:controller=>'comments',:action=>'index',:topic_id=>topic_id,:style=>"font-size: 1em;") %>
 						</font>
 					<% end %>
 				<% end %>&nbsp;&nbsp;&nbsp;
-				<% if session[:user_id] == topic.user_id && topic.points < 2 && noEditNoDelete == false %> 
-					<%= link_to image_tag("Edit2.png", :border => "0", :onmouseover => "this.src='/assets/Edit3.png'", :onmouseout => "this.src='/assets/Edit2.png'"), :action=>'edit', :id=>topic.id  %>
-					<%= link_to image_tag("Delete2.png", :border => "0", :onmouseover => "this.src='/assets/Delete3.png'", :onmouseout => "this.src='/assets/Delete2.png'"), :action=>'delete', :id=>topic.id  %>
+				<% if session[:user_id] == topic_user_id && topic_points < 2 && noEditNoDelete == false %> 
+					<%= link_to image_tag("Edit2.png", :border => "0", :onmouseover => "this.src='/assets/Edit3.png'", :onmouseout => "this.src='/assets/Edit2.png'"), :action=>'edit', :id=>topic_id  %>
+					<%= link_to image_tag("Delete2.png", :border => "0", :onmouseover => "this.src='/assets/Delete3.png'", :onmouseout => "this.src='/assets/Delete2.png'"), :action=>'delete', :id=>topic_id  %>
 					<br>&nbsp;&nbsp;
 				<% else %>			
 				<br>&nbsp;&nbsp;
@@ -233,9 +256,9 @@
 					&nbsp;
 					<% end %>
 				<font class="subject_list_text">
-				<%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %>&nbsp;
-				by <%= User.where(:id => topic.user_id).first.login %>&nbsp;
-				<% @blob = ((Time.now.to_i - topic.created_at.strftime("%s").to_i)/60) %>
+				<%= tp=topic_points %> <% if tp==1 %> point <% else %> points <% end %>&nbsp;
+				by <%= User.where(:id => topic_user_id).first.login %>&nbsp;
+				<% @blob = ((Time.now.to_i - topic_created_at.strftime("%s").to_i)/60) %>
 					 <% @text = "minutes ago"%>
 					 <% if @blob > 120 then @blob = @blob/60; @text="hours ago"; end %> 
 					 <% if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end %> 
