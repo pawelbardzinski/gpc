@@ -30,8 +30,8 @@
 
 					<div class="sort">
 						<span>Sort by</span>
-						<a class="sort left">Popularity</a>
-						<a class="sort right">Date</a>
+						<span class="sort left"><%= link_to "Popularity", topics_path(:sort=>'popularity'), :class => 'sort left' %></a>
+						<span class="sort right"><%= link_to "Date", topics_path(:sort=>'date'), :class => 'sort right' %></span>
 					</div>
 
 					<div class="rightBox">
@@ -110,7 +110,7 @@
 					<div class="pagination">
 						<div class="step next">
 						<% if @next>1 then %>
-							<%= link_to "Next page",{:action=>'list',:next=>@next.to_i-2} %>
+							<%= link_to "Previous page",{:action=>'list',:next=>@next.to_i-2} %>
 						<% end %>
 						</div>
 
@@ -136,7 +136,7 @@
 
 						<div class="step previous">
 						<% if @topics.size > @next*$per_page then %>
-							<%= link_to "Previous page", :action=>'list',:next=>@next %>
+							<%= link_to "Next page", :action=>'list',:next=>@next %>
 						<% end %>
 						</div>
 					</div>
