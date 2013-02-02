@@ -75,6 +75,56 @@
 					</div>
 					<div class="clear"></div>
 				</div>
+
+				<div class="listing">
+				<% @comments.each_with_index do |comment,iterator| %>
+
+					<div class="comment">
+
+						<div class="h"><div><div> </div></div></div>
+						
+						<div class="m"><div class="m"><div class="m">
+							<div class="text"><%= simple_format(comment.comment) %></div>
+						</div></div></div>
+
+						<div class="f"><div class="f"><div class="f">
+
+						<% 
+							@blob = ((Time.now.to_i - comment.created_at.strftime("%s").to_i)/60)
+					 		@text = "minutes ago"
+					 		if @blob > 120 then @blob = @blob/60; @text="hours ago"; end 
+					 		if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end 
+					 		if @blob > 730 && @text=="days ago" then @blob = @blob/365; @text="years ago"; end
+						%>
+						<span class="date"><%= @blob %> <%= @text %></span>
+						<span class="by">by <%= User.find(comment.user_id).login %></span>
+
+						<span class="vote"><%= link_to "upvote", :action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!" %></span>
+						<span class="points">
+							<% cp=comment.points.to_i %>
+							<% if cp!=1 %>
+								<%= cp %> points
+							<% else %> 
+								<%= cp %> point 
+							<% end %>
+						</span>
+
+						<div class="actions">
+							<%= link_to "reply", {:action => "reply", :id => comment.id}, :class => "reply" %>
+
+							<% if comment.user_id == session[:user_id] %>
+								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit" %>
+								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete" %>
+							<% end %>
+						</div>
+
+					</div></div></div>
+				</div>
+				<% end %>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+
 			</div>
 		</div></div>
 	</div>
