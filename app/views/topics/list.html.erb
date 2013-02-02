@@ -45,24 +45,28 @@
 				<table class="topics">
 					<% if @topics.size > @next*$per_page then end_step=@next*$per_page else end_step=@topics.size end %>
 					<% for i in @next*$per_page-($per_page-1)..end_step do %>
-					<% topic = @topics[i-1] %>
-					<% if defined?(topic.id) %>
-						<% topic_id = topic.id %>
-						<% topic_url = topic.url %>
-						<% topic_user_id = topic.user_id %>
-						<% topic_subject = topic.subject %>
-						<% topic_points = topic.points %>
-						<% topic_created_at = topic.created_at %>
-						<% topic_upvoted_by = topic.upvoted_by %>
-					<% else %>
-						<% topic_id = topic["id"].to_i %>
-						<% topic_url = topic["url"] %>
-						<% topic_user_id = topic["user_id"].to_i %>
-						<% topic_subject = topic["subject"] %>
-						<% topic_points = topic["points"].to_i %>
-						<% topic_created_at = topic["created_at"].to_date %>
-						<% topic_upvoted_by = topic["upvoted_by"] %>
-					<% end %>
+
+					<% 
+						topic = @topics[i-1]
+
+						if defined?(topic.id)
+							topic_id = topic.id
+							topic_url = topic.url
+							topic_user_id = topic.user_id
+							topic_subject = topic.subject
+							topic_points = topic.points
+							topic_created_at = topic.created_at
+							topic_upvoted_by = topic.upvoted_by
+						else
+							topic_id = topic["id"].to_i
+							topic_url = topic["url"]
+							topic_user_id = topic["user_id"].to_i
+							topic_subject = topic["subject"]
+							topic_points = topic["points"].to_i
+							topic_created_at = topic["created_at"].to_date
+							topic_upvoted_by = topic["upvoted_by"]
+						end 
+					%>
 					<tr>	
 						<td class="no"><span class="no"><%= i %></span></td>
 						<td class="vote">
