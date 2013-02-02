@@ -1,7 +1,12 @@
 
 body {
-
+	font-family: arial;
+	font-size: 12px;
 	background: url('bg.png') ;
+}
+
+.clear {
+	clear: both;
 }
 
 .box.white {
@@ -474,7 +479,7 @@ div.pagination div.pages a.current {
 
 div.header div.vote {
 	float: left;
-	margin: 24px 0 0 16px;
+	margin: 28px 0 0 16px;
 	text-align: center;
 	vertical-align: middle;
 	color: #a09d8c;
@@ -504,7 +509,7 @@ div.header span.vote a {
 
 div.header div.topic {
 	float: left;
-	margin: 20px 0 0 20px;
+	margin: 24px 0 0 20px;
 }
 
 
@@ -525,5 +530,146 @@ span.go_back a {
 
 span.go_back a:hover {
 	background-position: 0 -30px;
+}
+
+/**********************/
+
+div.comments div.header {
+	height: 70px;
+	background: url(header_large.png) 0% 0% repeat-x;
+}
+
+div.comments div.header div.rightBox {
+	height: 70px;
+	background-image: url(header_large_right.png);
+}
+
+div.comments div.header div.rightBox div.in {
+	height: 70px;
+	background-image: url(header_large_right.png);
+	background-position: 100% -142px;
+}
+
+div.comments div.header div.rightBox div.in div.in {
+	margin: 0 3px;
+	height: 70px;
+	background-position: 100% -71px;
+	background-image: url(header_large_right.png);
+}
+
+div.comments span.go_back {
+	padding-top: 24px;
+}
+
+div.comment {
+	background: #f7f7f5;
+	width: 100%;
+	min-height: 330px;
+	padding: 30px 0px 30px 0px;
+}
+
+div.comment div.left {
+	float: left;
+	width: 28%;
+	padding: 0 2% 0 8%;
+}
+
+div.comment div.right {
+	float: left;
+	width: 62%;
+}
+
+div.comment div.text {
+	font-family: arial;
+	font-size: 12px;
+}
+
+div.comment div.right textarea {
+
+	border: 2px solid #6ebea9;
+	border-radius: 6px;
+	resize: none;
+	width: 99%;
+	height: 210px;
+	outline: 0px none;
+}
+
+div.box.green div.h, 
+div.box.green div.f {
+	margin: 0;
+	padding: 0;
+	height: 4px;
+	background: url(box-green-h.png) 0 0 no-repeat;
+}
+
+div.box.green div.f {
+	background-image: url(box-green-f.png);
+}
+
+div.box.green div.h div,
+div.box.green div.f div {
+	margin: 0;
+	padding: 0;
+	height: inherit;
+	background: url(box-green-h.png) 100% -8px no-repeat;
+}
+
+div.box.green div.f div {
+	background-image: url(box-green-f.png);
+}
+
+div.box.green div.h div div,
+div.box.green div.f div div {
+	margin: 0 4px;
+	background-position: 0% -4px;
+	background-repeat: repeat;
+}
+
+div.box.green div.g {
+	float: left;
+	width: 11px;
+	margin: 0 0 0 -35px;
+	padding: 0;
+	height: inherit;
+	min-height: inherit;
+	background: url(green-g.png) 0 50% no-repeat;
+}
+
+div.box.green div.content {
+	color: #f8f7f5;
+	background: url(box-green-bg.png) 0 0 repeat-x #005b45;
+	padding: 16px 24px;
+	margin: 0;
+	width: auto;
+	min-height: 300px;
+}
+
+div.box.green div.content p {
+	font-weight: bold;
+	padding: 0;
+	margin: 6px 0;
+}
+
+div.box.green div.content input[type="submit"] {
+	display: block;
+	width: 77px;
+	height: 28px;
+	text-indent: -3000px;
+	overflow: hidden;
+	background: url(button/send.png) 0 0 no-repeat;
+	border: 0px none;
+	padding: 0;
+	margin: 0;
+	outline: 0 none;
+	cursor: pointer;
+	float: right;
+}
+
+div.box.green div.content input[type="submit"]:hover {
+	background-position: 0 -30px;
+}
+
+div.box.green div.content textarea {
+	margin-bottom: 22px;
 }
 
