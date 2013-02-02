@@ -1,13 +1,25 @@
 class TopicsController < ApplicationController
+
   def index
     list
     render('list')
   end
   
   def list
-    @topics = Topic.order("topics.position DESC")
+    @topics = []
+    if params[:commit] && params[:search_string] != ''
+      search_string = params[:search_string]
+      search_string.gsub!(' ','%')
+      search_string = '%'+search_string+'%'
+      sql_search_in_subject = 'select * from topics where subject like \''+search_string+'\' order by updated_at'
+      sql_search_in_text = 'select * from topics where text like \''+search_string+'\' order by updated_at'
+      @topics = ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_text).to_a
+    else
+      @topics = Topic.order("topics.position DESC")
+    end
     @next=params[:next].to_i+1
   end
+  helper_method :list
   
   def chart
     @topics = Topic.order("topics.position DESC")
