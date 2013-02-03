@@ -9,15 +9,25 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-<!--	<%= link_to image_tag( 'Reply.png' ) %>-->     
-	<table style="min-width: 1000px, height: 95%" align="center" class="tabela_cala_strona">
-		<tr>									
-			<td>
-				<%= yield %>
-									<br>
-									<div align=center><font color="black" size="4" face="myFont">sh</font><font color="red" size="4" face="myFont">1</font><font color="black" size="4" face="myFont">ny </font><font color="grey" size="4" face="myFont">with precious metals enthiustasts in mind</font></div>
-		</tr>
-	</table>     
-
+	<div class="wrap">
+		<div class="head">
+			<div class="logo">&nbsp;</div>
+			<div class="info">
+			<% if session[:login] != nil %>
+				<div class="user">You are logged in as <span class="username"><%= session[:login] %></span></div>
+				<span class="points">
+					<%= p = User.find(session[:user_id]).karma %>
+					<% if p == 1 %>point<% else %>points<% end %>
+				</span>
+			<% end %>
+			</div>
+			<div class="navigation">
+				<a href="/" class="home">Home</a>
+				<a href="/" class="news">News</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<%= yield %>
+	</div>
 </body>
 </html>
