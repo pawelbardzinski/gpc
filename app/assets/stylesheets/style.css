@@ -1,10 +1,20 @@
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0
+}
+
 
 body {
 	margin: 0;
 	padding: 0;
 	font-family: arial;
 	font-size: 12px;
-	background: url('bg.png') ;
+	background: url('bg.png');
+	height: auto;	
+	min-height: 100%;
+	position: relative;
 }
 
 .clear {
@@ -14,7 +24,7 @@ body {
 .wrap {
 	width: 970px;
 	margin: 0 auto;
-	padding: 0;
+	padding: 0 0 152px 0;
 	height: 100%;
 }
 
@@ -70,7 +80,50 @@ div.head div.navigation a {
 	margin: 0 2px 0 16px;
 }
 
-div.head
+div.head div.navigation a:hover {
+}
+
+div.foot {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 142px;
+	background: url(foot_bg.png);
+}
+
+div.foot div.in {
+	width: 970px;
+	margin: 0 auto;
+	padding: 0;
+	height: 100%;
+	background: url(footer_gold.png) 50% 46px no-repeat;
+}
+
+div.foot div.logo {
+	float: left;
+	width: 239px;
+	height: 100%;
+	background: url(footer_logo.png) 0 40% no-repeat;
+}
+
+div.foot div.navigation {
+	clear: right;
+	float: right;
+	margin: 68px 0 0 0;
+}
+
+div.foot div.navigation a {
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #0a7d63;
+	font-size: 12px;
+	margin: 0 2px 0 16px;
+}
+
+div.foot div.navigation a:hover {
+	color: #86d5c3;
+}
 
 .box.white {
 	width: 970px;
