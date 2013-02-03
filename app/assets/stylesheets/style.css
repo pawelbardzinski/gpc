@@ -764,3 +764,49 @@ div.listing div.comment span.vote {
 div.listing div.comment span.points {
 	margin-left: 0;
 }
+
+div.listing div.comment div.actions {
+	padding: 10px 0 0 0;
+	float: right;
+}
+
+div.actions a {
+	display: block;
+	float: left;
+	margin: 0 0 0 4px;
+	padding: 0;
+	height: 28px;
+	background: url(button/actions.png) no-repeat;
+	text-indent: -3000px;
+	overflow: hidden;
+	text-decoration: none;
+	cursor: pointer;
+
+}
+
+div.actions a.edit {
+	width: 57px;
+}
+
+div.actions a.edit:hover {
+	background-position: 0 -30px;
+}
+
+div.actions a.delete {
+	width: 72px;
+	background-position: -60px 0;
+}
+
+div.actions a.delete:hover {
+	background-position: -60px -30px;
+}
+
+div.actions a.reply {
+	width: 72px;
+	background-position: -136px 0;
+}
+
+div.actions a.reply:hover {
+	background-position: -136px -30px;
+}
+

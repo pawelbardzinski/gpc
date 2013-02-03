@@ -110,12 +110,11 @@
 						</span>
 
 						<div class="actions">
-							<%= link_to "reply", {:action => "reply", :id => comment.id}, :class => "reply" %>
-
 							<% if comment.user_id == session[:user_id] %>
 								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit" %>
 								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete" %>
 							<% end %>
+							<%= link_to "reply", {:action => "reply", :id => comment.id}, :class => "reply" %>
 						</div>
 
 					</div></div></div>
