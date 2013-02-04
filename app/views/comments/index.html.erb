@@ -1,4 +1,4 @@
-<div class="comments container">
+<div id="content" class="comments container">
 <% topic = Topic.find(params[:topic_id]) %>
 <div class="box white">
 	<div class="top">
@@ -35,7 +35,7 @@
 						<div class="in">
 							<div class="in">
 								
-								<span class="go_back"><%= link_to "go back", {:controller=>'topics',:action=>'list'},  :class=>"ajax_request" %></span>
+								<span class="go_back"><%= link_to "go back", {:controller=>'topics',:action=>'list'}, :class=>"ajax_request" %></span>
 							</div>
 						</div>
 					</div>
@@ -88,7 +88,7 @@
 							<div class="text"><%= simple_format(comment.comment) %></div>
 						</div></div></div>
 
-						<div class="f"><div class="f"><div class="f">
+						<div class="f container"><div class="f"><div class="f">
 
 						<% 
 							@blob = ((Time.now.to_i - comment.created_at.strftime("%s").to_i)/60)
@@ -100,7 +100,7 @@
 						<span class="date"><%= @blob %> <%= @text %></span>
 						<span class="by">by <%= User.find(comment.user_id).login %></span>
 
-						<span class="vote"><%= link_to "upvote", :action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!" %></span>
+						<span class="vote"><%= link_to "upvote", {:action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!"}, :class=>"ajax_request", :rel=>"content" %></span>
 						<span class="points">
 							<% cp=comment.points.to_i %>
 							<% if cp!=1 %>
@@ -110,7 +110,7 @@
 							<% end %>
 						</span>
 
-						<div class="actions container">
+						<div class="actions">
 							<% if comment.user_id == session[:user_id] %>
 								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit ajax_request" %>
 								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete ajax_request"%>
