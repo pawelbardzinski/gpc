@@ -110,12 +110,12 @@
 							<% end %>
 						</span>
 
-						<div class="actions">
+						<div class="actions container">
 							<% if comment.user_id == session[:user_id] %>
-								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit ajax_request" , :rel=>"reply_".concat( comment.id.to_s ) %>
-								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete ajax_request", :rel=>"reply_".concat( comment.id.to_s ) %>
+								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit ajax_request" %>
+								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete ajax_request"%>
 							<% end %>
-							<%= link_to "reply", {:action => "reply", :id => comment.id}, :class => "reply ajax_request", :rel=>"reply_".concat( comment.id.to_s ) %>
+							<%= link_to "reply", {:action => "reply", :id => comment.id}, :class => "reply ajax_request" %>
 						</div>
 						
 					</div></div></div>
