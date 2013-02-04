@@ -524,11 +524,11 @@ div.pagination div.step {
 }
 
 div.pagination div.next {
-	width: 90px;
+	width: 110px;
 }
 
 div.pagination div.previous {
-	width: 110px;
+	width: 90px;
 }
 
 div.pagination div.step a {

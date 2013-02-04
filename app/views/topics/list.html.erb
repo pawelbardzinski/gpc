@@ -114,7 +114,7 @@
 					<div class="pagination">
 						<div class="step next">
 						<% if @next>1 then %>
-							<%= link_to "Previous page",{:action=>'list',:next=>@next.to_i-2} %>
+							<%= link_to "Previous page",{:action=>'list',:next=>@next.to_i-2}, :class=>"ajax_request" %>
 						<% end %>
 						</div>
 
@@ -122,13 +122,23 @@
 							<% 
 								i = @next
 								pages = per_page+@next
-								#pages = (@topics.size/per_page.to_f).floor
-								pages = 9
-								i=i-4 if i>5
+								pages = (@topics.size/per_page.to_f).ceil
+								#pages = 9
+								
+								if i>5 
+									i = i-4 
+								else 
+									i = 0
+								end
+
 								while i < pages 
-									class_ = '';
-									class_ = 'current' if (@next.to_i - 1) == i
-									%><%= link_to (i+1), {:action=>'list', :next=> i}, :class => class_ %><% 
+									class_ = 'ajax_request'
+									if( (@next.to_i - 1) == i )
+										class_ = class_.concat(' current')
+									end
+									%>
+							<%= link_to (i+1), {:action=>'list', :next=> i}, :class => class_ %>
+							<% 
 									i += 1; 
 								end 
 							%>
@@ -137,7 +147,7 @@
 
 						<div class="step previous">
 						<% if @topics.size > @next*per_page then %>
-							<%= link_to "Next page", :action=>'list',:next=>@next %>
+							<%= link_to "Next page", {:action=>'list',:next=>@next}, :class=>"ajax_request" %>
 						<% end %>
 						</div>
 					</div>
