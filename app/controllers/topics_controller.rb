@@ -15,9 +15,13 @@ class TopicsController < ApplicationController
       sql_search_in_text = 'select * from topics where text like \''+search_string+'\' order by updated_at'
       sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where comment like \''+search_string+'\') order by updated_at'
       @topics = ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_text).to_a + ActiveRecord::Base.connection.execute(sql_search_in_comments).to_a
+      @topics.uniq!
     else
-      @topics = Topic.order("topics.position DESC") if params[:sort] == 'popularity'
-      @topics = Topic.order("topics.updated_at DESC") if params[:sort] == 'date'
+      if params[:sort] == 'date'
+        @topics = Topic.order("topics.updated_at DESC") 
+      else
+        @topics = Topic.order("topics.position DESC")
+      end
     end
     @next=params[:next].to_i+1
   end
