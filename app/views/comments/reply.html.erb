@@ -1,7 +1,7 @@
-<div class="reply">
+<div id="reply_<%= @comment.id %>" class="reply">
 	<div class="content">
 	<p>Your comment:</p>
-	<%=form_for(:comment, :url=>{:action => 'replied', :id=>@comment.id, :previous_id=>@previous_comment.id,:topic_id=>@previous_comment.topic_id}) do |f| %>
+	<%=form_for(:comment, :url=>{:action => 'replied', :id=>@comment.id, :previous_id=>@previous_comment.id,:topic_id=>@previous_comment.topic_id}, :html => {:class=>"ajax_request"}) do |f| %>
 
 	<%= f.text_area :comment %>
 

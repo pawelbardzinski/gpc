@@ -104,7 +104,7 @@
 							<% end %>
 						</td>
 						<td class="discuss">
-							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic_id}, :class => "discuss" %></span>
+							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic_id}, :class => "discuss ajax_request" %></span>
 						</td>
 					</tr>
 					<% end %>

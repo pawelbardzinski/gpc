@@ -1,36 +1,15 @@
-<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
-<div style="float:right" id="hello_world" class='listalista'>		
-<%= link_to("chart",:controller=>'topics',:action=>'chart') %>&nbsp;&nbsp;
-<%= link_to("news",:controller=>'topics',:action=>'list') %>&nbsp;&nbsp;
-<%= link_to("videos",:controller=>'topics',:action=>'videos') %>&nbsp;&nbsp;
-<%= link_to("contact",:controller=>'topics',:action=>'contact')%>
-&nbsp;&nbsp;&nbsp;
-</div>
-<br>
-<div style="float:center" id="hello_world" class='listalista'>
-<font size="1pt">
-<% if session[:login] == nil %>
-	<%= link_to("login/create account",:controller=>'topics',:action=>'login') %>&nbsp;
-<% else %>
-	<%= link_to("logut", :controller=>'topics',:action=>'logout') %>
-	<%= link_to("add thread",:controller=>'topics',:action=>'new')%>
-	<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
-<% end %></style>
+<div id="reply_<%= @comment.id %>" class="reply">
+	<div class="content">
+	<p>Your comment:</p>
+		<%=form_for(:comment, :url=>{:action => 'update', :id=>@comment.id}, :html => {:class=>"ajax_request"}) do |f| %>
 
-<% login = session[:login] %>
-<% if login == nil then login="a" end %>
+	<%= f.text_area :comment %>
 
-<%= link_to("add thread",:controller=>'topics',:action=>'new') if session[:login] == nil %>&nbsp;
-<hr>
+	<div class="submit">
+		<%= submit_tag("add comment")%>
+	</div>
+	<% end %>
+	</div>
+	
+	<div class="f"><div><div> </div></div></div>
 </div>
-<div class="back_link"><%= link_to("<< back",:back)%></div>
-<br>
-<div class="guidelines">
-	<h3>edit comment</h3>
-	<%=form_for(:comment, :url=>{:action => 'update', :id=>@comment.id}) do |f| %>
-			<%= f.text_area(:comment, :size=>"65x10")%>
-</div>
-	<%= submit_tag("update")%>
-<br>
-<br>
-<% end %>

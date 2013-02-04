@@ -83,6 +83,6 @@ function on_error(result){
 }
 
 $(function(event) {
-	$('form.ajax_request').submit(ajax_request);
+	$('form.ajax_request').live('submit', ajax_request);
 	$('a.ajax_request').live('click',ajax_request);
 });

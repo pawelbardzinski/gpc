@@ -60,7 +60,7 @@
 
 								<p>Your comment:</p>
 
-								<%=form_for(:comment, :url=>{:action => 'create',:topic_id=>topic.id,:reply=>'false'}) do |f| %>
+								<%=form_for(:comment, :url=>{:action => 'create',:topic_id=>topic.id,:reply=>'false'}, :html => {:class=>"ajax_request"}) do |f| %>
 
 								<%= f.text_area :comment %>
 
@@ -111,8 +111,8 @@
 
 						<div class="actions">
 							<% if comment.user_id == session[:user_id] %>
-								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit" %>
-								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete" %>
+								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit ajax_request" , :rel=>"reply_".concat( comment.id.to_s ) %>
+								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete ajax_request", :rel=>"reply_".concat( comment.id.to_s ) %>
 							<% end %>
 							<%= link_to "reply", {:action => "reply", :id => comment.id}, :class => "reply ajax_request", :rel=>"reply_".concat( comment.id.to_s ) %>
 						</div>
