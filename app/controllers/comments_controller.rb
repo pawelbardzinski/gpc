@@ -12,7 +12,8 @@ class CommentsController < ApplicationController
   def edit
     if request.xhr?
       layout 'no_layout'
-    end    @comment = Comment.find(params[:id])
+    end    
+    @comment = Comment.find(params[:id])
     if @comment.user_id != session[:user_id] then
       redirect_to(:action=>'index',:topic_id=>@comment.topic_id,:notice=>'Only comment submitter may edit the comment.')
       return
