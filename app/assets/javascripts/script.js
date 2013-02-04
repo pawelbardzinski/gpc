@@ -80,3 +80,8 @@ function on_error(result){
 
 	return _on_error;
 }
+
+$(function(event) {
+	$('form.ajax_request').submit(ajax_request);
+	$('a.ajax_request').click(ajax_request);
+});

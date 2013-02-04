@@ -98,9 +98,12 @@ class CommentsController < ApplicationController
   end
   
   def reply
+=begin
     @previous_comment = Comment.find(params[:id])
     @comment = Comment.new(params[:comment])
     @topic_id = params[:topic_id]
+=end
+    @json = "{\ncontent: \""+Comment.find(params[:id]).comment+"\"\n}"
   end
   
   def replied

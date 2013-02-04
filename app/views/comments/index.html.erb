@@ -114,12 +114,12 @@
 								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit" %>
 								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete" %>
 							<% end %>
-							<%= link_to "reply", {:action => "reply", :id => comment.id}, :class => "reply" %>
+							<%= link_to "reply", {:action => "reply", :id => comment.id}, :class => "reply ajax_request", :rel=>"reply_".concat( comment.id.to_s ) %>
 						</div>
 						
 					</div></div></div>
 					
-					<div class="reply" style="display: none;">
+					<div id="reply_<%= comment.id %>" class="reply" style="display: none;">
 					</div>
 					
 				</div>
