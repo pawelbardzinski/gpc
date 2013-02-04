@@ -9,11 +9,13 @@ class TopicsController < ApplicationController
     @topics = []
     if params[:commit] && params[:search_string] != ''
       search_string = params[:search_string]
+      @search_string = search_string.gsub('%',' ')
       search_string.gsub!(' ','%')
       search_string = '%'+search_string+'%'
-      sql_search_in_subject = 'select * from topics where subject like \''+search_string+'\' order by updated_at'
-      sql_search_in_text = 'select * from topics where text like \''+search_string+'\' order by updated_at'
-      sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where comment like \''+search_string+'\') order by updated_at'
+      # for perfomance issues check: http://stackoverflow.com/questions/7005302/postgresql-how-to-make-not-case-sensitive-queries
+      sql_search_in_subject = 'select * from topics where lower(subject) like lower(\''+search_string+'\') order by updated_at'
+      sql_search_in_text = 'select * from topics where lower(text) like lower(\''+search_string+'\') order by updated_at'
+      sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where lower(comment) like lower(\''+search_string+'\')) order by updated_at'
       @topics = ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_text).to_a + ActiveRecord::Base.connection.execute(sql_search_in_comments).to_a
       @topics.uniq!
     else
@@ -22,6 +24,7 @@ class TopicsController < ApplicationController
       else
         @topics = Topic.order("topics.position DESC")
       end
+      @search_string = ''
     end
     @next=params[:next].to_i+1
   end

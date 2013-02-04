@@ -700,7 +700,8 @@ div.comment div.text {
 	font-size: 12px;
 }
 
-div.comment div.right textarea {
+div.comment div.right textarea,
+div.listing div.comment div.reply textarea  {
 
 	border: 2px solid #6ebea9;
 	border-radius: 6px;
@@ -708,6 +709,11 @@ div.comment div.right textarea {
 	width: 99%;
 	height: 210px;
 	outline: 0px none;
+}
+
+div.listing div.comment div.reply textarea  {
+	height: 190px;
+	margin-bottom: 1px;
 }
 
 div.box.green div.h, 
@@ -760,13 +766,22 @@ div.box.green div.content {
 	min-height: 300px;
 }
 
-div.box.green div.content p {
+div.reply div.content {
+	color: #f8f7f5;
+	padding: 16px 24px;
+	margin: 0;
+	width: auto;
+}
+
+div.box.green div.content p,
+div.listing div.comment div.reply p {
 	font-weight: bold;
 	padding: 0;
 	margin: 6px 0;
 }
 
-div.box.green div.content input[type="submit"] {
+div.box.green div.content input[type="submit"],
+div.listing div.comment div.reply input[type="submit"] {
 	display: block;
 	width: 77px;
 	height: 28px;
@@ -781,7 +796,8 @@ div.box.green div.content input[type="submit"] {
 	float: right;
 }
 
-div.box.green div.content input[type="submit"]:hover {
+div.box.green div.content input[type="submit"]:hover,
+div.listing div.comment div.reply input[type="submit"]:hover {
 	background-position: 0 -30px;
 }
 
@@ -884,6 +900,37 @@ div.listing div.comment span.points {
 div.listing div.comment div.actions {
 	padding: 10px 0 0 0;
 	float: right;
+}
+
+div.listing div.comment div.reply {
+	width: 100%;
+	height: 272px;
+	display:block;	
+	background: url(box-green-bg.png) 0% 0% repeat-x #005b45;
+	position: relative;
+}
+
+div.listing div.comment div.reply div.f {
+	position: absolute;
+	width: 100%;
+	bottom: -4px;
+	margin: 0;
+	padding: 0;
+	height: 4px;
+	background: url(box-green-f.png) 0 0 no-repeat;
+}
+
+div.listing div.comment div.reply div.f div {
+	margin: 0;
+	padding: 0;
+	height: inherit;
+	background: url(box-green-f.png) 100% -8px no-repeat;
+}
+
+div.listing div.comment div.reply div.f div div {
+	margin: 0 4px;
+	background-position: 0% -4px;
+	background-repeat: repeat;
 }
 
 div.actions a {

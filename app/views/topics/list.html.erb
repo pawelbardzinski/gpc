@@ -1,6 +1,6 @@
 <% @page_title = "Live Gold Chart & News" %>
 
-<% $per_page = 8 %>
+<% per_page = 8 %>
 
 <div class="box white">
 	<div class="top">
@@ -17,7 +17,7 @@
 						<div class="in">
 							<div class="in">
 								<%= form_tag topics_path do %>
-									<%= text_field_tag :search_string %>
+									<%= text_field_tag :search_string, @search_string %>
 									<%= submit_tag "Search" %>
 								<% end %>
 <!--
@@ -43,8 +43,8 @@
 					</div>
 				</div>
 				<table class="topics">
-					<% if @topics.size > @next*$per_page then end_step=@next*$per_page else end_step=@topics.size end %>
-					<% for i in @next*$per_page-($per_page-1)..end_step do %>
+					<% if @topics.size > @next*per_page then end_step=@next*per_page else end_step=@topics.size end %>
+					<% for i in @next*per_page-(per_page-1)..end_step do %>
 
 					<% 
 						topic = @topics[i-1]
@@ -120,26 +120,24 @@
 
 						<div class="pages">
 							<% 
-								$i = 0
-								$pages = (@topics.size/$per_page.to_f).floor
+								i = @next
+								pages = per_page+@next
+								puts 'PER PAGE: '+pages.to_s
+								puts 'NEXT: '+@next.to_s
+								#pages = (@topics.size/per_page.to_f).floor
+								pages = 9
+								while i < pages 
+									class_ = '';
+									class_ = 'current' if (@next.to_i - 1) == i
+									%><%= link_to (i+1), {:action=>'list', :next=> i}, :class => class_ %><% 
+									i += 1; 
+								end 
 							%>
-
-							<% begin %>
-
-
-								<% 
-									$class = '';
-									if (@next.to_i - 1) == $i then $class = 'current' end
-								%>
-								<%= link_to ($i+1), {:action=>'list', :next=> $i}, :class => $class %>
-
-								<% $i += 1; %>
-							<% end until $i > $pages %>
 
 						</div>
 
 						<div class="step previous">
-						<% if @topics.size > @next*$per_page then %>
+						<% if @topics.size > @next*per_page then %>
 							<%= link_to "Next page", :action=>'list',:next=>@next %>
 						<% end %>
 						</div>
