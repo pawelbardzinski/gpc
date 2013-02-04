@@ -122,10 +122,9 @@
 							<% 
 								i = @next
 								pages = per_page+@next
-								puts 'PER PAGE: '+pages.to_s
-								puts 'NEXT: '+@next.to_s
 								#pages = (@topics.size/per_page.to_f).floor
 								pages = 9
+								i=i-4 if i>5
 								while i < pages 
 									class_ = '';
 									class_ = 'current' if (@next.to_i - 1) == i
