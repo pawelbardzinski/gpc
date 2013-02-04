@@ -1,8 +1,5 @@
 class CommentsController < ApplicationController
   respond_to :js, :html
-  if request.xhr?
-    layout 'no_layout'
-  end
   
   def index
     @comments = Comment.where(:topic_id=>params[:topic_id]).order("comments.position ASC")
