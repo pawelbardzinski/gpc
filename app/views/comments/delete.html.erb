@@ -5,6 +5,7 @@
 
 	<%= form_for(:comment, :url => {:action=>'destroy', :id=>@comment.id, :topic_id=>@comment.topic_id}, :html => {:class=>"ajax_request", :rel=>"content"}) do |f| %>
 
+	<%= link_to "<< back", :back, :class=>"ajax_request", :rel=>"content" %>
 	<div class="submit">
 		<%= submit_tag("Delete")%>
 	</div>
