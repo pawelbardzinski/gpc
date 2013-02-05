@@ -121,13 +121,12 @@
 						<div class="pages">
 							<% 
 								i = @next
-								pages = per_page+@next
-								pages = (@topics.size/per_page.to_f).ceil
-								#pages = 9
-								
-								if i>5 
-									i = i-4 
+
+								if i>5
+									pages = i+4
+									i = i-5 
 								else 
+									pages = 9
 									i = 0
 								end
 
