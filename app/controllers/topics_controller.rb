@@ -1,4 +1,7 @@
 class TopicsController < ApplicationController
+  if request.xhr?
+    layout 'no_layout'
+  end
 
   def index
     list
