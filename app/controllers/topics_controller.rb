@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
   def list
     @topics = []
     if defined?(params[:search_string]) && params[:search_string] != '' && (params[:sort] != 'date' && params[:sort] != 'popularity')
-      search_string = params[:search_string]
+      search_string = params[:search_string] ? params[:search_string] : ""
       @search_string = search_string.gsub('%',' ')
       search_string.gsub!(' ','%')
       search_string = '%'+search_string+'%'

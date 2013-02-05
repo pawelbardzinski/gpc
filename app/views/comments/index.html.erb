@@ -11,7 +11,7 @@
 
 				<div class="header">
 					<div class="vote">
-						<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic.id} %></span>
+						<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic.id}, :class=>"ajax_request" %></span>
 						vote
 					</div>
 
