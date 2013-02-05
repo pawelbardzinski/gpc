@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  respond_to :js, :html
+  layout 'no_layout'
   
   def index
     @comments = Comment.where(:topic_id=>params[:topic_id]).order("comments.position ASC")
@@ -98,12 +100,15 @@ class CommentsController < ApplicationController
   end
   
   def reply
-=begin
     @previous_comment = Comment.find(params[:id])
     @comment = Comment.new(params[:comment])
     @topic_id = params[:topic_id]
-=end
     @json = "{\ncontent: \""+Comment.find(params[:id]).comment+"\"\n}"
+=begin
+    respond_with @json do |format|
+      format.json { render :layout => false, :comment => @comment.to_json }
+    end
+=end
   end
   
   def replied
