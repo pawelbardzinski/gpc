@@ -125,10 +125,12 @@
 								
 								if total_pages < 9
 									pages = total_pages
+									i = 0
 								else
 									if i > (total_pages-5)
 										pages = total_pages
 										i = total_pages-8
+										i=i-1
 									else
 										if i>5
 											pages = i+4
