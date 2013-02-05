@@ -1,7 +1,4 @@
 class TopicsController < ApplicationController
-  if request.xhr?
-    layout 'no_layout'
-  end
 
   def index
     list
@@ -9,6 +6,9 @@ class TopicsController < ApplicationController
   end
   
   def list
+    if request.xhr?
+      layout 'no_layout'
+    end
     @topics = []
     if params[:commit] && params[:search_string] != ''
       search_string = params[:search_string]
