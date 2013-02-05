@@ -123,16 +123,20 @@
 								i = @next
 								total_pages = (@topics.size/per_page.to_f).ceil
 								
-								if i > (total_pages-5)
+								if total_pages < 9
 									pages = total_pages
-									i = total_pages-8
 								else
-									if i>5
-										pages = i+4
-										i = i-5 
-									else 
-										pages = 9
-										i = 0
+									if i > (total_pages-5)
+										pages = total_pages
+										i = total_pages-8
+									else
+										if i>5
+											pages = i+4
+											i = i-5 
+										else 
+											pages = 9
+											i = 0
+										end
 									end
 								end
 
@@ -142,7 +146,7 @@
 										class_ = class_.concat(' current')
 									end
 									%>
-							<%= link_to (i+1), {:action=>'list', :next=> i}, :class => class_ %>
+							<%= link_to (i+1), {:action=>'list', :next=> i, :search_string=>@search_string}, :class => class_ %>
 							<% 
 									i += 1; 
 								end 
@@ -152,7 +156,7 @@
 
 						<div class="step previous">
 						<% if @topics.size > @next*per_page then %>
-							<%= link_to "Next page", {:action=>'list',:next=>@next}, :class=>"ajax_request" %>
+							<%= link_to "Next page", {:action=>'list',:next=>@next, :search_string=>@search_string}, :class=>"ajax_request" %>
 						<% end %>
 						</div>
 					</div>
