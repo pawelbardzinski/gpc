@@ -1,13 +1,18 @@
 class CommentsController < ApplicationController
   respond_to :js, :html
-  
+
   def index
+    if request.xhr?
+      layout 'no_layout'
+    end
     @comments = Comment.where(:topic_id=>params[:topic_id]).order("comments.position ASC")
     @topic = Topic.where(:id=>params[:topic_id])
   end
   
   def edit
-    @comment = Comment.find(params[:id])
+    if request.xhr?
+      layout 'no_layout'
+    end    @comment = Comment.find(params[:id])
     if @comment.user_id != session[:user_id] then
       redirect_to(:action=>'index',:topic_id=>@comment.topic_id,:notice=>'Only comment submitter may edit the comment.')
       return
@@ -31,6 +36,9 @@ class CommentsController < ApplicationController
 #  end
 
   def create
+    if request.xhr?
+      layout 'no_layout'
+    end
     if session[:user_id] != '' && session[:user_id] != nil then
       @comment = Comment.new(params[:comment])
       @comment.user_id = session[:user_id]
@@ -53,6 +61,9 @@ class CommentsController < ApplicationController
   end
     
   def update
+    if request.xhr?
+      layout 'no_layout'
+    end
     @comment = Comment.find(params[:id])    
       if @comment.update_attributes(params[:comment])
         redirect_to(:action=>'index',:topic_id=>@comment.topic_id,:notice=>'The comment has been updated.')
@@ -62,6 +73,9 @@ class CommentsController < ApplicationController
   end   
   
   def delete
+    if request.xhr?
+      layout 'no_layout'
+    end
     @comment = Comment.find(params[:id])
     if @comment.user_id != session[:user_id] then
       redirect_to(:action=>'index',:topic_id=>@comment.topic_id,:notice=>'Only comment submitter may delete the comment.')
@@ -70,16 +84,25 @@ class CommentsController < ApplicationController
   end
   
   def destroy
+    if request.xhr?
+      layout 'no_layout'
+    end
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to(:action=>'index',:topic_id=>params[:topic_id],:notice=>'The comment has been permamently deleted.')
   end
   
   def logout
+    if request.xhr?
+      layout 'no_layout'
+    end
     redirect_to(:controller=>'topics', :action=>'logout')
   end
 
   def upvote
+    if request.xhr?
+      layout 'no_layout'
+    end
     if session[:user_id] == nil    
       redirect_to(:controller=>'topics',:action=>'login',:notice=>'You need to be logged in to upvote.')
       return
@@ -99,6 +122,9 @@ class CommentsController < ApplicationController
   end
   
   def reply
+    if request.xhr?
+      layout 'no_layout'
+    end
     @previous_comment = Comment.find(params[:id])
     @comment = Comment.new(params[:comment])
     @topic_id = params[:topic_id]
@@ -111,6 +137,9 @@ class CommentsController < ApplicationController
   end
   
   def replied
+    if request.xhr?
+      layout 'no_layout'
+    end
         @comment = Comment.new(params[:comment])
         @previous_comment = Comment.find(params[:previous_id])
         if session[:user_id] != nil 
