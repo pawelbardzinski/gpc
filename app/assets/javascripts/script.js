@@ -1,6 +1,6 @@
 
 $.ajaxSetup( {
-	dataType: 'json',
+	dataType: 'text',
 
 	error: function(jqXHR, textStatus, errorThrown){
 		alert(jqXHR);
@@ -22,7 +22,7 @@ ajax_request = function (event)
 
 		success: function(result)
 		{
-			if(!on_error(result)){
+		//	if(!on_error(result)){
 				container = false;
 				
 				if( $(self).attr('rel') ) { 
@@ -31,11 +31,12 @@ ajax_request = function (event)
 				else {
 					container = $(self).parents('.container:first');
 				}
-
+console.log(container)
+console.log(result)
 				if( !container ) return false;
 
-				$(container).hide().replaceWith( result.content );
-			}
+				$(container).hide().replaceWith( result /*.content */ );
+	//		}
 		},
 
 		error: function(result, textStatus)
@@ -74,7 +75,7 @@ function on_error(result){
 
 	var _on_error = false;
 
-	if(result.error != undefined) {
+	if(result != undefined) {
 		_on_error = true;
 	}
 
@@ -83,5 +84,5 @@ function on_error(result){
 
 $(function(event) {
 	$('form.ajax_request').submit(ajax_request);
-	$('a.ajax_request').click(ajax_request);
+	$('a.ajax_request').live('click',ajax_request);
 });

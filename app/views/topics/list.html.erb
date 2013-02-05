@@ -2,7 +2,7 @@
 
 <% per_page = 8 %>
 
-<div class="box white">
+<div class="box white container">
 	<div class="top">
 		<div class="top"><div class="top">&nbsp;</div></div>
 	</div>
@@ -78,7 +78,7 @@
 							<% if topic_url != '' %>
 								<%= link_to(topic_subject,topic_url,:target=>'_blank') %>
 							<% else %>          
-								<%= link_to(topic_subject,:controller=>'comments',:topic_id=>topic_id) %>
+								<%= link_to(topic_subject,{:controller=>'comments',:topic_id=>topic_id}, :class=>"ajax_request") %>
 							<% end %>
 							</span>
 							<span class="points"><%= tp=topic_points %> <% if tp==1 %> point <% else %> points <% end %></span>
