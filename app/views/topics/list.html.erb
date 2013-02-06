@@ -76,7 +76,7 @@
 						<td class="topic">
 							<span class="topic">
 							<% if topic_url != '' %>
-								<%= link_to(topic_subject,topic_url,:target=>'_blank') %>
+								<%= link_to(topic_subject,{:controller=>'comments',:topic_id=>topic_id}, :class=>"ajax_request") %>
 							<% else %>          
 								<%= link_to(topic_subject,{:controller=>'comments',:topic_id=>topic_id}, :class=>"ajax_request") %>
 							<% end %>
