@@ -7,6 +7,7 @@
 	<div class="middle">
 		<div class="middle"><div class="middle">
 			<div class="content">
+
 				<div class="h1">Commenting on</div>
 
 				<div class="header">
@@ -59,6 +60,8 @@
 							<div class="content">
 								<div class="g"> </div>
 
+								<% if session[:user_id] %>
+
 								<p>Your comment:</p>
 
 								<%=form_for(:comment, :url=>{:action => 'create',:topic_id=>topic.id,:reply=>'false'}, :html => {:class=>"ajax_request"}) do |f| %>
@@ -69,6 +72,15 @@
 									<%= submit_tag("add comment")%>
 								</div>
 
+								<% end %>
+
+								<% else %>
+									<div class="login">
+										<p>Commenting disabled. You are not logged in.</p>
+										<div class="actions">
+											<a href="login" class="login">login</a> or <a href="register" class="register">register</a>
+										</div>
+									</div>
 								<% end %>
 							</div>
 							<div class="f"><div><div> </div></div></div>

@@ -72,6 +72,8 @@ div.head div.navigation {
 }
 
 div.head div.navigation a {
+	line-height: 32px;
+	float: left;
 	font-weight: bold;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -971,5 +973,52 @@ div.actions a.reply {
 
 div.actions a.reply:hover {
 	background-position: -136px -30px;
+}
+
+div.comment div.right div.login {
+	padding: 100px 0 0 0;
+	text-align: center;
+}
+
+div.comment div.right div.login div.actions {
+	padding: 16px 0 0 0;
+	width: 200px;
+	margin: 0 auto;
+	line-height: 30px;
+}
+
+div.head div.navigation a.login,
+div.head div.navigation a.register,
+div.comment div.right div.login a.login,
+div.comment div.right div.login a.register {
+	float: left;
+	display: block;
+	background: url(button/login.png) -1px -2px no-repeat;
+	width: 66px;
+	height: 32px;
+	text-indent: -3000px;
+	overflow: hidden;
+}
+
+div.head div.navigation a.login,
+div.head div.navigation a.register {
+	float: left;
+}
+
+div.head div.navigation  a.register,
+div.comment div.right div.login a.register {
+	float: right;
+	width: 83px;
+	background-position: -96px -2px;
+}
+
+div.head div.navigation  a.login:hover,
+div.comment div.right div.login a.login:hover {
+	background-position: -1px -38px;
+}
+
+div.navigation a.register:hover,
+div.comment div.right div.login a.register:hover {
+	background-position: -96px -38px;
 }
 
