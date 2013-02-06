@@ -7,7 +7,7 @@ class TopicsController < ApplicationController
   
   def list
       @topics = []
-      if defined?(params[:search_string]) == false
+      if params[:search_string].to_s == ''
         if params[:sort] == 'date' 
           sql = 'select * from topics order by updated_at'
           @topics = ActiveRecord::Base.connection.execute(sql).to_a 
