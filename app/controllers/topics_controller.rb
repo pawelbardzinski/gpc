@@ -18,6 +18,7 @@ class TopicsController < ApplicationController
           @topics.uniq!
         end
         @next=params[:next].to_i+1
+        @search_string = params[:search_string]
       else
         search_string = params[:search_string] 
         @search_string = search_string.gsub('%',' ')
