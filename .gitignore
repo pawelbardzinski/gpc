@@ -3,5 +3,6 @@ th-pg-config=
 log/*
 Gemfile.lock
 .project
+*.png
 ~
 *~
