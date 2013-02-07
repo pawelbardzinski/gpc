@@ -78,7 +78,7 @@
 									<div class="login">
 										<p>Commenting disabled. You are not logged in.</p>
 										<div class="actions">
-											<a href="login" class="login">login</a> or <a href="register" class="register">register</a>
+											<%= link_to("logut", {:action=>'login'}, :class => "login") %> or <%= link_to("register", {:controller=>'topics',:action => 'create_account'}, :class => "register") %>
 										</div>
 									</div>
 								<% end %>

@@ -1,43 +1,27 @@
-<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
-<div style="float:right" id="hello_world" class='listalista'>		
-<%= link_to("chart",:action=>'chart') %>&nbsp;&nbsp;
-<%= link_to("news",:action=>'list') %>&nbsp;&nbsp;
-<%= link_to("videos",:action=>'videos') %>&nbsp;&nbsp;
-<%= link_to("contact", :action=>'contact')%>
-&nbsp;&nbsp;&nbsp;
-</div>
-<br>
-<div style="float:center" id="hello_world" class='listalista'>
-<font size="1pt">
-<% if session[:login] == nil %>
-	<%= link_to("login/create account",:action=>'login') %>&nbsp;
-<% else %>
-	<%= link_to("logut", :action=>'logout') %>
-	<%= link_to("add thread",:action=>'new')%>
-	<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
-<% end %></style>
-
-<% login = session[:login] %>
-<% if login == nil then login="a" end %>
-
-<%= link_to("add thread",:action=>'new') if session[:login] == nil %>&nbsp;
-<%= link_to("guidelines", :action=>'guidelines')%>&nbsp;<hr>
-</div>
-</font><% if !params[:notice].blank? %>
-	<div class="notice">
-		<%= params[:notice] %>
+<div id="dialog_content">
+	<div class="header">
+		<p>Add a thread</p>
 	</div>
-<% end %>
-<div class="back_link"><%= link_to("<< back", :back)%></div>
-<div class="guidelines">
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h4>submit link or text</h4>
-	
-	<%=form_for(:topic, :url=>{:action => 'create'}) do |f| %>
-		<%= render(:partial => 'form', :locals =>{:f=>f}) %><br>
-		<div class="form-buttons">
-			<%= submit_tag("create")%>
+
+
+	<% if !params[:notice].blank? %>
+		<div class="notice">
+			<%= params[:notice] %>
 		</div>
-		
 	<% end %>
+
+	<div class="add_thread">
+		
 	
+		<%=form_for(:topic, :url=>{:action => 'create'}) do |f| %>
+
+			<%= render(:partial => 'form', :locals =>{:f=>f}) %><br>
+			<div class="form-buttons">
+				<%= submit_tag("create")%>
+				<a class="dialog_close">close</a>
+			</div>
+		
+		<% end %>
+	
+	</div>
 </div>

@@ -31,8 +31,7 @@ ajax_request = function (event)
 				else {
 					container = $(self).parents('.container:first');
 				}
-console.log(container)
-console.log(result)
+
 				if( !container ) return false;
 
 				$(container).hide().replaceWith( result /*.content */ );
@@ -82,7 +81,28 @@ function on_error(result){
 	return _on_error;
 }
 
+function dialog_hide() {
+	$('#dialog, #dialog_overall').animate({opacity: 0}, 500, function(){$(this).css('display', 'none')});
+}
+
+function dialog_show() {
+	$('#dialog, #dialog_overall').css('display', 'block').css('opacity', 0);
+	$('#dialog_overall').animate({opacity: 0.7}, 500);
+	$('#dialog').animate({opacity: 1}, 500);
+}
+
+function dialog(event) {
+
+	dialog_show();
+	this.ajax_request = ajax_request;
+	this.ajax_request(event);
+}
+
 $(function(event) {
 	$('form.ajax_request').live('submit', ajax_request);
 	$('a.ajax_request').live('click',ajax_request);
+
+	$('a.dialog').live('click',dialog);
+
+	$('.dialog_close').live('click',dialog_hide);
 });
