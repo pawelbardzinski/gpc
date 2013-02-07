@@ -34847,3 +34847,1004 @@ Compiled public.css  (0ms)  (pid 26554)
 Compiled topic.css  (1ms)  (pid 26554)
 Compiled topics.css  (1ms)  (pid 26554)
 Compiled user.css  (1ms)  (pid 26554)
+Compiled application.js  (1ms)  (pid 28649)
+Compiled jquery.js  (0ms)  (pid 28649)
+Compiled jquery_ujs.js  (0ms)  (pid 28649)
+Compiled comments.js  (30ms)  (pid 28649)
+Compiled script.js  (0ms)  (pid 28649)
+Compiled topic.js  (0ms)  (pid 28649)
+Compiled topics.js  (0ms)  (pid 28649)
+Compiled user.js  (0ms)  (pid 28649)
+Compiled old/application.css  (1ms)  (pid 28649)
+Compiled old/admin.css  (0ms)  (pid 28649)
+Compiled old/backup_public.css  (0ms)  (pid 28649)
+Compiled old/comments.css  (1ms)  (pid 28649)
+Compiled old/public.css  (0ms)  (pid 28649)
+Compiled old/topic.css  (0ms)  (pid 28649)
+Compiled old/topics.css  (0ms)  (pid 28649)
+Compiled old/user.css  (0ms)  (pid 28649)
+Compiled application.js  (1ms)  (pid 28645)
+Compiled jquery.js  (0ms)  (pid 28645)
+Compiled jquery_ujs.js  (0ms)  (pid 28645)
+Compiled comments.js  (30ms)  (pid 28645)
+Compiled script.js  (0ms)  (pid 28645)
+Compiled topic.js  (0ms)  (pid 28645)
+Compiled topics.js  (0ms)  (pid 28645)
+Compiled user.js  (0ms)  (pid 28645)
+Compiled old/application.css  (1ms)  (pid 28645)
+Compiled old/admin.css  (0ms)  (pid 28645)
+Compiled old/backup_public.css  (0ms)  (pid 28645)
+Compiled old/comments.css  (1ms)  (pid 28645)
+Compiled old/public.css  (0ms)  (pid 28645)
+Compiled old/topic.css  (0ms)  (pid 28645)
+Compiled old/topics.css  (0ms)  (pid 28645)
+Compiled old/user.css  (0ms)  (pid 28645)
+Compiled application.js  (1ms)  (pid 29158)
+Compiled jquery.js  (12ms)  (pid 29158)
+Compiled jquery_ujs.js  (0ms)  (pid 29158)
+Compiled comments.js  (31ms)  (pid 29158)
+Compiled script.js  (0ms)  (pid 29158)
+Compiled topic.js  (0ms)  (pid 29158)
+Compiled topics.js  (0ms)  (pid 29158)
+Compiled user.js  (0ms)  (pid 29158)
+Compiled old/application.css  (1ms)  (pid 29158)
+Compiled old/admin.css  (0ms)  (pid 29158)
+Compiled old/backup_public.css  (0ms)  (pid 29158)
+Compiled old/comments.css  (1ms)  (pid 29158)
+Compiled old/public.css  (0ms)  (pid 29158)
+Compiled old/topic.css  (0ms)  (pid 29158)
+Compiled old/topics.css  (0ms)  (pid 29158)
+Compiled old/user.css  (0ms)  (pid 29158)
+Compiled application.js  (1ms)  (pid 29154)
+Compiled jquery.js  (0ms)  (pid 29154)
+Compiled jquery_ujs.js  (0ms)  (pid 29154)
+Compiled comments.js  (30ms)  (pid 29154)
+Compiled script.js  (0ms)  (pid 29154)
+Compiled topic.js  (0ms)  (pid 29154)
+Compiled topics.js  (0ms)  (pid 29154)
+Compiled user.js  (0ms)  (pid 29154)
+Compiled old/application.css  (1ms)  (pid 29154)
+Compiled old/admin.css  (0ms)  (pid 29154)
+Compiled old/backup_public.css  (0ms)  (pid 29154)
+Compiled old/comments.css  (1ms)  (pid 29154)
+Compiled old/public.css  (0ms)  (pid 29154)
+Compiled old/topic.css  (0ms)  (pid 29154)
+Compiled old/topics.css  (0ms)  (pid 29154)
+Compiled old/user.css  (0ms)  (pid 29154)
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 08:07:58 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (style.css isn't precompiled):
+    5: 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    6: 	
+    7: 	<title>Gold Chart & News</title>    
+    8: 	<%= stylesheet_link_tag "style.css" %>
+    9: 	<%= javascript_include_tag "jquery" %>
+    10: 	<%= javascript_include_tag "script" %>
+    11: 	<%= csrf_meta_tags %>
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4412604314408401672_69951260595700'
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:07:59 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+Compiled application.js  (1ms)  (pid 29278)
+Compiled jquery.js  (12ms)  (pid 29278)
+Compiled jquery_ujs.js  (0ms)  (pid 29278)
+Compiled comments.js  (30ms)  (pid 29278)
+Compiled script.js  (0ms)  (pid 29278)
+Compiled topic.js  (0ms)  (pid 29278)
+Compiled topics.js  (0ms)  (pid 29278)
+Compiled user.js  (0ms)  (pid 29278)
+Compiled old/application.css  (1ms)  (pid 29278)
+Compiled old/admin.css  (0ms)  (pid 29278)
+Compiled old/backup_public.css  (0ms)  (pid 29278)
+Compiled old/comments.css  (1ms)  (pid 29278)
+Compiled old/public.css  (0ms)  (pid 29278)
+Compiled old/topic.css  (0ms)  (pid 29278)
+Compiled old/topics.css  (0ms)  (pid 29278)
+Compiled old/user.css  (0ms)  (pid 29278)
+Compiled application.js  (1ms)  (pid 29273)
+Compiled jquery.js  (0ms)  (pid 29273)
+Compiled jquery_ujs.js  (0ms)  (pid 29273)
+Compiled comments.js  (30ms)  (pid 29273)
+Compiled script.js  (0ms)  (pid 29273)
+Compiled topic.js  (0ms)  (pid 29273)
+Compiled topics.js  (0ms)  (pid 29273)
+Compiled user.js  (0ms)  (pid 29273)
+Compiled old/application.css  (1ms)  (pid 29273)
+Compiled old/admin.css  (0ms)  (pid 29273)
+Compiled old/backup_public.css  (0ms)  (pid 29273)
+Compiled old/comments.css  (1ms)  (pid 29273)
+Compiled old/public.css  (0ms)  (pid 29273)
+Compiled old/topic.css  (0ms)  (pid 29273)
+Compiled old/topics.css  (0ms)  (pid 29273)
+Compiled old/user.css  (0ms)  (pid 29273)
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 08:09:30 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (style.css isn't precompiled):
+    5: 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    6: 	
+    7: 	<title>Gold Chart & News</title>    
+    8: 	<%= stylesheet_link_tag "style.css" %>
+    9: 	<%= javascript_include_tag "jquery" %>
+    10: 	<%= javascript_include_tag "script" %>
+    11: 	<%= csrf_meta_tags %>
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4168459590537774374_70199160741500'
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:09:31 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+Compiled application.js  (1ms)  (pid 29467)
+Compiled jquery.js  (0ms)  (pid 29467)
+Compiled jquery_ujs.js  (0ms)  (pid 29467)
+Compiled comments.js  (30ms)  (pid 29467)
+Compiled script.js  (0ms)  (pid 29467)
+Compiled topic.js  (0ms)  (pid 29467)
+Compiled topics.js  (0ms)  (pid 29467)
+Compiled user.js  (0ms)  (pid 29467)
+Compiled old/application.css  (1ms)  (pid 29467)
+Compiled old/admin.css  (0ms)  (pid 29467)
+Compiled old/backup_public.css  (0ms)  (pid 29467)
+Compiled old/comments.css  (1ms)  (pid 29467)
+Compiled old/public.css  (0ms)  (pid 29467)
+Compiled old/topic.css  (0ms)  (pid 29467)
+Compiled old/topics.css  (0ms)  (pid 29467)
+Compiled old/user.css  (0ms)  (pid 29467)
+Compiled application.js  (1ms)  (pid 29463)
+Compiled jquery.js  (0ms)  (pid 29463)
+Compiled jquery_ujs.js  (0ms)  (pid 29463)
+Compiled comments.js  (31ms)  (pid 29463)
+Compiled script.js  (0ms)  (pid 29463)
+Compiled topic.js  (0ms)  (pid 29463)
+Compiled topics.js  (0ms)  (pid 29463)
+Compiled user.js  (0ms)  (pid 29463)
+Compiled old/application.css  (1ms)  (pid 29463)
+Compiled old/admin.css  (0ms)  (pid 29463)
+Compiled old/backup_public.css  (0ms)  (pid 29463)
+Compiled old/comments.css  (1ms)  (pid 29463)
+Compiled old/public.css  (0ms)  (pid 29463)
+Compiled old/topic.css  (0ms)  (pid 29463)
+Compiled old/topics.css  (0ms)  (pid 29463)
+Compiled old/user.css  (0ms)  (pid 29463)
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 08:12:36 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (style.css isn't precompiled):
+    5: 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    6: 	
+    7: 	<title>Gold Chart & News</title>    
+    8: 	<%= stylesheet_link_tag "style.css" %>
+    9: 	<%= javascript_include_tag "jquery" %>
+    10: 	<%= javascript_include_tag "script" %>
+    11: 	<%= csrf_meta_tags %>
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3147217076778451128_70299354274400'
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:12:37 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+Compiled application.js  (13ms)  (pid 29762)
+Compiled jquery.js  (0ms)  (pid 29762)
+Compiled jquery_ujs.js  (0ms)  (pid 29762)
+Compiled comments.js  (30ms)  (pid 29762)
+Compiled script.js  (0ms)  (pid 29762)
+Compiled topic.js  (0ms)  (pid 29762)
+Compiled topics.js  (0ms)  (pid 29762)
+Compiled user.js  (0ms)  (pid 29762)
+Compiled old/admin.css  (0ms)  (pid 29762)
+Compiled old/application.css  (1ms)  (pid 29762)
+Compiled old/backup_public.css  (0ms)  (pid 29762)
+Compiled old/comments.css  (0ms)  (pid 29762)
+Compiled old/public.css  (0ms)  (pid 29762)
+Compiled old/topic.css  (0ms)  (pid 29762)
+Compiled old/topics.css  (0ms)  (pid 29762)
+Compiled old/user.css  (0ms)  (pid 29762)
+Compiled style.css  (0ms)  (pid 29762)
+Compiled jquery-ui.js  (1ms)  (pid 29762)
+Compiled jquery-ui.min.js  (0ms)  (pid 29762)
+Compiled jquery.min.js  (0ms)  (pid 29762)
+Compiled application.js  (1ms)  (pid 29758)
+Compiled jquery.js  (0ms)  (pid 29758)
+Compiled jquery_ujs.js  (0ms)  (pid 29758)
+Compiled comments.js  (31ms)  (pid 29758)
+Compiled script.js  (0ms)  (pid 29758)
+Compiled topic.js  (0ms)  (pid 29758)
+Compiled topics.js  (0ms)  (pid 29758)
+Compiled user.js  (0ms)  (pid 29758)
+Compiled old/admin.css  (0ms)  (pid 29758)
+Compiled old/application.css  (1ms)  (pid 29758)
+Compiled old/backup_public.css  (0ms)  (pid 29758)
+Compiled old/comments.css  (0ms)  (pid 29758)
+Compiled old/public.css  (0ms)  (pid 29758)
+Compiled old/topic.css  (0ms)  (pid 29758)
+Compiled old/topics.css  (0ms)  (pid 29758)
+Compiled old/user.css  (0ms)  (pid 29758)
+Compiled style.css  (0ms)  (pid 29758)
+Compiled jquery-ui.js  (6ms)  (pid 29758)
+Compiled jquery-ui.min.js  (2ms)  (pid 29758)
+Compiled jquery.min.js  (1ms)  (pid 29758)
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 08:18:12 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 08:18:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css"):
+  
+
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 08:18:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js"):
+  
+
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 08:18:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/script-a1ef0498fde06d1c408f807fe773131c.js"):
+  
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:18:13 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+Compiled application.js  (1ms)  (pid 29945)
+Compiled jquery.js  (0ms)  (pid 29945)
+Compiled jquery_ujs.js  (0ms)  (pid 29945)
+Compiled comments.js  (30ms)  (pid 29945)
+Compiled script.js  (0ms)  (pid 29945)
+Compiled topic.js  (0ms)  (pid 29945)
+Compiled topics.js  (0ms)  (pid 29945)
+Compiled user.js  (0ms)  (pid 29945)
+Compiled old/admin.css  (0ms)  (pid 29945)
+Compiled old/application.css  (1ms)  (pid 29945)
+Compiled old/backup_public.css  (0ms)  (pid 29945)
+Compiled old/comments.css  (0ms)  (pid 29945)
+Compiled old/public.css  (0ms)  (pid 29945)
+Compiled old/topic.css  (0ms)  (pid 29945)
+Compiled old/topics.css  (0ms)  (pid 29945)
+Compiled old/user.css  (0ms)  (pid 29945)
+Compiled style.css  (0ms)  (pid 29945)
+Compiled jquery-ui.js  (1ms)  (pid 29945)
+Compiled jquery-ui.min.js  (0ms)  (pid 29945)
+Compiled jquery.min.js  (0ms)  (pid 29945)
+Compiled application.js  (1ms)  (pid 29895)
+Compiled jquery.js  (0ms)  (pid 29895)
+Compiled jquery_ujs.js  (0ms)  (pid 29895)
+Compiled comments.js  (30ms)  (pid 29895)
+Compiled script.js  (0ms)  (pid 29895)
+Compiled topic.js  (0ms)  (pid 29895)
+Compiled topics.js  (0ms)  (pid 29895)
+Compiled user.js  (0ms)  (pid 29895)
+Compiled old/admin.css  (0ms)  (pid 29895)
+Compiled old/application.css  (1ms)  (pid 29895)
+Compiled old/backup_public.css  (0ms)  (pid 29895)
+Compiled old/comments.css  (0ms)  (pid 29895)
+Compiled old/public.css  (0ms)  (pid 29895)
+Compiled old/topic.css  (0ms)  (pid 29895)
+Compiled old/topics.css  (0ms)  (pid 29895)
+Compiled old/user.css  (0ms)  (pid 29895)
+Compiled style.css  (0ms)  (pid 29895)
+Compiled jquery-ui.js  (1ms)  (pid 29895)
+Compiled jquery-ui.min.js  (0ms)  (pid 29895)
+Compiled jquery.min.js  (0ms)  (pid 29895)
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 08:20:28 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 08:20:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css"):
+  
+
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 08:20:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js"):
+  
+
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 08:20:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/script-a1ef0498fde06d1c408f807fe773131c.js"):
+  
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:20:29 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+Compiled application.js  (1ms)  (pid 30086)
+Compiled jquery.js  (0ms)  (pid 30086)
+Compiled jquery_ujs.js  (0ms)  (pid 30086)
+Compiled comments.js  (31ms)  (pid 30086)
+Compiled script.js  (0ms)  (pid 30086)
+Compiled topic.js  (0ms)  (pid 30086)
+Compiled topics.js  (0ms)  (pid 30086)
+Compiled user.js  (0ms)  (pid 30086)
+Compiled old/admin.css  (0ms)  (pid 30086)
+Compiled old/application.css  (1ms)  (pid 30086)
+Compiled old/backup_public.css  (0ms)  (pid 30086)
+Compiled old/comments.css  (0ms)  (pid 30086)
+Compiled old/public.css  (0ms)  (pid 30086)
+Compiled old/topic.css  (0ms)  (pid 30086)
+Compiled old/topics.css  (0ms)  (pid 30086)
+Compiled old/user.css  (0ms)  (pid 30086)
+Compiled style.css  (0ms)  (pid 30086)
+Compiled jquery-ui.js  (1ms)  (pid 30086)
+Compiled jquery-ui.min.js  (1ms)  (pid 30086)
+Compiled jquery.min.js  (0ms)  (pid 30086)
+Compiled application.js  (1ms)  (pid 30036)
+Compiled jquery.js  (0ms)  (pid 30036)
+Compiled jquery_ujs.js  (0ms)  (pid 30036)
+Compiled comments.js  (30ms)  (pid 30036)
+Compiled script.js  (0ms)  (pid 30036)
+Compiled topic.js  (0ms)  (pid 30036)
+Compiled topics.js  (0ms)  (pid 30036)
+Compiled user.js  (0ms)  (pid 30036)
+Compiled old/admin.css  (0ms)  (pid 30036)
+Compiled old/application.css  (1ms)  (pid 30036)
+Compiled old/backup_public.css  (0ms)  (pid 30036)
+Compiled old/comments.css  (0ms)  (pid 30036)
+Compiled old/public.css  (0ms)  (pid 30036)
+Compiled old/topic.css  (0ms)  (pid 30036)
+Compiled old/topics.css  (0ms)  (pid 30036)
+Compiled old/user.css  (0ms)  (pid 30036)
+Compiled style.css  (0ms)  (pid 30036)
+Compiled jquery-ui.js  (1ms)  (pid 30036)
+Compiled jquery-ui.min.js  (0ms)  (pid 30036)
+Compiled jquery.min.js  (0ms)  (pid 30036)
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 08:22:19 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 08:22:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css"):
+  
+
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 08:22:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js"):
+  
+
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 08:22:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/script-a1ef0498fde06d1c408f807fe773131c.js"):
+  
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:22:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 08:23:56 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 08:23:56 -0500
+Served asset /style-33fb1019f43c96c47bfd6c5fc6c60a58.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 08:23:56 -0500
+Served asset /jquery-3cc750116fb43f98acbf123dbce1ebc1.js - 200 OK (3ms)
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 08:23:56 -0500
+Served asset /script-a1ef0498fde06d1c408f807fe773131c.js - 200 OK (3ms)
+
+
+Started GET "/assets/bg.png" for 188.123.222.205 at 2013-02-07 08:23:57 -0500
+Served asset /bg.png - 200 OK (2ms)
+
+
+Started GET "/assets/logo.png" for 188.123.222.205 at 2013-02-07 08:23:57 -0500
+Served asset /logo.png - 200 OK (8ms)
+
+
+Started GET "/assets/button/login.png" for 188.123.222.205 at 2013-02-07 08:23:57 -0500
+Served asset /button/login.png - 200 OK (3ms)
+
+
+Started GET "/assets/box_white-top-left.png" for 188.123.222.205 at 2013-02-07 08:23:57 -0500
+Served asset /box_white-top-left.png - 200 OK (3ms)
+
+
+Started GET "/assets/box_white-top-right.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /box_white-top-right.png - 200 OK (2ms)
+
+
+Started GET "/assets/box_white-top.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /box_white-top.png - 200 OK (2ms)
+
+
+Started GET "/assets/box-white-middle-left.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /box-white-middle-left.png - 200 OK (2ms)
+
+
+Started GET "/assets/box-white-middle-right.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /box-white-middle-right.png - 200 OK (2ms)
+
+
+Started GET "/assets/header.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /header.png - 200 OK (2ms)
+
+
+Started GET "/assets/search/search.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /search/search.png - 200 OK (1ms)
+
+
+Started GET "/assets/button/search.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /button/search.png - 200 OK (2ms)
+
+
+Started GET "/assets/search/separator.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /search/separator.png - 200 OK (2ms)
+
+
+Started GET "/assets/button/order.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /button/order.png - 200 OK (18ms)
+
+
+Started GET "/assets/header_right.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /header_right.png - 200 OK (1ms)
+
+
+Started GET "/assets/button/add_thread.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /button/add_thread.png - 200 OK (2ms)
+
+
+Started GET "/assets/footer.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /footer.png - 200 OK (2ms)
+
+
+Started GET "/assets/footer_right.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /footer_right.png - 200 OK (2ms)
+
+
+Started GET "/assets/box_white-bottom-left.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /box_white-bottom-left.png - 200 OK (2ms)
+
+
+Started GET "/assets/box_white-bottom-right.png" for 188.123.222.205 at 2013-02-07 08:23:58 -0500
+Served asset /box_white-bottom-right.png - 200 OK (2ms)
+
+
+Started GET "/assets/box_white-bottom.png" for 188.123.222.205 at 2013-02-07 08:23:59 -0500
+Served asset /box_white-bottom.png - 200 OK (2ms)
+
+
+Started GET "/assets/foot_bg.png" for 188.123.222.205 at 2013-02-07 08:23:59 -0500
+Served asset /foot_bg.png - 200 OK (2ms)
+
+
+Started GET "/assets/footer_gold.png" for 188.123.222.205 at 2013-02-07 08:23:59 -0500
+Served asset /footer_gold.png - 200 OK (2ms)
+
+
+Started GET "/assets/footer_logo.png" for 188.123.222.205 at 2013-02-07 08:23:59 -0500
+Served asset /footer_logo.png - 200 OK (2ms)
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:23:59 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+
+
+Started GET "/topics/list?sort=popularity" for 188.123.222.205 at 2013-02-07 08:24:57 -0500
+  Processing by TopicsController#list as HTML
+  Parameters: {"sort"=>"popularity"}
+Rendered topics/list.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:24:57 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+
+
+Started GET "/topics/list?sort=date" for 188.123.222.205 at 2013-02-07 08:24:58 -0500
+  Processing by TopicsController#list as HTML
+  Parameters: {"sort"=>"date"}
+Rendered topics/list.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:24:59 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+
+
+Started GET "/topics/new" for 188.123.222.205 at 2013-02-07 08:25:03 -0500
+  Processing by TopicsController#new as HTML
+Rendered topics/_form.html.erb (19.6ms)
+Rendered topics/new.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 50ms (Views: 41.9ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:25:04 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+
+
+Started GET "/topics/list?sort=date" for 188.123.222.205 at 2013-02-07 08:25:06 -0500
+  Processing by TopicsController#list as HTML
+  Parameters: {"sort"=>"date"}
+Rendered topics/list.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:25:06 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+Compiled application.js  (1ms)  (pid 31025)
+Compiled jquery.js  (0ms)  (pid 31025)
+Compiled jquery_ujs.js  (0ms)  (pid 31025)
+Compiled comments.js  (31ms)  (pid 31025)
+Compiled script.js  (0ms)  (pid 31025)
+Compiled topic.js  (0ms)  (pid 31025)
+Compiled topics.js  (0ms)  (pid 31025)
+Compiled user.js  (0ms)  (pid 31025)
+Compiled old/admin.css  (0ms)  (pid 31025)
+Compiled old/application.css  (1ms)  (pid 31025)
+Compiled old/backup_public.css  (0ms)  (pid 31025)
+Compiled old/comments.css  (0ms)  (pid 31025)
+Compiled old/public.css  (0ms)  (pid 31025)
+Compiled old/topic.css  (0ms)  (pid 31025)
+Compiled old/topics.css  (0ms)  (pid 31025)
+Compiled old/user.css  (0ms)  (pid 31025)
+Compiled style.css  (0ms)  (pid 31025)
+Compiled jquery-ui.js  (1ms)  (pid 31025)
+Compiled jquery-ui.min.js  (0ms)  (pid 31025)
+Compiled jquery.min.js  (0ms)  (pid 31025)
+Compiled application.js  (1ms)  (pid 30975)
+Compiled jquery.js  (0ms)  (pid 30975)
+Compiled jquery_ujs.js  (0ms)  (pid 30975)
+Compiled comments.js  (31ms)  (pid 30975)
+Compiled script.js  (0ms)  (pid 30975)
+Compiled topic.js  (0ms)  (pid 30975)
+Compiled topics.js  (0ms)  (pid 30975)
+Compiled user.js  (0ms)  (pid 30975)
+Compiled old/admin.css  (0ms)  (pid 30975)
+Compiled old/application.css  (1ms)  (pid 30975)
+Compiled old/backup_public.css  (0ms)  (pid 30975)
+Compiled old/comments.css  (0ms)  (pid 30975)
+Compiled old/public.css  (0ms)  (pid 30975)
+Compiled old/topic.css  (0ms)  (pid 30975)
+Compiled old/topics.css  (0ms)  (pid 30975)
+Compiled old/user.css  (0ms)  (pid 30975)
+Compiled style.css  (0ms)  (pid 30975)
+Compiled jquery-ui.js  (1ms)  (pid 30975)
+Compiled jquery-ui.min.js  (0ms)  (pid 30975)
+Compiled jquery.min.js  (0ms)  (pid 30975)
+
+
+Started GET "/topics/list?sort=date" for 188.123.222.205 at 2013-02-07 08:39:17 -0500
+  Processing by TopicsController#list as HTML
+  Parameters: {"sort"=>"date"}
+Rendered topics/list.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 08:39:18 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css"):
+  
+
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 08:39:18 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js"):
+  
+
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 08:39:18 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/script-a1ef0498fde06d1c408f807fe773131c.js"):
+  
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:39:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+Compiled application.js  (1ms)  (pid 31139)
+Compiled jquery.js  (0ms)  (pid 31139)
+Compiled jquery_ujs.js  (0ms)  (pid 31139)
+Compiled comments.js  (30ms)  (pid 31139)
+Compiled script.js  (0ms)  (pid 31139)
+Compiled topic.js  (0ms)  (pid 31139)
+Compiled topics.js  (0ms)  (pid 31139)
+Compiled user.js  (0ms)  (pid 31139)
+Compiled style.css  (0ms)  (pid 31139)
+Compiled jquery-ui.js  (1ms)  (pid 31139)
+Compiled jquery-ui.min.js  (0ms)  (pid 31139)
+Compiled jquery.min.js  (0ms)  (pid 31139)
+Compiled application.js  (1ms)  (pid 31135)
+Compiled jquery.js  (0ms)  (pid 31135)
+Compiled jquery_ujs.js  (0ms)  (pid 31135)
+Compiled comments.js  (31ms)  (pid 31135)
+Compiled script.js  (0ms)  (pid 31135)
+Compiled topic.js  (0ms)  (pid 31135)
+Compiled topics.js  (0ms)  (pid 31135)
+Compiled user.js  (0ms)  (pid 31135)
+Compiled style.css  (0ms)  (pid 31135)
+Compiled jquery-ui.js  (1ms)  (pid 31135)
+Compiled jquery-ui.min.js  (0ms)  (pid 31135)
+Compiled jquery.min.js  (0ms)  (pid 31135)
+
+
+Started GET "/topics/list?sort=date" for 188.123.222.205 at 2013-02-07 08:41:09 -0500
+  Processing by TopicsController#list as HTML
+  Parameters: {"sort"=>"date"}
+Rendered topics/list.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 08:41:09 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css"):
+  
+
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 08:41:09 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/script-a1ef0498fde06d1c408f807fe773131c.js"):
+  
+
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 08:41:09 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js"):
+  
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 08:41:09 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+Compiled application.js  (1ms)  (pid 2401)
+Compiled jquery.js  (0ms)  (pid 2401)
+Compiled jquery_ujs.js  (0ms)  (pid 2401)
+Compiled comments.js  (31ms)  (pid 2401)
+Compiled script.js  (0ms)  (pid 2401)
+Compiled topic.js  (0ms)  (pid 2401)
+Compiled topics.js  (0ms)  (pid 2401)
+Compiled user.js  (0ms)  (pid 2401)
+Compiled style.css  (0ms)  (pid 2401)
+Compiled jquery-ui.js  (1ms)  (pid 2401)
+Compiled jquery-ui.min.js  (0ms)  (pid 2401)
+Compiled jquery.min.js  (0ms)  (pid 2401)
+Compiled application.js  (1ms)  (pid 2397)
+Compiled jquery.js  (0ms)  (pid 2397)
+Compiled jquery_ujs.js  (0ms)  (pid 2397)
+Compiled comments.js  (30ms)  (pid 2397)
+Compiled script.js  (0ms)  (pid 2397)
+Compiled topic.js  (0ms)  (pid 2397)
+Compiled topics.js  (0ms)  (pid 2397)
+Compiled user.js  (0ms)  (pid 2397)
+Compiled style.css  (0ms)  (pid 2397)
+Compiled jquery-ui.js  (1ms)  (pid 2397)
+Compiled jquery-ui.min.js  (0ms)  (pid 2397)
+Compiled jquery.min.js  (0ms)  (pid 2397)
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 09:44:00 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 09:44:00 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css"):
+  
+
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 09:44:00 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js"):
+  
+
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 09:44:00 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/script-a1ef0498fde06d1c408f807fe773131c.js"):
+  
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 09:44:01 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+Compiled application.js  (1ms)  (pid 2929)
+Compiled jquery.js  (0ms)  (pid 2929)
+Compiled jquery_ujs.js  (0ms)  (pid 2929)
+Compiled comments.js  (31ms)  (pid 2929)
+Compiled script.js  (0ms)  (pid 2929)
+Compiled topic.js  (0ms)  (pid 2929)
+Compiled topics.js  (0ms)  (pid 2929)
+Compiled user.js  (0ms)  (pid 2929)
+Compiled style.css  (0ms)  (pid 2929)
+Compiled jquery-ui.js  (1ms)  (pid 2929)
+Compiled jquery-ui.min.js  (1ms)  (pid 2929)
+Compiled jquery.min.js  (0ms)  (pid 2929)
+Compiled application.js  (1ms)  (pid 2878)
+Compiled jquery.js  (0ms)  (pid 2878)
+Compiled jquery_ujs.js  (0ms)  (pid 2878)
+Compiled comments.js  (30ms)  (pid 2878)
+Compiled script.js  (0ms)  (pid 2878)
+Compiled topic.js  (0ms)  (pid 2878)
+Compiled topics.js  (0ms)  (pid 2878)
+Compiled user.js  (0ms)  (pid 2878)
+Compiled style.css  (0ms)  (pid 2878)
+Compiled jquery-ui.js  (1ms)  (pid 2878)
+Compiled jquery-ui.min.js  (0ms)  (pid 2878)
+Compiled jquery.min.js  (0ms)  (pid 2878)
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 09:46:19 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 09:46:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css"):
+  
+
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 09:46:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js"):
+  
+
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 09:46:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/script-a1ef0498fde06d1c408f807fe773131c.js"):
+  
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 09:46:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 09:51:02 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 09:51:03 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css"):
+  
+
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 09:51:03 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js"):
+  
+
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 09:51:04 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/script-a1ef0498fde06d1c408f807fe773131c.js"):
+  
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 09:51:04 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 09:51:46 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 09:51:46 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css"):
+  
+
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 09:51:46 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js"):
+  
+
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 09:51:46 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/script-a1ef0498fde06d1c408f807fe773131c.js"):
+  
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-02-07 09:51:46 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+Compiled application.js  (1ms)  (pid 7902)
+Compiled jquery.js  (0ms)  (pid 7902)
+Compiled jquery_ujs.js  (0ms)  (pid 7902)
+Compiled comments.js  (31ms)  (pid 7902)
+Compiled script.js  (0ms)  (pid 7902)
+Compiled topic.js  (0ms)  (pid 7902)
+Compiled topics.js  (0ms)  (pid 7902)
+Compiled user.js  (0ms)  (pid 7902)
+Compiled style.css  (0ms)  (pid 7902)
+Compiled jquery-ui.js  (1ms)  (pid 7902)
+Compiled jquery-ui.min.js  (0ms)  (pid 7902)
+Compiled jquery.min.js  (0ms)  (pid 7902)
+Compiled application.js  (1ms)  (pid 7898)
+Compiled jquery.js  (0ms)  (pid 7898)
+Compiled jquery_ujs.js  (0ms)  (pid 7898)
+Compiled comments.js  (30ms)  (pid 7898)
+Compiled script.js  (0ms)  (pid 7898)
+Compiled topic.js  (0ms)  (pid 7898)
+Compiled topics.js  (0ms)  (pid 7898)
+Compiled user.js  (0ms)  (pid 7898)
+Compiled style.css  (0ms)  (pid 7898)
+Compiled jquery-ui.js  (1ms)  (pid 7898)
+Compiled jquery-ui.min.js  (0ms)  (pid 7898)
+Compiled jquery.min.js  (0ms)  (pid 7898)
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 11:05:16 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css" for 188.123.222.205 at 2013-02-07 11:05:17 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/style-33fb1019f43c96c47bfd6c5fc6c60a58.css"):
+  
+
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-02-07 11:05:17 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js"):
+  
+
+
+
+Started GET "/assets/script-a1ef0498fde06d1c408f807fe773131c.js" for 188.123.222.205 at 2013-02-07 11:05:17 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/script-a1ef0498fde06d1c408f807fe773131c.js"):
+  
+
+Compiled application.js  (1ms)  (pid 10105)
+Compiled jquery.js  (0ms)  (pid 10105)
+Compiled jquery_ujs.js  (0ms)  (pid 10105)
+Compiled comments.js  (30ms)  (pid 10105)
+Compiled script.js  (0ms)  (pid 10105)
+Compiled topic.js  (0ms)  (pid 10105)
+Compiled topics.js  (0ms)  (pid 10105)
+Compiled user.js  (0ms)  (pid 10105)
+Compiled style.css  (0ms)  (pid 10105)
+Compiled jquery-ui.js  (1ms)  (pid 10105)
+Compiled jquery-ui.min.js  (1ms)  (pid 10105)
+Compiled jquery.min.js  (0ms)  (pid 10105)
+Compiled application.js  (1ms)  (pid 10101)
+Compiled jquery.js  (0ms)  (pid 10101)
+Compiled jquery_ujs.js  (0ms)  (pid 10101)
+Compiled comments.js  (30ms)  (pid 10101)
+Compiled script.js  (0ms)  (pid 10101)
+Compiled topic.js  (0ms)  (pid 10101)
+Compiled topics.js  (0ms)  (pid 10101)
+Compiled user.js  (0ms)  (pid 10101)
+Compiled style.css  (0ms)  (pid 10101)
+Compiled jquery-ui.js  (1ms)  (pid 10101)
+Compiled jquery-ui.min.js  (0ms)  (pid 10101)
+Compiled jquery.min.js  (0ms)  (pid 10101)
+
+
+Started GET "/assets/" for 188.123.222.205 at 2013-02-07 11:36:55 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets"):
+  
+
+
+
+Started GET "/" for 188.123.222.205 at 2013-02-07 11:37:00 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 1.5ms)
