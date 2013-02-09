@@ -34,6 +34,11 @@ ajax_request = function (event)
 
 				if( !container ) return false;
 
+				if( result.indexOf('id="dialog_content"') == -1 ) {
+					dialog_hide();
+					container = 'div.content';
+				}
+
 				$(container).hide().replaceWith( result /*.content */ );
 	//		}
 		},
@@ -91,9 +96,11 @@ function dialog_hide(event) {
 }
 
 function dialog_show() {
-	$('#dialog, #dialog_overall').css('display', 'block').css('opacity', 0);
-	$('#dialog_overall').animate({opacity: 0.7}, 500);
-	$('#dialog').animate({opacity: 1}, 500);
+	if( $('#dialog').css('display') != "block" ) {
+		$('#dialog, #dialog_overall').css('display', 'block').css('opacity', 0);
+		$('#dialog_overall').animate({opacity: 0.7}, 500);
+		$('#dialog').animate({opacity: 1}, 500);
+	}
 }
 
 function dialog(event) {
@@ -107,7 +114,8 @@ $(function(event) {
 	$('form.ajax_request').live('submit', ajax_request);
 	$('a.ajax_request').live('click',ajax_request);
 
-	$('.dialog').live('click',dialog);
+	$('a.dialog').live('click',dialog);
+	$('form.dialog').live('submit',dialog);
 
 	$('.dialog_close').live('click',dialog_hide);
 });
