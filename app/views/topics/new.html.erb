@@ -13,7 +13,7 @@
 	<div class="add_thread">
 		
 	
-		<%=form_for(:topic, :url=>{:action => 'create'}) do |f| %>
+		<%=form_for(:topic, :url=>{:action => 'create'}, :html=>{:class => 'dialog', :rel=>'dialog_content'}) do |f| %>
 
 			<%= render(:partial => 'form', :locals =>{:f=>f}) %><br>
 			<div class="form-buttons">

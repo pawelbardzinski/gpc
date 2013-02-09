@@ -81,8 +81,13 @@ function on_error(result){
 	return _on_error;
 }
 
-function dialog_hide() {
-	$('#dialog, #dialog_overall').animate({opacity: 0}, 500, function(){$(this).css('display', 'none')});
+function dialog_hide(event) {
+	if( typeof(event) != 'undefined') {
+		event.preventDefault();
+	}
+
+	$('#dialog').animate({opacity: 0}, 500, function(){$(this).css('display', 'none').css('opacity', 0)});
+	$('#dialog_overall').animate({opacity: 0}, 500, function(){$(this).css('display', 'none').css('opacity', 0)});
 }
 
 function dialog_show() {
@@ -102,7 +107,7 @@ $(function(event) {
 	$('form.ajax_request').live('submit', ajax_request);
 	$('a.ajax_request').live('click',ajax_request);
 
-	$('a.dialog').live('click',dialog);
+	$('.dialog').live('click',dialog);
 
 	$('.dialog_close').live('click',dialog_hide);
 });
