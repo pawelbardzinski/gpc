@@ -1067,10 +1067,96 @@ div#dialog .header p {
 	margin: 0;
 }
 
+div#dialog .header p.login {
+	width: 287px;
+	float: left;
+	height: 49px;
+	overflow: hidden;
+	border-right: 1px solid #e0e0da;
+	padding: 0 0 0 22px;
+}
+
+div#dialog .header p.register {
+	float: left;
+	padding: 0 0 0 22px;
+	height: 49px;
+	overflow: hidden;
+}
+
+div#dialog div.login,
+div#dialog div.register {
+	height: 325px;
+	float: left;
+	width: 287px;
+	padding: 56px 0 0 22px;
+}
+
+div#dialog div.notice {
+	position: absolute;
+	padding: 4px 0 0 22px;
+	color: red;
+}
+
+div#dialog div.login div,
+div#dialog div.register div {
+	padding: 6px 0;
+}
+
+div#dialog div.login {
+	border-right: 1px solid #eeece4;
+}
+
+div#dialog div.login label,
+div#dialog div.register label {
+	width: 60px;
+	display: block;
+	float: left;
+	padding: 0 6px 0 0;
+	line-height: 26px;
+	color: #a09f8f;
+}
+
+div#dialog div.login input[type="text"],
+div#dialog div.register input[type="text"],
+div#dialog div.login input[type="password"],
+div#dialog div.register input[type="password"] {
+	width: 184px;
+	color: #007a5d;
+}
+
+div#dialog div.login input[type="submit"],
+div#dialog div.register input[type="submit"] {
+	position: relative;
+	left: auto;
+	bottom: auto;
+	background: url(button/login_reg.png) 0 0 no-repeat;
+	height: 35px;
+	margin: 14px auto 0 auto;
+}
+
+div#dialog div.login input[type="submit"] {
+	width: 79px;
+}
+
+div#dialog div.login input[type="submit"]:hover {
+	background-position: 0px -36px;;
+}
+
+div#dialog div.register input[type="submit"] {
+	width: 160px;
+	background-position: -81px 0;
+}
+
+div#dialog div.register input[type="submit"]:hover {
+	background-position: -81px -36px;;
+}
+
+
 div#dialog .dialog_close {
 	cursor: pointer;
 }
 
+div#dialog input[type="password"],
 div#dialog input[type="text"],
 div#dialog input[type="url"],
 div#dialog textarea {

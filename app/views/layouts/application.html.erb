@@ -27,8 +27,8 @@
 				<a href="/" class="home">Home</a>
 				<a href="/" class="news">News</a>
 
-				<a href="/" class="login">Login</a>
-				<a href="/" class="register">Register</a>
+				<%= link_to "Login",{:controller=>'topics',:action=>'login'}, :class => 'login dialog', :rel=>"dialog_content" %>
+				<%= link_to "Register",{:controller=>'topics',:action=>'login'}, :class => 'register dialog', :rel=>"dialog_content" %>
 			</div>
 			<div class="clear"></div>
 		</div>

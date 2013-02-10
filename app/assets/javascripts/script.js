@@ -34,9 +34,9 @@ ajax_request = function (event)
 
 				if( !container ) return false;
 
-				if( result.indexOf('id="dialog_content"') == -1 ) {
+				if( result.indexOf('id="dialog_content"') == -1 && $(self).attr('rel') == 'dialog_content' ) {
 					dialog_hide();
-					container = 'div.content';
+					container = 'body div.container:first';
 				}
 
 				$(container).hide().replaceWith( result /*.content */ );
