@@ -4,6 +4,11 @@ class TopicsController < ApplicationController
     list
     render('list')
   end
+
+	
+  def crossdomain
+    render('crossdomain', :layout => false)
+  end
   
   def list
       @topics = []
