@@ -27,11 +27,20 @@
 							</div>
 						</div>
 					</div>
+					<% 
+						sort_pop_class = 'ajax_request sort left'
+						sort_date_class = 'ajax_request sort right'
 
+						if by_popularity == true 
+							sort_pop_class = sort_pop_class.concat(' current')
+						else 
+							sort_date_class = sort_date_class.concat(' current')
+						end 
+					%>
 					<div class="sort">
 						<span>Sort by</span>
-						<span class="sort left"><%= link_to "Popularity", topics_path(:sort=>'popularity',:search_string=>@search_string), :class => 'sort left' %></a>
-						<span class="sort right"><%= link_to "Date", topics_path(:sort=>'date',:search_string=>@search_string), :class => 'sort right' %></span>
+						<span class="sort left"><%= link_to "Popularity", topics_path(:sort=>'popularity',:search_string=>@search_string), :class => sort_pop_class %></a></span>
+						<span class="sort right"><%= link_to "Date", topics_path(:sort=>'date',:search_string=>@search_string), :class => sort_date_class %></span>
 					</div>
 
 					<div class="rightBox">

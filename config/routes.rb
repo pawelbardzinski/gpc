@@ -65,7 +65,5 @@ Sh1nyV1::Application.routes.draw do
   match 'topics/list' => 'topics#list', :as => :topics
 #  resources :topics
   match ':controller(/:action(/:id(.:format)))'
-
-	match 'crossdomain.xml' => 'topics#crossdomain', :as => :topics
 	
 end
