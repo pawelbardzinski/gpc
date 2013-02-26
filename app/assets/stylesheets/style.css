@@ -496,6 +496,10 @@ div.sort a.sort {
 	text-decoration: none;
 }
 
+div.sort span.sort.left {
+	margin: 0;
+}
+
 div.sort a.sort.left {
 	background-position: 0 0;
 }
@@ -1091,12 +1095,12 @@ div#dialog div.register {
 	width: 287px;
 	padding: 56px 0 0 22px;
 }
-
+/*
 div#dialog div.notice {
 	position: absolute;
 	padding: 4px 0 0 22px;
 	color: red;
-}
+}*/
 
 div#dialog div.login div,
 div#dialog div.register div {
@@ -1240,3 +1244,16 @@ div#dialog_content {
 	height: 100%;
 	position: relative;
 }
+
+div.notice {
+	background-color: #fad4d3;
+	border: solid 1px #e79796;
+	border-radius: 4px;
+	height: 26px;
+	padding: 0 56px;
+	margin: 10px 16px -38px 10px;
+	width: auto;
+	color: red;
+	line-height: 26px;
+}
+
