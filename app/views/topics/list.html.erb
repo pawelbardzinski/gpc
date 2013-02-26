@@ -31,7 +31,7 @@
 						sort_pop_class = 'ajax_request sort left'
 						sort_date_class = 'ajax_request sort right'
 
-						if @sort_by == nil || @sort_by == ""
+						if @sort_by == nil || @sort_by == '' || @sort_by == 'popularity'
 							sort_pop_class = sort_pop_class.concat(' current')
 						else 
 							sort_date_class = sort_date_class.concat(' current')
