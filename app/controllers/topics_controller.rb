@@ -12,6 +12,7 @@ class TopicsController < ApplicationController
   
   def list
       @topics = []
+      @sort_by = params[:sort]
       if params[:search_string].to_s == ''
         if params[:sort] == 'date' 
           sql = 'select * from topics order by updated_at DESC'
