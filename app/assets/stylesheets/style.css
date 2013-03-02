@@ -88,11 +88,11 @@ div.head div.navigation {
 div.head div.navigation a {
 	line-height: 32px;
 	float: left;
-	font-weight: bold;
+	font-weight: normal;
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #ffffff;
-	font-size: 14px;
+	font-size: 13px;
 	margin: 0 2px 0 16px;
 }
 
