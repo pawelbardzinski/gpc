@@ -79,7 +79,7 @@
 									<div class="login">
 										<p>Commenting disabled. You are not logged in.</p>
 										<div class="actions">
-											<%= link_to("login", {:controller=>'topics',:action=>'login'}, :class => "login ajax_request") %> or <%= link_to("register", {:controller=>'topics',:action => 'login'}, :class => "register ajax_request") %>
+											<%= link_to("login", {:controller=>'topics',:action=>'login',:topic_id=>topic.id,:reply=>'false'}, :class => "login ajax_request") %> or <%= link_to("register", {:controller=>'topics',:action => 'login',:topic_id=>topic.id,:reply=>'false'}, :class => "register ajax_request") %>
 										</div>
 									</div>
 								<% end %>
