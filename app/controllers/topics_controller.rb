@@ -95,6 +95,10 @@ class TopicsController < ApplicationController
           redirect_to(:action=>'list',:notice=>'User \''+new_user.login+'\' created successfuly. Start by adding your thread or post a comment!')
           return
         else
+          if params[:comment] == nil
+            redirect_to(:controller=>'comments',:action=>'index',:topic_id=>params[:topic_id])
+            return
+          end
           if params[:reply] == "false"
             redirect_to(:controller=>'comments',:action=>'create',:topic_id=>params[:topic_id],:comment=>params[:comment],:notice=>'Your comment has been published. User \''+new_user.login+'\' created successfuly.',:reply=>params[:reply])
             return
@@ -135,9 +139,8 @@ class TopicsController < ApplicationController
       if params[:topic_id] == '' || params[:topic_id] == nil 
         redirect_to(:action => 'list',:notice=>"You are now logged in as \'"+params[:login]+'\'.')
       else
-#        redirect_to(:controller=>'comments',:action=>'index',:topic_id=>@topic_id,:notice=>"You are now logged in as \'"+params[:login]+'\'.')
         if params[:reply] == 'false'
-          redirect_to(:controller=>'comments',:action=>'create',:comment=>params[:comment],:topic_id=>params[:topic_id],:notice=>'You are now logged in. Your reply has been posted.')
+          redirect_to(:controller=>'comments',:action=>'index',:topic_id=>@topic_id)
           return
         else
           redirect_to(:controller=>'comments',:action=>'replied',:comment=>params[:comment],:topic_id=>params[:topic_id],:previous_id=>params[:previous_id],:notice=>'You are now logged in. Your reply has been posted.')
@@ -285,6 +288,16 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @topic.destroy
     redirect_to(:action=>'list')
+  end
+  
+  def get_header
+    @user_id = @user_login = @user_karma = nil
+    if session[:user_id] != nil
+      @user_id = session[:user_id]
+      user = User.find(@user_id)
+      @user_login = user.login
+      @user_karma = user.karma
+    end
   end
   
 end
