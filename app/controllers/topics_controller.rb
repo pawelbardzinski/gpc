@@ -126,8 +126,8 @@ class TopicsController < ApplicationController
   end
   
   def attempt_login
-    authorized_user = User.authenticate(params[:login],params[:password])
     @topic_id = params[:topic_id]
+    authorized_user = User.authenticate(params[:login],params[:password])
     if (authorized_user)
       session[:user_id] = authorized_user.id
       session[:login] = authorized_user.login
@@ -136,8 +136,9 @@ class TopicsController < ApplicationController
         return
       end
       flash[:notice] = "You are now logged in."
-      if params[:topic_id] == '' || params[:topic_id] == nil 
+      if @topic_id == '' || @topic_id == nil 
         redirect_to(:action => 'list',:notice=>"You are now logged in as \'"+params[:login]+'\'.')
+        return
       else
         if params[:reply] == 'false'
           redirect_to(:controller=>'comments',:action=>'index',:topic_id=>@topic_id)

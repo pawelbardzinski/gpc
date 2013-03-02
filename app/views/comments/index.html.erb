@@ -45,7 +45,7 @@
 				<div class="comment">
 					<div class="left">
 					<% if topic.text != '' %>
-						<div class="topic text"><%= word_wrap topic.text %></div>
+						<div class="topic text"><%= word_wrap topic.text.to_s %></div>
 					<% end %>
 					<% if topic.url != '' %>
 						<div class="topic url"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
@@ -78,7 +78,7 @@
 									<div class="login">
 										<p>Commenting disabled. You are not logged in.</p>
 										<div class="actions">
-											<%= link_to("login", {:controller=>'topics',:action=>'login'}, :class => "login ajax_request") %> or <%= link_to("register", {:controller=>'topics',:action => 'login'}, :class => "register ajax_request") %>
+											<%= link_to("login", {:controller=>'topics',:action=>'login',:topic_id=>topic.id,:reply=>'false'}, :class => "login ajax_request") %> or <%= link_to("register", {:controller=>'topics',:action => 'login',:topic_id=>topic.id,:reply=>'false'}, :class => "register ajax_request") %>
 										</div>
 									</div>
 								<% end %>
