@@ -1,4 +1,4 @@
-<div id="dialog_content">
+<div id="dialog_content" class="login_content">
 
 	<div class="header">
 		<p class="login">Login</p>
@@ -13,7 +13,7 @@
 
 
 	<div class="login">
-		<%= form_tag({:url=>{:action => 'attempt_login'}}, {:class => 'dialog', :rel=>'dialog_content'}) do %>
+		<%= form_tag({:action => 'attempt_login'}, {:class => 'dialog', :rel=>'dialog_content'}) do %>
 			<div><%= label_tag(:login) %> <%= text_field_tag(:login) %></div>
 			<div class="clear"><%= label_tag(:password) %> <%= password_field_tag(:password) %></div>
 		<%= submit_tag("login")%>

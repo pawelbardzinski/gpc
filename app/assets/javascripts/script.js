@@ -38,6 +38,11 @@ ajax_request = function (event)
 					dialog_hide();
 					container = 'body div.container:first';
 				}
+				else if( result.indexOf('id="dialog_content"') > -1 ) {
+					$('#dialog > div:first').hide().replaceWith( result /*.content */ );
+					dialog_show();
+					return;
+				}
 
 				$(container).hide().replaceWith( result /*.content */ );
 	//		}
@@ -84,6 +89,10 @@ function on_error(result){
 	}
 
 	return _on_error;
+}
+
+function is_dialog() {
+	return $('#dialog:visible');
 }
 
 function dialog_hide(event) {

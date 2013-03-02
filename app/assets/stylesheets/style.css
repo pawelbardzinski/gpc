@@ -993,6 +993,7 @@ div.comment div.right div.login div.actions {
 }
 
 div.head div.navigation a.login,
+div.head div.navigation a.logout,
 div.head div.navigation a.register,
 div.comment div.right div.login a.login,
 div.comment div.right div.login a.register {
@@ -1006,6 +1007,7 @@ div.comment div.right div.login a.register {
 }
 
 div.head div.navigation a.login,
+div.head div.navigation a.logout,
 div.head div.navigation a.register {
 	float: left;
 }
@@ -1027,6 +1029,15 @@ div.comment div.right div.login a.register:hover {
 	background-position: -96px -38px;
 }
 
+div.head div.navigation  a.logout {
+	width: 78px;
+	background-position: -181px -1px;
+}
+
+div.head div.navigation  a.logout:hover {
+	background-position: -181px -37px;
+}
+
 div#dialog_overall {
 	display: none;
 	position: absolute;
@@ -1042,7 +1053,7 @@ div#dialog {
 	display: none;
 	background: white url(popup-bottom.png) 0% 100% repeat-x;
 	width: 620px;
-	height: 500px;
+	height: 400px;
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -1090,7 +1101,7 @@ div#dialog .header p.register {
 
 div#dialog div.login,
 div#dialog div.register {
-	height: 325px;
+	height: 225px;
 	float: left;
 	width: 287px;
 	padding: 56px 0 0 22px;
@@ -1245,14 +1256,23 @@ div#dialog_content {
 	position: relative;
 }
 
+div#dialog_content.login_content a.dialog_close {
+	left: 246px;
+}
+
 div.notice {
+	position: absolute;
+	width: 586px;
+	z-index: 999;
+	background: none;
 	background-color: #fad4d3;
 	border: solid 1px #e79796;
 	border-radius: 4px;
 	height: 26px;
-	padding: 0 56px;
+	padding: 0 6px;
+	text-align: center;
 	margin: 10px 16px -38px 10px;
-	width: auto;
+/*	width: auto;*/
 	color: red;
 	line-height: 26px;
 }

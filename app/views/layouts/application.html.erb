@@ -27,8 +27,12 @@
 				<a href="/" class="home">Home</a>
 				<a href="/" class="news">News</a>
 
-				<%= link_to "Login",{:controller=>'topics',:action=>'login'}, :class => 'login dialog', :rel=>"dialog_content" %>
-				<%= link_to "Register",{:controller=>'topics',:action=>'login'}, :class => 'register dialog', :rel=>"dialog_content" %>
+				<% if session[:login] == nil %>
+					<%= link_to "Login",{:controller=>'topics',:action=>'login'}, :class => 'login dialog', :rel=>"dialog_content" %>
+					<%= link_to "Register",{:controller=>'topics',:action=>'login'}, :class => 'register dialog', :rel=>"dialog_content" %>
+				<% else %>
+					<%= link_to "Logout",{:controller=>'topics',:action=>'logout'}, :class => 'logout', :rel=>"dialog_content" %>
+				<% end %>
 			</div>
 			<div class="clear"></div>
 		</div>

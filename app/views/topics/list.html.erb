@@ -79,7 +79,7 @@
 					<tr>	
 						<td class="no"><span class="no"><%= i %></span></td>
 						<td class="vote">
-							<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic_id}, :class => "vote" %></span>
+							<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic_id}, :class => "vote ajax_request" %></span>
 							vote
 						</td>
 						<td class="topic">
