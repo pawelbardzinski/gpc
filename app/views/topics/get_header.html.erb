@@ -11,6 +11,8 @@
 	</div>
 	<div class="navigation">
 		<a href="/" class="news ajax_request" rel="content">News</a>
+		<a href="/topics/guidelines" class="news ajax_request" rel="content">Guidelines</a>
+		<a href="/topics/contact" class="news ajax_request" rel="content">Contact</a>
 
 		<% if session[:login] == nil %>
 			<%= link_to "Login",{:controller=>'topics',:action=>'login'}, :class => 'login dialog', :rel=>"dialog_content" %>

@@ -1,31 +1,33 @@
-<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
-<div style="float:right" id="hello_world" class='listalista'>		
-<%= link_to("chart",:action=>'chart') %>&nbsp;&nbsp;
-<%= link_to("news",:action=>'list') %>&nbsp;&nbsp;
-<%= link_to("videos",:action=>'videos') %>&nbsp;&nbsp;
-<%= link_to("contact", :action=>'contact')%>
-&nbsp;&nbsp;&nbsp;
-</div>
-<br>
-<hr>
-</div>
+<div id="content" class="container guidelnes">
+<div class="box white">
+	<div class="top">
+		<div class="top"><div class="top">&nbsp;</div></div>
+	</div>
+	<div class="middle">
+		<div class="middle"><div class="middle">
+			<div class="content">
 
 <% login = session[:login] %>
 <% if login == nil then login="a" end %>
-</div>
-</font>
+
 
 <% if !params[:notice].blank? %>
 	<div class="notice">
 		<%= params[:notice] %>
 	</div>
 <% end %>
-<div class="back_link"><%= link_to("<< back", {:action=>'list'}, :class=>'back-link')%></div>
-<div class="contact">
+<div class="contacta">
 	<br>
 	<h4>Contact Us:</h4>
 
 	OnlyHedge LLC<br>
 	e-mail: info@sh1ny.com<br>
 </div>
-<br>
+
+</div>
+</div></div>
+</div>
+<div class="bottom"><div class="bottom"><div class="bottom">&nbsp;</div></div></div>
+</div>
+</div>
+
