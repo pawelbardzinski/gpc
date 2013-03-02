@@ -82,7 +82,7 @@ class TopicsController < ApplicationController
           return
         end
         flash[:notice] = "User #{new_user.login} created."
-        if params[:comment] != '' && params[:topic_id] != nil
+        if params[:comment] != '' && params[:comment] != nil && params[:topic_id] != nil
           if params[:reply] == "false"
             redirect_to(:controller=>'comments',:action=>'create',:topic_id=>params[:topic_id],:comment=>params[:comment],:notice=>'Your comment has been published. User \''+new_user.login+'\' created successfuly.',:reply=>params[:reply])
             return
@@ -95,7 +95,7 @@ class TopicsController < ApplicationController
           redirect_to(:action=>'list',:notice=>'User \''+new_user.login+'\' created successfuly. Start by adding your thread or post a comment!')
           return
         else
-          if params[:comment] == nil
+          if params[:comment] == nil || params[:comment] == ''
             redirect_to(:controller=>'comments',:action=>'index',:topic_id=>params[:topic_id])
             return
           end
