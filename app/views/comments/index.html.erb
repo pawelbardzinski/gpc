@@ -113,7 +113,7 @@
 						<span class="date"><%= @blob %> <%= @text %></span>
 						<span class="by">by <%= User.find(comment.user_id).login %></span>
 
-						<% if comment.user_id != session[:user_id] && !(comment.upvoted_by.include? session[:login] if comment.upvoted_by != nil) %>
+						<% if session[:user_id] != nil && comment.user_id != session[:user_id] && !(comment.upvoted_by.include? session[:login] if comment.upvoted_by != nil) %>
 							<span class="vote"><%= link_to "upvote", {:action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!"}, :class=>"ajax_request", :rel=>"content" %></span>
 						<% end %>
 						<span class="points">
