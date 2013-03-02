@@ -1,138 +1,35 @@
-asdasd<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
-<div style="float:right" id="hello_world" class='listalista'>		
-<%= link_to("chart",:controller=>'topics',:action=>'chart') %>&nbsp;&nbsp;
-<%= link_to("news",:action=>'list') %>&nbsp;&nbsp;
-<%= link_to("videos",:controller=>'topics',:action=>'videos') %>&nbsp;&nbsp;
-<%= link_to("contact", :controller=>'topics',:action=>'contact')%>
-&nbsp;&nbsp;&nbsp;
-</div>
-<br>
-<div style="float:center" id="hello_world" class='listalista'>
-<font size="1pt">
-<% if session[:login] == nil %>
-	<%= link_to("login/create account",:controller=>'topics',:action=>'login') %>&nbsp;
-<% else %>
-	<%= link_to("logut", :controller=>'topics',:action=>'logout') %>
-	<%= link_to("add thread",:controller=>'topics',:action=>'new')%>
-	<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
-<% end %></style>
+<div id="dialog_content" class="login_content">
 
-<%= link_to("add thread",:controller=>'topics',:action=>'new') if session[:login] == nil %>&nbsp;
-</div>
-</font>
-<hr height="1">
-<% if !params[:notice].blank? %>
+	<div class="header">
+		<p class="login">Login</p>
+		<p class="register">Create account</p>
+	</div>
+
+	<% if !params[:notice].blank? %>
 	<div class="notice">
 		<%= params[:notice] %>
 	</div>
-<% end %>
+	<% end %>
 
-<div class="back_link"><%= link_to("<< back", :back) %></div>
-<% @page_title = "Create Account Page" %>
-<h4>to add your comment: </h4>
-<style type="text/css">
-.result8790974 {
-	text-align: left;
-  width: 480px;
-  margin: 0px 0 0 0px;
-  }
-.result8790974 > div.boxtop {
-  background: url(boxtop76375405.png) no-repeat top;
-  height: 11px;
-  }
-.result8790974 > div.boxtext {
-  margin: 0px;
-  padding: 5px 15px 1px 15px;
-  background: url(boxmid43048230.png) repeat-y top;
-  font-family:Verdana,"Helvetica Neue",Helvetica,sans-serif;
-  }				
-.result8790974 > div.boxtext p { margin-top: 100; }
-.result8790974 > div.boxbot {
-  margin: 0px;
-  height: 11px;
-  background: url(boxbot62495260.png) no-repeat bottom;
-  }
-</style>
-</div>
-<div class="result8790974">
-	<div class="boxtop"></div>
-	<div class="boxtext">
-		<!--font size=2em-->
-		<font size = 1em class="index_text">
-		<p style="text-align: left;">
-			<!--span style="font-size: 10pt;"-->
-			<% c1 = params[:comment].to_s %>
-			<% c1.slice!(0..6) %>
-			<%= simple_format(c1) %><!--/span--></p></font>
+
+	<div class="login">
+		<%= form_tag({:controller=>'topics',:action => 'attempt_login',:topic_id=>params[:topic_id],:reply=>params[:reply]}, {:class => 'dialog', :rel=>'dialog_content'}) do %>
+			<div><%= label_tag(:login) %> <%= text_field_tag(:login) %></div>
+			<div class="clear"><%= label_tag(:password) %> <%= password_field_tag(:password) %></div>
+		<%= submit_tag("login")%>
+	<% end %>
 	</div>
-	<div class="boxbot"></div>
-</div>
 
+	<div class="register">
+		<%= form_tag({:controller=>'topics',:action => 'create_account',:topic_id=>params[:topic_id],:comment=>nil}, {:class => 'dialog', :rel=>'dialog_content'}) do %>
+			<div><%= label_tag(:login) %> <%= text_field_tag(:login) %></div>
+			<div><%= label_tag(:password) %> <%= password_field_tag(:password) %></div>
+		<%= submit_tag("create account")%>
+		<% end %>
+	</div>
 
-<div class="guidelines">
-	<% flash[:notice] = "" %>
-	<h4>create an account:</h4>
-	<% if params[:reply] == false %>
-	<%= form_tag(:controller=>'topics',:action => 'create_account',:comment=>params[:comment],:topic_id=>params[:topic_id],:reply=>params[:reply]) do %>
-	<table>
-		<tr>
-			<td><%= label_tag(:username) %></td>
-			<td><%= text_field_tag(:login)%></td>
-		</tr>
-		<tr>
-			<td><%= label_tag(:password) %></td>
-			<td><%= password_field_tag(:password) %></td>
-		</tr>
-	</table>
-	<%= submit_tag("create account")%> 
-	<% end %>
-	<% else %>
-	<%= form_tag(:controller=>'topics',:action => 'create_account',:comment=>params[:comment],:topic_id=>params[:topic_id],:previous_id=>params[:previous_id],:reply=>params[:reply]) do %>
-	<table>
-		<tr>
-			<td><%= label_tag(:username) %></td>
-			<td><%= text_field_tag(:login)%></td>
-		</tr>
-		<tr>
-			<td><%= label_tag(:password) %></td>
-			<td><%= password_field_tag(:password) %></td>
-		</tr>
-	</table>
-	<%= submit_tag("create account") %> 
-	<% end %>
-	<% end %>
+	<div class="form-buttons">
+		<a class="dialog_close">close</a>
+	</div>
+			
 </div>
-<br>
-	<h4>or login:</h4>
-	<% if params[:reply] == false %>
-	<%= form_tag(:controller=>'comments',:action => 'create',:comment=>params[:comment],:topic_id=>params[:topic_id],:previous_id=>params[:previous_id],:notice=>'hello1',:reply=>params[:reply]) do %>
-	<table>
-		<tr>
-			<td><%= label_tag(:username) %></td>
-			<td><%= text_field_tag(:login)%></td>
-		</tr>
-		<tr>
-			<td><%= label_tag(:password) %></td>
-			<td><%= password_field_tag(:password) %></td>
-		</tr>
-	</table>
-	<%= submit_tag("login")%> 
-	<% end %>
-	<% else %>
-	<%= form_tag(:controller=>'topics',:action => 'attempt_login',:previous_id=>params[:previous_id],:comment=>params[:comment],:topic_id=>params[:topic_id],:notice=>'hello2',:reply=>params[:reply]) do %>
-	<table>
-		<tr>
-			<td><%= label_tag(:username) %></td>
-			<td><%= text_field_tag(:login)%></td>
-		</tr>
-		<tr>
-			<td><%= label_tag(:password) %></td>
-			<td><%= password_field_tag(:password) %></td>
-		</tr>
-	</table>
-	<%= submit_tag("login") %> 
-	<% end %>
-	<% end %>
-</div>
-<br>
-<br>

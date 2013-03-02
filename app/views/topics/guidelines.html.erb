@@ -1,47 +1,20 @@
-<% @page_title = "Live Gold Chart & News" %>
-<font size="14" face="myFont">sh<font color="red">1</font>ny<font color="#DEDEDE"> news </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
-<div style="float:right" id="hello_world" class='listalista'>		
-<%= link_to("chart",:action=>'chart') %>&nbsp;&nbsp;
-<%= link_to("news",:action=>'list') %>&nbsp;&nbsp;
-<%= link_to("videos",:action=>'videos') %>&nbsp;&nbsp;
-<%= link_to("contact", :action=>'contact')%>
-&nbsp;&nbsp;&nbsp;
-</div>
-<br>
-<div style="float:center" id="hello_world" class='listalista'>
-<font size="1pt">
-<% if session[:login] == nil %>
-	<%= link_to("login/create account",:action=>'login') %>&nbsp;
-<% else %>
-	<%= link_to("logut", :action=>'logout') %>
-	<%= link_to("add thread",:action=>'new')%>
-	<%= session[:login] %>&nbsp;<%= p=User.find(session[:user_id]).karma %>&nbsp;<% if p == 1 %>point<% else %>points<% end %>
-<% end %></style>
-
-<% login = session[:login] %>
-<% if login == nil then login="a" end %>
-
-<%= link_to("add thread",:action=>'new') if session[:login] == nil %>&nbsp;
-<%= link_to("guidelines", :action=>'guidelines')%>&nbsp;<hr>
-</div>
-
-<% if !params[:notice].blank? %>
-	<div class="notice">
-		<%= params[:notice] %>
+<div id="content" class="container guidelnes">
+<div class="box white">
+	<div class="top">
+		<div class="top"><div class="top">&nbsp;</div></div>
 	</div>
-<% end %>
-
-<div class="backlink">
-<font size="1px"><%= link_to("<< back", :back)%></font>
-</div>
+	<div class="middle">
+		<div class="middle"><div class="middle">
+			<div class="content">
+				
 <div class="guidelines">
 	<h4>Guidelines:</h4>
 
-	1. sh1ny.com is available for the free exchange of ideas and discussion by users of all
+	1. goldpricecafe.com is available for the free exchange of ideas and discussion by users of all
 	nationalities, religions, and ethnicities.<br>
-	2. Behavior on sh1ny.com should be conducted in a civil fashion, to allow all users to engage
+	2. Behavior on goldpricecafe.com should be conducted in a civil fashion, to allow all users to engage
 	in challenging and creative discussions.<br>
-	3. sh1ny.com is committed to providing an environment free of censorship for all users, as
+	3. goldpricecafe.com is committed to providing an environment free of censorship for all users, as
 	long as they abide by these simple rules.<br>
 
 	<h4>General Prohibitions:</h4>
@@ -62,7 +35,17 @@
 	mailing address or office location of an elected official.<br><br>
 
 
-	<h5>Users that violate sh1ny.com rules may have their posts edited, accounts temporarily locked, or
+	<h5>Users that violate goldpricecafe.com rules may have their posts edited, accounts temporarily locked, or
 	accounts deleted depending on the severity and frequency of violation. Administrators and Moderators
 	may take these corrective actions at their discretion.<br><br><h5>
 </div>
+
+			</div>
+		</div></div>
+	</div>
+	<div class="bottom"><div class="bottom"><div class="bottom">&nbsp;</div></div></div>
+</div>
+</div>
+
+
+

@@ -21,6 +21,20 @@ body {
 	clear: both;
 }
 
+h4 {
+	margin-top: 0;
+	padding-top: 6px;
+}
+
+h5 {
+	margin-bottom: 0;
+	padding-bottom: 8px;
+}
+
+.guidelines {
+	font-size: 14px;
+}
+
 .wrap {
 	width: 970px;
 	margin: 0 auto;
@@ -74,11 +88,11 @@ div.head div.navigation {
 div.head div.navigation a {
 	line-height: 32px;
 	float: left;
-	font-weight: bold;
+	font-weight: normal;
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #ffffff;
-	font-size: 14px;
+	font-size: 13px;
 	margin: 0 2px 0 16px;
 }
 
