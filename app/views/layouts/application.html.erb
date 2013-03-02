@@ -7,12 +7,13 @@
 	<title>Gold Chart & News</title>    
 	<%= stylesheet_link_tag "style.css" %>
 	<%= javascript_include_tag "jquery" %>
+	<%= javascript_include_tag "jquery.scrollto" %>
 	<%= javascript_include_tag "script" %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
 	<div class="wrap">
-		<div class="head">
+		<div id="header" class="head" rel="header">
 			<div class="logo">&nbsp;</div>
 			<div class="info">
 			<% if session[:login] != nil %>
@@ -24,20 +25,19 @@
 			<% end %>
 			</div>
 			<div class="navigation">
-				<a href="/" class="home">Home</a>
-				<a href="/" class="news">News</a>
+				<a href="/" class="news ajax_request" rel="content">News</a>
 
 				<% if session[:login] == nil %>
 					<%= link_to "Login",{:controller=>'topics',:action=>'login'}, :class => 'login dialog', :rel=>"dialog_content" %>
 					<%= link_to "Register",{:controller=>'topics',:action=>'login'}, :class => 'register dialog', :rel=>"dialog_content" %>
 				<% else %>
-					<%= link_to "Logout",{:controller=>'topics',:action=>'logout'}, :class => 'logout', :rel=>"dialog_content" %>
+					<%= link_to "Logout",{:controller=>'topics',:action=>'logout'}, :class => 'logout ajax_request', :rel=>"dialog_content" %>
 				<% end %>
 			</div>
 			<div class="clear"></div>
 		</div>
 
-		<iframe src="http://goldpricecafe.com:8400/alive5/Alive6_HiRes/Alive6.html?wmode=transparent" style="width:960px;height: 800px;" frameborder="0" allowfullscreen></iframe>
+		<iframe src="http://goldpricecafe.com:8400/alive5/Alive6_HiRes/Alive6.html?wmode=transparent" style="width:960px;height: 800px; padding: 0 5px;" frameborder="0" allowfullscreen></iframe>
 
 		<%= yield %>
 	</div>

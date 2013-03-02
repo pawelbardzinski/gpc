@@ -12,7 +12,10 @@ $.ajaxSetup( {
 
 ajax_request = function (event)
 {
-	event.preventDefault();
+	if( typeof event != 'undefined' ) {
+		event.preventDefault();
+	}
+	
 	var self = this;
 
 	var params = {
@@ -22,6 +25,9 @@ ajax_request = function (event)
 
 		success: function(result)
 		{
+			if( params.url != '/topics/get_header' ) {
+				header();
+			}
 		//	if(!on_error(result)){
 				container = false;
 				
@@ -50,6 +56,7 @@ ajax_request = function (event)
 
 		error: function(result, textStatus)
 		{
+			header();
 			if( textStatus == 'error' && result.status == 0 ) {
 				return;
 			}
@@ -72,7 +79,13 @@ ajax_request = function (event)
 			break;
 
 		default:
-			return false;
+			if( typeof(this.url) == 'string' ) {
+				params.type	= 'GET';
+				params.url	= this.url;
+			}
+			else {
+				return false;
+			}
 	}
 	
 	$.ajax(params);
@@ -119,7 +132,18 @@ function dialog(event) {
 	this.ajax_request(event);
 }
 
+function header() {
+
+	var header = $('#header')[0];
+	header.url = '/topics/get_header';
+	header.ajax_request = ajax_request;
+	header.ajax_request();
+}
+
 $(function(event) {
+	
+	$('div.navigation a.ajax_request[rel="content"], table.topics span.topic a').live('click',function(){$('#content').ScrollTo();});
+	
 	$('form.ajax_request').live('submit', ajax_request);
 	$('a.ajax_request').live('click',ajax_request);
 
