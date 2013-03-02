@@ -17,7 +17,7 @@
 					</div>
 
 					<div class="topic">
-						<span class="topic"><%= topic.subject %></span>
+						<span class="topic"><%= topic.subject %>&nbsp;</span>
 						<span class="points"><%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %></span>
 						<span class="date">
 							<% 
@@ -45,7 +45,8 @@
 				<div class="comment">
 					<div class="left">
 					<% if topic.text != '' %>
-						<div class="topic text"><%= word_wrap topic.text.to_s %></div>
+						<div class="topic text">
+							<% if topic.text != nil %><%= word_wrap topic.text %><% end %></div>
 					<% end %>
 					<% if topic.url != '' %>
 						<div class="topic url"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
@@ -92,7 +93,7 @@
 				<div class="listing">
 				<% @comments.each_with_index do |comment,iterator| %>
 
-					<div class="comment">
+					<div class="comment" style="width: <%= 100 - comment.tab * 2 %>%">
 
 						<div class="h"><div><div> </div></div></div>
 						
@@ -112,7 +113,9 @@
 						<span class="date"><%= @blob %> <%= @text %></span>
 						<span class="by">by <%= User.find(comment.user_id).login %></span>
 
-						<span class="vote"><%= link_to "upvote", {:action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!"}, :class=>"ajax_request", :rel=>"content" %></span>
+						<% if comment.user_id != session[:user_id] && !(comment.upvoted_by.include? session[:login] if comment.upvoted_by != nil) %>
+							<span class="vote"><%= link_to "upvote", {:action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!"}, :class=>"ajax_request", :rel=>"content" %></span>
+						<% end %>
 						<span class="points">
 							<% cp=comment.points.to_i %>
 							<% if cp!=1 %>
