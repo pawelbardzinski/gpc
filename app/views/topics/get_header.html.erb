@@ -2,24 +2,25 @@
 	<div class="logo">&nbsp;</div>
 	<div class="info">
 	<% if session[:login] != nil %>
-		<div class="user">You are logged in as <span class="username"><%= session[:login] %></span></div>
 		<span class="points">
 			<%= p = User.find(session[:user_id]).karma %>
 			<% if p == 1 %>point<% else %>points<% end %>
 		</span>
+		<div class="user">You are logged in as <span class="username"><%= session[:login] %></span></div>
 	<% end %>
 	</div>
 	<div class="navigation">
-		<a href="/" class="news ajax_request" rel="content">News</a>
-		<a href="/topics/guidelines" class="news ajax_request" rel="content">Guidelines</a>
-		<a href="/topics/contact" class="news ajax_request" rel="content">Contact</a>
-
 		<% if session[:login] == nil %>
-			<%= link_to "Login",{:controller=>'topics',:action=>'login'}, :class => 'login dialog', :rel=>"dialog_content" %>
 			<%= link_to "Register",{:controller=>'topics',:action=>'login'}, :class => 'register dialog', :rel=>"dialog_content" %>
+			<%= link_to "Login",{:controller=>'topics',:action=>'login'}, :class => 'login dialog', :rel=>"dialog_content" %>
 		<% else %>
 			<%= link_to "Logout",{:controller=>'topics',:action=>'logout'}, :class => 'logout ajax_request', :rel=>"dialog_content" %>
 		<% end %>
+	
+		<a href="/topics/contact" class="news ajax_request" rel="content">Contact</a>
+		<a href="/topics/guidelines" class="news ajax_request" rel="content">Guidelines</a>
+		<a href="/" class="news ajax_request" rel="content">News</a>
+		
 	</div>
 	<div class="clear"></div>
 </div>

@@ -17,8 +17,22 @@ body {
 	position: relative;
 }
 
+iframe {
+	background: none;
+	#background: url('bg.png');
+	padding: 0;
+	border: none 0px;
+	width:960px;
+	height: 800px; 
+	margin: 0 5px;
+}
+
 .clear {
 	clear: both;
+}
+
+#content .top, #content .bottom {
+	font-size: 1px;
 }
 
 h4 {
@@ -50,7 +64,7 @@ div.head div.logo {
 	float: left;
 	width: 262px;
 	height: 88px;
-	background: url(logo.png) no-repeat;
+	background: url(logo.gif) no-repeat;
 }
 
 div.head div.info {
@@ -62,7 +76,7 @@ div.head div.info {
 }
 
 div.head div.user {
-	float: left;
+	float: right;
 }
 
 div.head div.info span.username {
@@ -82,12 +96,13 @@ div.head div.info span.points {
 div.head div.navigation {
 	clear: right;
 	float: right;
+	width: 70%;
 	margin: 18px 0 0 0;
 }
 
 div.head div.navigation a {
 	line-height: 32px;
-	float: left;
+	float: right;
 	font-weight: normal;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -474,6 +489,7 @@ div.search_string input[type="submit"] {
 	overflow: hidden;
 	background: url(button/search.png) 0 0 no-repeat;
 	cursor: pointer;
+	font-size: 0;
 }
 
 div.search_string input[type="submit"]:hover {
@@ -1026,7 +1042,7 @@ div.comment div.right div.login a.register {
 div.head div.navigation a.login,
 div.head div.navigation a.logout,
 div.head div.navigation a.register {
-	float: left;
+	float: right;
 }
 
 div.head div.navigation  a.register,
@@ -1157,6 +1173,10 @@ div#dialog div.register input[type="password"] {
 	color: #007a5d;
 }
 
+.search_string form {
+	width: 162px;
+}
+
 div#dialog div.login input[type="submit"],
 div#dialog div.register input[type="submit"] {
 	position: relative;
@@ -1165,10 +1185,17 @@ div#dialog div.register input[type="submit"] {
 	background: url(button/login_reg.png) 0 0 no-repeat;
 	height: 35px;
 	margin: 14px auto 0 auto;
+	color: transparent;
+	font-size: 0;
 }
 
 div#dialog div.login input[type="submit"] {
 	width: 79px;
+	outline: none;
+	border: none;
+	text-indent: -3000px;
+	color: transparent;
+	font-size: 0;
 }
 
 div#dialog div.login input[type="submit"]:hover {
@@ -1235,6 +1262,7 @@ div#dialog input[type="submit"] {
 	text-indent: -3000px;
 	border: none;
 	outline: none 0px;
+	font-size: 0;
 }
 
 div#dialog input[type="submit"]:hover {
