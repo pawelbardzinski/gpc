@@ -851,7 +851,7 @@ div.listing div.comment {
 	width: 100%;
 	min-width: 50%;
 	float: right;
-	min-height: auto;
+	min-height: 40px;
 	height: auto;
 	background: #ffffff;
 	margin: 0;
