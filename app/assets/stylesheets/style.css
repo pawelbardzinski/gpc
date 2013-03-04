@@ -23,7 +23,7 @@ iframe {
 	padding: 0;
 	border: none 0px;
 	width:960px;
-	height: 800px; 
+	height: 756px; 
 	margin: 0 5px;
 }
 
@@ -45,6 +45,59 @@ h5 {
 	padding-bottom: 8px;
 }
 
+.ab {
+	position: relative;
+	width: 100%;
+	height: 130px;
+}
+
+.ab .bg {
+	background: #000000;
+	opacity: 0.3;
+	filter: alpha(opacity = 30);
+	width: 100%;
+	height: 100%;
+}
+
+.ab .abc {
+/*border: 1px solid red;*/
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	margin: 0;
+	margin-left: -480px;
+	width: 960px;
+	height: 90px;
+}
+
+.ab2 {
+	position: relative;
+	width: 960px;
+	height: 130px;
+	margin: 10px auto;
+}
+
+.ab2 .bg {
+	background: #000000;
+	opacity: 0.3;
+	filter: alpha(opacity = 30);
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+}
+
+.ab2 .abc {
+/*border: 1px solid red;*/
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	margin: 0;
+	margin-left: -460px;
+	width: 920px;
+	height: 90px;
+}
+
+
 .guidelines {
 	font-size: 14px;
 }
@@ -53,7 +106,6 @@ h5 {
 	width: 970px;
 	margin: 0 auto;
 	padding: 0 0 152px 0;
-	height: 100%;
 }
 
 div.head {
