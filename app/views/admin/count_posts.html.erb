@@ -1,0 +1,7 @@
+<h1>Posts by user:</h1>
+<p>
+  <b>There are <%= @users.size %> Users. Users and total comments posted: </b>
+	<% @users.each_with_index do |user,index| %>
+  	 <p><%= user.login %>: <%= @posts[index] %></p>
+	<% end %>
+</p>
