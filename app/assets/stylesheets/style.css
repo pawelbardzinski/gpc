@@ -663,7 +663,10 @@ div.header span.vote a {
 
 div.header div.topic {
 	float: left;
-	margin: 24px 0 0 20px;
+	margin: 12px 0 0 20px;
+	padding-left: 16px;
+	border-left: 1px solid #dad5c5;
+	height: 58px;
 }
 
 
