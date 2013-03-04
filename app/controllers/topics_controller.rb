@@ -273,7 +273,7 @@ class TopicsController < ApplicationController
         redirect_to(:action=>'new',:notice=>'submitted link is not valid.')
         return
       end    
-      redirect_to(:controller=>'topics',:action=>'create_acc_and_post_topic',:topic=>params[:topic],:notice=>'e-mail not required to create account')
+      redirect_to(:controller=>'topics',:action=>'create_acc_and_post_topic',:topic=>params[:topic])
     end
   end
   
