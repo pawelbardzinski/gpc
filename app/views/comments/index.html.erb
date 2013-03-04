@@ -50,6 +50,7 @@
 					<% end %>
 					<% if topic.url != '' %>
 						<div class="topic url"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
+						<div><%= topic.snippet %></div>
 					<% end %>
 					</div>
 

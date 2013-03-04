@@ -242,6 +242,14 @@ class TopicsController < ApplicationController
         redirect_to(:action=>'new',:notice=>'submitted link is not valid.')
         return
       end
+      if @topic.url != '' && @topic.url != nil
+        html_snippet = `python -m readability.readability -u #{@topic.url}` 
+        @topic.snippet = Nokogiri::HTML(html_snippet).text.strip!   
+=begin
+        @topic.snippet.gsub!("\n",'<br />')
+        @topic.snippet.gsub!("\t"," ")   
+=end
+      end
       if @topic.save
         @topic.position = (@topic.points+1).to_f/(((Time.now.to_f+60000-@topic.created_at.strftime("%s").to_f)/1000))
         @topic.points = @topic.points+1
