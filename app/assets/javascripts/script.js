@@ -1,3 +1,16 @@
+window.onpopstate = function(event) {
+
+	if( typeof event != 'undefined' ) {
+		event.preventDefault();
+	}
+
+	$('#content').attr('rel', 'content');
+	var content = $('#content')[0];
+	content.url = document.location.toString();
+	content.ajax_request = ajax_request;
+	content.ajax_request();
+};
+
 
 $.ajaxSetup( {
 	dataType: 'text',
@@ -48,6 +61,16 @@ ajax_request = function (event)
 					$('#dialog > div:first').hide().replaceWith( result /*.content */ );
 					dialog_show();
 					return;
+				}
+				else if( params.url != '/topics/get_header' && $(container).attr('id') == 'content' ) {
+
+					if( typeof(window.history.pushState) != "undefined" ) {
+						window.history.pushState(
+							{ page: "$('title').text()" },
+							"$('title').text()",
+							params.url
+						);
+					}
 				}
 
 				$(container).hide().replaceWith( result /*.content */ );
