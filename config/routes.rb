@@ -1,5 +1,7 @@
 Sh1nyV1::Application.routes.draw do
   
+  get "admin/count_posts"
+
 #  get "comments/list"
 
 #  get "comments/edit"

@@ -77,7 +77,7 @@
 
 								<% else %>
 									<div class="login">
-										<p>Commenting disabled. You are not logged in.</p>
+										<p>You are not logged in.</p>
 										<div class="actions">
 											<%= link_to("login", {:controller=>'topics',:action=>'login',:topic_id=>topic.id,:reply=>'false'}, :class => "login ajax_request") %> or <%= link_to("register", {:controller=>'topics',:action => 'login',:topic_id=>topic.id,:reply=>'false'}, :class => "register ajax_request") %>
 										</div>
@@ -130,7 +130,7 @@
 								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit ajax_request" %>
 								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete ajax_request"%>
 							<% end %>
-							<%= link_to "reply", {:action => "reply", :id => comment.id}, :class => "reply ajax_request" %>
+							<%= link_to "reply", {:action => "reply", :id => comment.id,}, :class => "reply ajax_request" %>
 						</div>
 						
 					</div></div></div>

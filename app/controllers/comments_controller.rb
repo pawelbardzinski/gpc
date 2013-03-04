@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
         flash[:notice] = @comment.errors.full_messages
       end    
     else
-      redirect_to(:action=>'create_acc_and_post',:comment=>params[:comment],:topic_id=>params[:topic_id],:reply=>params[:reply],:notice=>'No personal data (i.e. e-mail) needed to create an account')
+      redirect_to(:action=>'create_acc_and_post',:comment=>params[:comment],:topic_id=>params[:topic_id],:reply=>params[:reply])
     end
   end
     
@@ -132,7 +132,7 @@ class CommentsController < ApplicationController
             flash[:notice] = @comment.errors.full_messages
           end    
         else
-          redirect_to(:controller=>'comments',:action=>'create_acc_and_post',:topic_id=>@previous_comment.topic_id,:previous_id=>params[:previous_id],:comment=>params[:comment],:notice=>'No personal data (i.e. e-mail) needed to create an account',:reply=>'true')
+          redirect_to(:controller=>'comments',:action=>'create_acc_and_post',:topic_id=>@previous_comment.topic_id,:previous_id=>params[:previous_id],:comment=>params[:comment],:reply=>'true')
         end
   end
 end
