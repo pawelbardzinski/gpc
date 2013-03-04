@@ -1377,3 +1377,12 @@ div.notice {
 	line-height: 26px;
 }
 
+div.listing div.comment div.delete input[type="submit"]{
+	line-height: 26px;
+	text-indent: 0px;
+	background: none;
+	font-size: 14px;
+	font-weight: bold;
+	color: blue;
+}
+
