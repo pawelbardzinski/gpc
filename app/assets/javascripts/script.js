@@ -66,8 +66,8 @@ ajax_request = function (event)
 
 					if( typeof(window.history.pushState) != "undefined" ) {
 						window.history.pushState(
-							{ page: "$('title').text()" },
-							"$('title').text()",
+							{ page: $('title').text() },
+							$('title').text(),
 							params.url
 						);
 					}
