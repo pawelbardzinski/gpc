@@ -5,7 +5,6 @@ class TopicsController < ApplicationController
     render('list')
   end
 
-	
   def crossdomain
     render('crossdomain', :layout => false)
   end
@@ -77,7 +76,7 @@ class TopicsController < ApplicationController
       if new_user.save
         session[:user_id] = new_user.id
         session[:login] = new_user.login      
-        if params[:topic] != nil
+        if params[:topic] != nil && (params[:comment] == '' || params[:comment] == nil)
           redirect_to(:action=>'create',:topic=>params[:topic],:notice=>'Thread added. User \''+new_user.login+'\' created succesfuly.')
           return
         end

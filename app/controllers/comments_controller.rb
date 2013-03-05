@@ -127,6 +127,9 @@ class CommentsController < ApplicationController
             c.save
           end
           if @comment.save
+            u=User.find(session[:user_id])
+            u.karma = u.karma+1
+            u.save
             redirect_to(:controller=>'comments',:action=>'index',:topic_id=>@previous_comment.topic_id)
           else
             flash[:notice] = @comment.errors.full_messages
