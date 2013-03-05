@@ -17,7 +17,7 @@ body {
 	position: relative;
 }
 
-iframe {
+.wrap iframe {
 	background: none;
 	#background: url('bg.png');
 	padding: 0;
