@@ -16,10 +16,10 @@
 					<div class="search_string">
 						<div class="in">
 							<div class="in">
-								<%= form_tag topics_path do %>
+								<form accept-charset="UTF-8" action="/topics/list" method="post" class="ajax_request">
 									<%= text_field_tag :search_string, @search_string %>
 									<%= submit_tag "Search" %>
-								<% end %>
+								</form>
 <!--
 								<input name="string" type="text" />
 								<input name="Search" type="submit"/>
