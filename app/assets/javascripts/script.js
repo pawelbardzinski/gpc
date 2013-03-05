@@ -165,7 +165,7 @@ function header() {
 
 $(function(event) {
 	
-	$('div.navigation a.ajax_request[rel="content"], table.topics span.topic a').live('click',function(){$('#content').ScrollTo();});
+	$('div.navigation a.ajax_request[rel="content"], table.topics span.topic a').live('click',function(){$.scrollTo(0,$('#content'));});
 	
 	$('form.ajax_request').live('submit', ajax_request);
 	$('a.ajax_request').live('click',ajax_request);
