@@ -995,6 +995,7 @@ div.listing div.comment span.points {
 div.listing div.comment div.actions {
 	padding: 10px 0 0 0;
 	float: right;
+	position: relative;
 }
 
 div.listing div.comment div.reply {
@@ -1384,5 +1385,45 @@ div.listing div.comment div.delete input[type="submit"]{
 	font-size: 14px;
 	font-weight: bold;
 	color: blue;
+}
+
+div.delete-box {
+	width: 146px;
+	height: 70px;
+	position: absolute;
+	background: url(delete.png) no-repeat 0% 0%;
+	left: 50%;
+	margin-left: -76px;
+	bottom: 25px;
+}
+
+div.delete-box a {
+	width: 52px;
+	height: 26px;
+	overflow: hidden;
+	text-indent: -3000px;
+	display: block;
+	cursor: pointer;
+	font-size: 0;
+	background: url(button/yn.png) no-repeat 0 0;
+}
+
+div.delete-box a.yes {
+	margin: 29px 0 0 18px;
+	float: left;
+}
+
+div.delete-box a.yes:hover {
+	background-position: 0 -28px;
+}
+
+div.delete-box a.no {
+	margin: 29px 18px 0 0;
+	float: right;
+	background-position: -55px 0;
+}
+
+div.delete-box a.no:hover {
+	background-position: -55px -28px;
 }
 
