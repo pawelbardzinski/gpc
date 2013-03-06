@@ -243,7 +243,7 @@ class TopicsController < ApplicationController
       end
       if @topic.url != '' && @topic.url != nil
         html_snippet = `python -m readability.readability -u #{@topic.url}` 
-        @topic.snippet = Nokogiri::HTML(html_snippet).text.strip!   
+        @topic.snippet = Nokogiri::HTML(html_snippet).text.strip!.slice(0,300) + ' ...'
 =begin
         @topic.snippet.gsub!("\n",'<br />')
         @topic.snippet.gsub!("\t"," ")   
