@@ -39,8 +39,12 @@
 					%>
 					<div class="sort">
 						<span>Sort by</span>
-						<span class="sort left"><%= link_to "Popularity", topics_path(:sort=>'popularity',:search_string=>@search_string), :class => sort_pop_class %></a></span>
-						<span class="sort right"><%= link_to "Date", topics_path(:sort=>'date',:search_string=>@search_string), :class => sort_date_class %></span>
+						<span class="sort left">
+						<% @sort_by = 'popularity' %>
+						<%= link_to "Popularity", topics_path(:sort=>'popularity',:search_string=>@search_string), :class => sort_pop_class %></a></span>
+						<span class="sort right">
+						<% @sort_by = 'date' %>
+						<%= link_to "Date", topics_path(:sort=>'date',:search_string=>@search_string), :class => sort_date_class %></span>
 					</div>
 
 					<div class="rightBox">
@@ -167,7 +171,7 @@
 
 						<div class="step previous">
 						<% if @topics.size > @next*per_page then %>
-							<%= link_to "Next page", {:action=>'list',:next=>@next, :search_string=>@search_string}, :class=>"ajax_request" %>
+							<%= link_to "Next page", {:action=>'list',:next=>@next, :search_string=>@search_string, :sort=>@sort_by}, :class=>"ajax_request" %>
 						<% end %>
 						</div>
 					</div>
