@@ -129,7 +129,11 @@
 						<div class="actions">
 							<% if comment.user_id == session[:user_id] %>
 								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit ajax_request" %>
-								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete ajax_request"%>
+								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete"%>
+								<div class="delete-box" style="display: none;">
+									<a href="/comments/destroy/<%= comment.id %>?topic_id=<%= params[:topic_id]%>" rel="content" class="yes no_history ajax_request">Yes</a>
+									<a href="#" class="no no_history">No</a>
+								</div>
 							<% end %>
 							<%= link_to "reply", {:action => "reply", :id => comment.id,}, :class => "reply ajax_request" %>
 						</div>

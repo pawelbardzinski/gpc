@@ -64,7 +64,7 @@ ajax_request = function (event)
 				}
 				else if( params.url != '/topics/get_header' && $(container).attr('id') == 'content' ) {
 
-					if( typeof(window.history.pushState) != "undefined" ) {
+					if( typeof(window.history.pushState) != "undefined" && $(self).hasClass('no_history') == false ) {
 						window.history.pushState(
 							{ page: $('title').text() },
 							$('title').text(),
@@ -165,7 +165,7 @@ function header() {
 
 $(function(event) {
 	
-	$('div.navigation a.ajax_request[rel="content"], table.topics span.topic a').live('click',function(){$('#content').ScrollTo();});
+	$('div.navigation a.ajax_request[rel="content"], table.topics span.topic a').live('click',function(){$.scrollTo(0,$('#content'));});
 	
 	$('form.ajax_request').live('submit', ajax_request);
 	$('a.ajax_request').live('click',ajax_request);
@@ -174,4 +174,29 @@ $(function(event) {
 	$('form.dialog').live('submit',dialog);
 
 	$('.dialog_close').live('click',dialog_hide);
+
+	$('.actions a.delete').live('click', function(event) {
+
+		event.preventDefault();
+		var box = $(this).parent().find('.delete-box');
+
+		var boxes = $('.actions .delete-box:visible').not(box);
+		$(boxes).animate({opacity: 0}, 500, function(){$(this).css('display', 'none').css('opacity', 0)});
+
+		if( !$(box).is(':visible') ) {
+
+			$(box).css('display', 'block').css('opacity', 0);
+			$(box).animate({opacity: 1}, 500);
+		}
+	});
+
+	$('.actions .delete-box a.no').live('click', function(event) {
+		event.preventDefault();
+		var box = $(this).parents('.delete-box:first');
+
+		if( $(box).is(':visible') ) {
+
+			$(box).animate({opacity: 0}, 500, function(){$(this).css('display', 'none').css('opacity', 0)});
+		}
+	});
 });
