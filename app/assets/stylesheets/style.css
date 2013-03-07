@@ -1000,10 +1000,14 @@ div.listing div.comment div.actions {
 
 div.listing div.comment div.reply {
 	width: 100%;
-	height: 272px;
+	height: 282px;
 	display:block;	
 	background: url(box-green-bg.png) 0% 0% repeat-x #005b45;
 	position: relative;
+}
+
+div.listing div.comment div.reply input[type="submit"] {
+	margin: 5px 0 0 0;
 }
 
 div.listing div.comment div.reply div.f {
@@ -1380,7 +1384,7 @@ div.notice {
 
 div.listing div.comment div.delete input[type="submit"]{
 	line-height: 26px;
-	text-indent: 0px;
+	text-indent: -3000px;
 	background: none;
 	font-size: 14px;
 	font-weight: bold;
@@ -1427,3 +1431,19 @@ div.delete-box a.no:hover {
 	background-position: -55px -28px;
 }
 
+div.reply a.cancel {
+	display: block;
+	float: left;
+	margin: 5px 0 0 0;
+	padding: 0;
+	font-size: 0;
+	text-indent: -3000px;
+	overflow: hidden;
+	background: url(cancel.png) no-repeat 0 0;
+	width: 79px;
+	height: 27px;
+}
+
+div.reply a.cancel:hover {
+	background-position: 0 -28px;
+}
