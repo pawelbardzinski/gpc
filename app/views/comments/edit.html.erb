@@ -6,6 +6,7 @@
 	<%= f.text_area :comment %>
 
 	<div class="submit">
+		<%= link_to("<< back", :back, :class=>"ajax_request cancel") %>
 		<%= submit_tag("add comment")%>
 	</div>
 	<% end %>
