@@ -1447,3 +1447,18 @@ div.reply a.cancel {
 div.reply a.cancel:hover {
 	background-position: 0 -28px;
 }
+
+div.listing div.comment div.reply {
+	position: relative;
+}
+
+div.reply div.gpu {
+	width: 13px;
+	height: 8px;
+	margin: 0;
+	background: url(gpu.png) no-repeat 50% 0;
+	padding: 0;
+	position: absolute;
+	top: -7px;
+	left: 50%;
+}
