@@ -117,7 +117,7 @@
 							<% end %>
 						</td>
 						<td class="discuss">
-							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic_id}, :class => "discuss ajax_request" %></span>
+							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic_id,:sort=>@sort_by}, :class => "discuss ajax_request" %></span>
 						</td>
 					</tr>
 					<% end %>
@@ -127,7 +127,7 @@
 					<div class="pagination">
 						<div class="step next">
 						<% if @next>1 then %>
-							<%= link_to "Previous page",{:action=>'list',:next=>@next.to_i-2}, :class=>"ajax_request" %>
+							<%= link_to "Previous page",{:action=>'list',:next=>@next.to_i-2,:sort=>@sort_by}, :class=>"ajax_request" %>
 						<% end %>
 						</div>
 
@@ -161,7 +161,7 @@
 										class_ = class_.concat(' current')
 									end
 									%>
-							<%= link_to (i+1), {:action=>'list', :next=> i, :search_string=>@search_string}, :class => class_ %>
+							<%= link_to (i+1), {:action=>'list', :next=> i, :search_string=>@search_string,:sort=>@sort_by}, :class => class_ %>
 							<% 
 									i += 1; 
 								end 
