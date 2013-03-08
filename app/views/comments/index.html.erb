@@ -78,7 +78,7 @@
 
 								<% else %>
 									<div class="login">
-										<p>You are not logged in.</p>
+										<p>Login or Register to comment.</p>
 										<div class="actions">
 											<%= link_to("login", {:controller=>'topics',:action=>'login',:topic_id=>topic.id,:reply=>'false'}, :class => "login ajax_request") %> or <%= link_to("register", {:controller=>'topics',:action => 'login',:topic_id=>topic.id,:reply=>'false'}, :class => "register ajax_request") %>
 										</div>
