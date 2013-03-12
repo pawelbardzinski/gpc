@@ -55,14 +55,5 @@ Sh1nyV1::Application.configure do
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners
-  config.active_support.deprecation = :notify
-  
-  # Postgres to use timestamptz by default_locale
-  NativeDbTypesOverride.configure({
-    postgres: {
-      datetime: { name: "timestamptz" },
-      timestamp: { name: "timestamptz" }
-    }
-  })
-  
+  config.active_support.deprecation = :notify  
 end
