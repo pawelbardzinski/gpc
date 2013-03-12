@@ -20,6 +20,7 @@ end
 
 gem 'jquery-rails'
 gem 'nokogiri'
+gem 'activerecord-native_db_types_override'
 #gem 'readability'
 
 # To use ActiveModel has_secure_password
