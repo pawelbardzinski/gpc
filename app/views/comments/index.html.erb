@@ -16,7 +16,7 @@
 						vote
 					</div>
 
-					<div class="topic">
+					<div class="topic"><br>
 						<span class="topic"><%= topic.subject %>&nbsp;</span>
 						<span class="points"><%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %></span>
 						<span class="date">
@@ -35,7 +35,6 @@
 					<div class="rightBox">
 						<div class="in">
 							<div class="in">
-								
 								<span class="go_back"><%= link_to "go back", {:controller=>'topics',:action=>'list'}, :class=>"ajax_request" %></span>
 							</div>
 						</div>
@@ -44,13 +43,20 @@
 				
 				<div class="comment">
 					<div class="left">
+					<% if topic.url != '' %>
+						<div class="snippet"><%= topic.snippet %></div><br>
+						<div class="source">Source:</div>
+						<div class="url_link"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
+					<% end %>
 					<% if topic.text != '' %>
 						<div class="topic text">
-							<% if topic.text != nil %><%= word_wrap topic.text %><% end %></div>
-					<% end %>
-					<% if topic.url != '' %>
-						<div class="topic url"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
-						<div><%= topic.snippet %></div>
+							<% if topic.text != nil %>
+								<% if topic.url != '' %>
+									Source:
+								<% end %>
+								<br>
+							<%= word_wrap topic.text %><% end %>
+						</div>
 					<% end %>
 					</div>
 

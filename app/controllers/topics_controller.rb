@@ -51,7 +51,7 @@ class TopicsController < ApplicationController
   
   def chart
     @topics = Topic.order("topics.position DESC")
-    @topics = @topics[0..30]
+    @topics = @topics[0..10]
   end
   
   def show
@@ -243,18 +243,20 @@ class TopicsController < ApplicationController
       end
       if @topic.url != '' && @topic.url != nil
         html_snippet = `python -m readability.readability -u #{@topic.url}` 
-        @topic.snippet = Nokogiri::HTML(html_snippet).text.strip!.slice(0,300) + ' ...'
+        @topic.snippet = Nokogiri::HTML(html_snippet).text.strip!.slice(0,600) + '...'
 =begin
         @topic.snippet.gsub!("\n",'<br />')
         @topic.snippet.gsub!("\t"," ")   
 =end
+      else
+        @topic.snippet = @topic.text.slice(0,600)
       end
       if @topic.save
         @topic.position = (@topic.points+1).to_f/(((Time.now.to_f+60000-@topic.created_at.strftime("%s").to_f)/1000))
         @topic.points = @topic.points+1
         @topic.save       
         User.upvote(@topic.user_id)   
-        redirect_to(:action=>'list',:notice=>params[:notice])
+        redirect_to(:action=>'list',:sort=>'date',:notice=>params[:notice])
       else
         render('new')
       end

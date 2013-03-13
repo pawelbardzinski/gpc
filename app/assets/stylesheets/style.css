@@ -299,7 +299,7 @@ table.topics td.topic {
 
 .topic span.topic,
 .topic span a {
-	font-size: 14px;
+	font-size: 17px;
 	color: #494a3a;
 	font-weight: bold;
 	text-decoration: none;
@@ -358,6 +358,25 @@ span.by {
 	font-size: 12px;
 }
 
+span .subject	{
+	display: block;
+	float: left;
+/*	width: 76px;*/
+	color: #494a3a;
+	font-family: "Times New Roman";
+	font-weight: bold;
+	font-size: 18px;	
+}
+
+span .snippet	{
+	display: block;
+	float: left;
+/*	width: 76px;*/
+	color: #494a3a;
+	font-family: arial;
+	font-weight: normal;
+	font-size: 15px;	
+}
 
 span.vote {
 	display: block;
@@ -464,6 +483,37 @@ div.footer div.rightBox div.in div.in {
 	background-image: url(footer_right.png);
 }
 
+div .snippet	{
+	display: block;
+/*	width: 76px;*/
+	color: #494a3a;
+	font-family: arial;
+	font-weight: normal;
+	font-size: 15px;	
+}
+
+div .source	{
+	display: block;
+/*	width: 76px;*/
+	color: black;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 13px;	
+}
+
+.url_link div.url_link,
+div .url_link a	{
+	display: block;
+	color: #007a5d;
+	font-family: arial;
+	font-weight: normal;
+	font-size: 13px;	
+	text-decoration: none;
+}
+
+.url_link a:hover	{
+	text-decoration: underline;
+}
 
 span.add_thread {
 	display: block;
@@ -486,8 +536,9 @@ a.add_thread:hover {
 
 div.h1 {
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 19px;
 	font-family: Arial;
+	color: #494a3a;
 	display: block;
 	margin: 0;
 	padding: 8px 0 2px 12px;
