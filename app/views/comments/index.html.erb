@@ -21,7 +21,7 @@
 						<span class="points"><%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %></span>
 						<span class="date">
 							<% 
-								@blob = ((Time.now.to_i - topic.created_at.strftime("%s").to_i)/60) 
+								@blob = ((DateTime.now.change(:offset=>"+0000").to_i - topic.created_at.strftime("%s").to_i)/60) 
 								@text = "minutes ago"
 								if @blob > 120 then @blob = @blob/60; @text="hours ago"; end
 								if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end
@@ -111,7 +111,7 @@
 						<div class="f container"><div class="f"><div class="f">
 
 						<% 
-							@blob = ((Time.now.to_i - comment.created_at.strftime("%s").to_i)/60)
+							@blob = ((DateTime.now.change(:offset=>"+0000").to_i - comment.created_at.strftime("%s").to_i)/60)
 					 		@text = "minutes ago"
 					 		if @blob > 120 then @blob = @blob/60; @text="hours ago"; end 
 					 		if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end 
