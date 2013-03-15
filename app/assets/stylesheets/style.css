@@ -155,11 +155,11 @@ div.head div.navigation {
 div.head div.navigation a {
 	line-height: 32px;
 	float: right;
-	font-weight: normal;
+	font-weight: bold;
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #ffffff;
-	font-size: 13px;
+	font-size: 14px;
 	margin: 0 2px 0 16px;
 }
 
@@ -206,6 +206,10 @@ div.foot div.navigation a {
 
 div.foot div.navigation a:hover {
 	color: #86d5c3;
+}
+
+div .contact	{
+	font-size:14px;
 }
 
 .box.white {
