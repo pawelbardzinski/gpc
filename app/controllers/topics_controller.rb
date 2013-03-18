@@ -14,11 +14,11 @@ class TopicsController < ApplicationController
       @sort_by = params[:sort]
       if params[:search_string].to_s == ''
         if params[:sort] == 'date' 
-          sql = 'select * from topics order by updated_at DESC'
+          sql = 'select * from topics order by created_at DESC'
           @topics = ActiveRecord::Base.connection.execute(sql).to_a 
           @topics.uniq!
         else
-          sql = 'select * from topics order by position'
+          sql = 'select * from topics order by position DESC'
           @topics = ActiveRecord::Base.connection.execute(sql).to_a 
           @topics.uniq!
         end
@@ -31,16 +31,16 @@ class TopicsController < ApplicationController
         search_string = '%'+search_string+'%'
         if params[:sort] == 'date' 
           # for perfomance issues check: http://stackoverflow.com/questions/7005302/postgresql-how-to-make-not-case-sensitive-queries
-          sql_search_in_subject = 'select * from topics where lower(subject) like lower(\''+search_string+'\') order by updated_at DESC'
-          sql_search_in_text = 'select * from topics where lower(text) like lower(\''+search_string+'\') order by updated_at DESC'
-          sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where lower(comment) like lower(\''+search_string+'\')) order by updated_at DESC'
+          sql_search_in_subject = 'select * from topics where lower(subject) like lower(\''+search_string+'\') at time zone \'utc\' order by created_at DESC' 
+          sql_search_in_text = 'select * from topics where lower(text) like lower(\''+search_string+'\')at time zone \'utc\' order by created_at DESC'
+          sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where lower(comment) like lower(\''+search_string+'\'))at time zone \'utc\' order by created_at DESC'
           @topics = ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_text).to_a + ActiveRecord::Base.connection.execute(sql_search_in_comments).to_a
           @topics.uniq!
         else
           # for perfomance issues check: http://stackoverflow.com/questions/7005302/postgresql-how-to-make-not-case-sensitive-queries
-          sql_search_in_subject = 'select * from topics where lower(subject) like lower(\''+search_string+'\') order by position'
-          sql_search_in_text = 'select * from topics where lower(text) like lower(\''+search_string+'\') order by position'
-          sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where lower(comment) like lower(\''+search_string+'\')) order by position'
+          sql_search_in_subject = 'select * from topics where lower(subject) like lower(\''+search_string+'\') at time zone \'utc\' order by position DESC'
+          sql_search_in_text = 'select * from topics where lower(text) like lower(\''+search_string+'\') at time zone \'utc\' order by position DESC'
+          sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where lower(comment) like lower(\''+search_string+'\')) at time zone \'utc\' order by position DESC'
           @topics = ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_text).to_a + ActiveRecord::Base.connection.execute(sql_search_in_comments).to_a
           @topics.uniq!
         end
@@ -51,7 +51,7 @@ class TopicsController < ApplicationController
   
   def chart
     @topics = Topic.order("topics.position DESC")
-    @topics = @topics[0..30]
+    @topics = @topics[0..10]
   end
   
   def show
@@ -243,18 +243,20 @@ class TopicsController < ApplicationController
       end
       if @topic.url != '' && @topic.url != nil
         html_snippet = `python -m readability.readability -u #{@topic.url}` 
-        @topic.snippet = Nokogiri::HTML(html_snippet).text.strip!.slice(0,300) + ' ...'
+        @topic.snippet = Nokogiri::HTML(html_snippet).text.strip!.slice(0,600) + '...'
 =begin
         @topic.snippet.gsub!("\n",'<br />')
         @topic.snippet.gsub!("\t"," ")   
 =end
+      else
+        @topic.snippet = @topic.text.slice(0,600)
       end
       if @topic.save
         @topic.position = (@topic.points+1).to_f/(((Time.now.to_f+60000-@topic.created_at.strftime("%s").to_f)/1000))
         @topic.points = @topic.points+1
         @topic.save       
         User.upvote(@topic.user_id)   
-        redirect_to(:action=>'list',:notice=>params[:notice])
+        redirect_to(:action=>'list',:sort=>'date',:notice=>params[:notice])
       else
         render('new')
       end

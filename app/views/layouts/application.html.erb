@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Language" content="pl">
+	<META NAME="Robots" CONTENT="Index, Follow">
+	<meta http-equiv="Content-Language" content="en">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
-	<title>Gold Chart & News</title>    
+	<title>Welcome to the Gold Price Cafe web site</title>    
+	<meta name="description" content="GoldPriceCafe.com - the current Live Gold Prices displayed on a Chic and Fast Gold Chart updating prices automatically every two minutes plus Gold News.">
+	<meta name="keywords" content="gold chart, gold price chart, gold price, gold prices, price of gold, live gold price, current gold price, gold chart, live gold chart, interactive gold chart, autoupdating gold chart, gold news, latest gold news, Gold Price News, gold news aggregator, silver chart, silver price chart, silver price, live silver price, current silver price, silver chart, gold to silver ratio, gold to platinum ratio">
 	<%= stylesheet_link_tag "style.css" %>
 	<%= javascript_include_tag "jquery" %>
 	<%= javascript_include_tag "jquery.scrollto" %>
@@ -13,6 +16,8 @@
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
+	  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+	  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
 	  _gaq.push(['_setAccount', 'UA-31150857-1']);
 	  _gaq.push(['_trackPageview']);
 
@@ -38,6 +43,18 @@
 		<script type="text/javascript"
 			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-7045562803905628";
+		/* links ad */
+		google_ad_slot = "4400603431";
+		google_ad_width = 120;
+		google_ad_height = 90;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
 		</div>
 	</div>
 	<div class="wrap">
@@ -61,6 +78,7 @@
 				<% end %>
 			
 				<a href="/topics/contact" class="news ajax_request" rel="content">Contact</a>
+				<a href="/topics/privacy_policy" class="news ajax_request" rel="content">Privacy</a>
 				<a href="/topics/guidelines" class="news ajax_request" rel="content">Guidelines</a>
 				<a href="/" class="news ajax_request" rel="content">News</a>
 				
@@ -68,7 +86,7 @@
 			<div class="clear"></div>
 		</div>
 
-		<iframe id="alive" src="http://goldpricecafe.com:8400/alive5/Alive6_HiRes/Alive6.html?wmode=transparent" style="" frameborder="0" allowfullscreen></iframe>
+		<iframe id="alive" src="http://www.goldpricecafe.com:8400/alive5/Alive6_HiRes/Alive6.html?wmode=transparent" style="" frameborder="0" allowfullscreen></iframe>
 
 		<div class="ab2">
 			<div class="bg">&nbsp;</div>
@@ -82,7 +100,20 @@
 			</script>
 			<script type="text/javascript"
 				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script></div>
+			</script>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-7045562803905628";
+			/* links ad */
+			google_ad_slot = "4400603431";
+			google_ad_width = 120;
+			google_ad_height = 90;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div>
 		</div>
 
 		<%= yield %>
@@ -93,6 +124,7 @@
 			<div class="navigation">
 				<a href="/" class="news ajax_request" rel="content">News</a>
 				<a href="/topics/guidelines" class="news ajax_request" rel="content">Guidelines</a>
+				<a href="/topics/privacy_policy" class="news ajax_request" rel="content">Privacy</a>
 				<a href="/topics/contact" class="news ajax_request" rel="content">Contact</a>
 			</div>
 		</div>

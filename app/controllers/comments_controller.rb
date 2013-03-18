@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
 	respond_to :js, :html
 
   def index
-
     @comments = Comment.where(:topic_id=>params[:topic_id]).order("comments.position ASC")
     @topic = Topic.where(:id=>params[:topic_id])
   end

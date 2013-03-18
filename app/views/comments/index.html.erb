@@ -8,7 +8,7 @@
 		<div class="middle"><div class="middle">
 			<div class="content">
 
-				<div class="h1">Commenting on</div>
+				<div class="h1">Gold Price News</div>
 
 				<div class="header">
 					<div class="vote">
@@ -16,12 +16,12 @@
 						vote
 					</div>
 
-					<div class="topic">
-						<span class="topic"><%= topic.subject %>&nbsp;</span>
+					<div class="topic"><br>
+						<span class="topic"><%= topic.subject.slice(0,80) %>&nbsp;</span>
 						<span class="points"><%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %></span>
 						<span class="date">
 							<% 
-								@blob = ((Time.now.to_i - topic.created_at.strftime("%s").to_i)/60) 
+								@blob = ((DateTime.now.change(:offset=>"+0000").to_i - topic.created_at.strftime("%s").to_i)/60) 
 								@text = "minutes ago"
 								if @blob > 120 then @blob = @blob/60; @text="hours ago"; end
 								if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end
@@ -35,7 +35,6 @@
 					<div class="rightBox">
 						<div class="in">
 							<div class="in">
-								
 								<span class="go_back"><%= link_to "go back", {:controller=>'topics',:action=>'list'} %></span>
 							</div>
 						</div>
@@ -44,13 +43,20 @@
 				
 				<div class="comment">
 					<div class="left">
+					<% if topic.url != '' %>
+						<div class="snippet"><%= topic.snippet %></div><br>
+						<div class="source">Source:</div>
+						<div class="url_link"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
+					<% end %>
 					<% if topic.text != '' %>
 						<div class="topic text">
-							<% if topic.text != nil %><%= word_wrap topic.text %><% end %></div>
-					<% end %>
-					<% if topic.url != '' %>
-						<div class="topic url"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
-						<div><%= topic.snippet %></div>
+							<% if topic.text != nil %>
+								<% if topic.url != '' %>
+									Source:
+								<% end %>
+								<br>
+							<%= word_wrap topic.text %><% end %>
+						</div>
 					<% end %>
 					</div>
 
@@ -78,7 +84,7 @@
 
 								<% else %>
 									<div class="login">
-										<p>You are not logged in.</p>
+										<p>Login or Register to comment.</p>
 										<div class="actions">
 											<%= link_to("login", {:controller=>'topics',:action=>'login',:topic_id=>topic.id,:reply=>'false'}, :class => "login ajax_request") %> or <%= link_to("register", {:controller=>'topics',:action => 'login',:topic_id=>topic.id,:reply=>'false'}, :class => "register ajax_request") %>
 										</div>
@@ -105,7 +111,7 @@
 						<div class="f container"><div class="f"><div class="f">
 
 						<% 
-							@blob = ((Time.now.to_i - comment.created_at.strftime("%s").to_i)/60)
+							@blob = ((DateTime.now.change(:offset=>"+0000").to_i - comment.created_at.strftime("%s").to_i)/60)
 					 		@text = "minutes ago"
 					 		if @blob > 120 then @blob = @blob/60; @text="hours ago"; end 
 					 		if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end 

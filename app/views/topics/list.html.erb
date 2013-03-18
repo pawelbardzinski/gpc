@@ -1,6 +1,6 @@
 <% @page_title = "Live Gold Chart & News" %>
 
-<% per_page = 30 %>
+<% per_page = 10 %>
 
 <div id="content" class="box white container">
 	<div class="top">
@@ -9,7 +9,7 @@
 	<div class="middle">
 		<div class="middle"><div class="middle">
 			<div class="content">
-				<div class="h1">Discuss the news</div>
+				<div class="h1">Gold Price News</div>
 
 				<div class="header">
 
@@ -31,19 +31,17 @@
 						sort_pop_class = 'ajax_request sort left'
 						sort_date_class = 'ajax_request sort right'
 
-						if @sort_by == nil || @sort_by == '' || @sort_by == 'popularity'
-							sort_pop_class = sort_pop_class.concat(' current')
-						else 
+						if @sort_by == 'date'
 							sort_date_class = sort_date_class.concat(' current')
+						else 
+							sort_pop_class = sort_pop_class.concat(' current')
 						end 
 					%>
 					<div class="sort">
 						<span>Sort by</span>
 						<span class="sort left">
-						<% @sort_by = 'popularity' %>
 						<%= link_to "Popularity", topics_path(:sort=>'popularity',:search_string=>@search_string), :class => sort_pop_class %></a></span>
 						<span class="sort right">
-						<% @sort_by = 'date' %>
 						<%= link_to "Date", topics_path(:sort=>'date',:search_string=>@search_string), :class => sort_date_class %></span>
 					</div>
 
@@ -58,7 +56,6 @@
 				<table class="topics">
 					<% if @topics.size > @next*per_page then end_step=@next*per_page else end_step=@topics.size end %>
 					<% for i in @next*per_page-(per_page-1)..end_step do %>
-
 					<% 
 						topic = @topics[i-1]
 
@@ -70,14 +67,18 @@
 							topic_points = topic.points
 							topic_created_at = topic.created_at
 							topic_upvoted_by = topic.upvoted_by
+							topic_snippet = topic.snippet
+							topic_text = topic.text
 						else
 							topic_id = topic["id"].to_i
 							topic_url = topic["url"]
 							topic_user_id = topic["user_id"].to_i
 							topic_subject = topic["subject"]
 							topic_points = topic["points"].to_i
-							topic_created_at = topic["created_at"].to_date
+							topic_created_at = topic["created_at"].to_datetime
 							topic_upvoted_by = topic["upvoted_by"]
+							topic_snippet = topic["snippet"]
+							topic_text = topic["text"]
 						end 
 					%>
 					<tr>	
@@ -88,16 +89,19 @@
 						</td>
 						<td class="topic">
 							<span class="topic">
-							<% if topic_url != '' %>
-								<%= link_to(topic_subject,{:controller=>'comments',:topic_id=>topic_id}, :class=>"ajax_request") %>
-							<% else %>          
-								<%= link_to(topic_subject,{:controller=>'comments',:topic_id=>topic_id}, :class=>"ajax_request") %>
-							<% end %>
+								<% if topic_text != nil && topic_text != '' %>
+									<%= link_to topic_subject, {:controller=>'comments',:action=>'index',:topic_id=>topic_id,:sort=>@sort_by}, :class => "discuss ajax_request" %><br>
+								<% else %>
+									<%= link_to(topic_subject,topic_url,:target=>'_blank') %><br>
+								<% end %>
+								<% if topic_snippet != nil %>
+									<span class="snippet"><%= if topic_snippet.size > 300 then topic_snippet.slice(0,300)+'...' else  topic_snippet end %></span>
+								<% end %>
 							</span>
 							<span class="points"><%= tp=topic_points %> <% if tp==1 %> point <% else %> points <% end %></span>
 							<span class="date">
 							<% 
-								@blob = ((Time.now.to_i - topic_created_at.strftime("%s").to_i)/60) 
+								@blob = ((DateTime.now.change(:offset=>"+0000").to_i - topic_created_at.strftime("%s").to_i)/60) 
 								@text = "minutes ago"
 								if @blob > 120 then @blob = @blob/60; @text="hours ago"; end
 								if @blob > 48 && @text=="hours ago" then @blob = @blob/24; @text="days ago"; end
@@ -111,13 +115,13 @@
 							<% cs = Comment.where(:topic_id=>topic_id).size %>
 							<%= cs %>
 							<% if cs <= 1 %>
-								comment
+								comment&nbsp;
 							<% else %>
-								comments
+								comments&nbsp;
 							<% end %>
 						</td>
 						<td class="discuss">
-							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic_id}, :class => "discuss ajax_request" %></span>
+							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic_id,:sort=>@sort_by}, :class => "discuss ajax_request" %></span>
 						</td>
 					</tr>
 					<% end %>
@@ -127,7 +131,7 @@
 					<div class="pagination">
 						<div class="step next">
 						<% if @next>1 then %>
-							<%= link_to "Previous page",{:action=>'list',:next=>@next.to_i-2}, :class=>"ajax_request" %>
+							<%= link_to "Previous page",{:action=>'list',:next=>@next.to_i-2,:sort=>@sort_by}, :class=>"ajax_request" %>
 						<% end %>
 						</div>
 
@@ -135,7 +139,7 @@
 							<% 
 								i = @next
 								total_pages = (@topics.size/per_page.to_f).ceil
-								
+
 								if total_pages < 9
 									pages = total_pages
 									i = 0
@@ -161,14 +165,13 @@
 										class_ = class_.concat(' current')
 									end
 									%>
-							<%= link_to (i+1), {:action=>'list', :next=> i, :search_string=>@search_string}, :class => class_ %>
+							<%= link_to (i+1), {:action=>'list', :next=> i, :search_string=>@search_string,:sort=>@sort_by}, :class => class_ %>
 							<% 
 									i += 1; 
 								end 
 							%>
 
 						</div>
-
 						<div class="step previous">
 						<% if @topics.size > @next*per_page then %>
 							<%= link_to "Next page", {:action=>'list',:next=>@next, :search_string=>@search_string, :sort=>@sort_by}, :class=>"ajax_request" %>
@@ -189,4 +192,3 @@
 	</div>
 <div class="bottom"><div class="bottom"><div class="bottom">&nbsp;</div></div></div>
 </div>
-

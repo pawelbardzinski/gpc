@@ -35848,3 +35848,589 @@ Started GET "/" for 188.123.222.205 at 2013-02-07 11:37:00 -0500
   Processing by TopicsController#list as HTML
 Rendered topics/list.html.erb within layouts/application (3.0ms)
 Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 1.5ms)
+Compiled admin.js  (30ms)  (pid 25549)
+Compiled application.js  (2ms)  (pid 25549)
+Compiled jquery.js  (0ms)  (pid 25549)
+Compiled jquery_ujs.js  (0ms)  (pid 25549)
+Compiled comments.js  (0ms)  (pid 25549)
+Compiled jquery.scrollto.js  (0ms)  (pid 25549)
+Compiled script.js  (0ms)  (pid 25549)
+Compiled topic.js  (0ms)  (pid 25549)
+Compiled topics.js  (0ms)  (pid 25549)
+Compiled user.js  (10ms)  (pid 25549)
+Compiled admin.css  (11ms)  (pid 25549)
+Compiled style.css  (0ms)  (pid 25549)
+Compiled jquery-ui.js  (14ms)  (pid 25549)
+Compiled jquery-ui.min.js  (11ms)  (pid 25549)
+Compiled jquery.min.js  (0ms)  (pid 25549)
+Compiled admin.js  (30ms)  (pid 25442)
+Compiled application.js  (2ms)  (pid 25442)
+Compiled jquery.js  (0ms)  (pid 25442)
+Compiled jquery_ujs.js  (0ms)  (pid 25442)
+Compiled comments.js  (0ms)  (pid 25442)
+Compiled jquery.scrollto.js  (0ms)  (pid 25442)
+Compiled script.js  (0ms)  (pid 25442)
+Compiled topic.js  (0ms)  (pid 25442)
+Compiled topics.js  (0ms)  (pid 25442)
+Compiled user.js  (0ms)  (pid 25442)
+Compiled admin.css  (1ms)  (pid 25442)
+Compiled style.css  (0ms)  (pid 25442)
+Compiled jquery-ui.js  (1ms)  (pid 25442)
+Compiled jquery-ui.min.js  (0ms)  (pid 25442)
+Compiled jquery.min.js  (0ms)  (pid 25442)
+
+
+Started GET "/" for 188.123.222.205 at 2013-03-08 09:04:50 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (110.6ms)
+Completed 500 Internal Server Error in 155ms
+
+ActionView::Template::Error (jquery.scrollto isn't precompiled):
+    7: 	<title>Gold Price & News</title>    
+    8: 	<%= stylesheet_link_tag "style.css" %>
+    9: 	<%= javascript_include_tag "jquery" %>
+    10: 	<%= javascript_include_tag "jquery.scrollto" %>
+    11: 	<%= javascript_include_tag "script" %>
+    12: 	<%= csrf_meta_tags %>
+    13: 	<script type="text/javascript">
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__812149474802980843_15449880'
+
+
+
+Started GET "/favicon.ico" for 188.123.222.205 at 2013-03-08 09:04:50 -0500
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+
+
+
+Started GET "/" for 188.123.222.205 at 2013-03-08 09:05:52 -0500
+  Processing by TopicsController#list as HTML
+Rendered topics/list.html.erb within layouts/application (118.9ms)
+Completed 200 OK in 163ms (Views: 125.0ms | ActiveRecord: 37.3ms)
+
+
+Started GET "/assets/style-86ebd2e44436e7aa30aaea5e54d0fb90.css" for 188.123.222.205 at 2013-03-08 09:05:53 -0500
+Served asset /style-86ebd2e44436e7aa30aaea5e54d0fb90.css - 200 OK (2ms)
+
+
+Started GET "/assets/script-a5d19ea08c1cbb8653ff0f1f3c606c7e.js" for 188.123.222.205 at 2013-03-08 09:05:53 -0500
+Served asset /script-a5d19ea08c1cbb8653ff0f1f3c606c7e.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery-3cc750116fb43f98acbf123dbce1ebc1.js" for 188.123.222.205 at 2013-03-08 09:05:53 -0500
+Served asset /jquery-3cc750116fb43f98acbf123dbce1ebc1.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.scrollto-94723a635ccb24a756b23d487f76efe5.js" for 188.123.222.205 at 2013-03-08 09:05:53 -0500
+Served asset /jquery.scrollto-94723a635ccb24a756b23d487f76efe5.js - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery.scrollto-94723a635ccb24a756b23d487f76efe5.js"):
+  
+
+
+
+Started GET "/assets/bg.png" for 188.123.222.205 at 2013-03-08 09:05:53 -0500
+Served asset /bg.png - 200 OK (1ms)
+
+
+Started GET "/assets/logo.gif" for 188.123.222.205 at 2013-03-08 09:05:53 -0500
+Served asset /logo.gif - 200 OK (1ms)
+
+
+Started GET "/assets/button/login.png" for 188.123.222.205 at 2013-03-08 09:05:53 -0500
+Served asset /button/login.png - 200 OK (1ms)
+
+
+Started GET "/assets/box_white-top-left.png" for 188.123.222.205 at 2013-03-08 09:05:53 -0500
+Served asset /box_white-top-left.png - 200 OK (1ms)
+
+
+Started GET "/assets/box_white-top-right.png" for 188.123.222.205 at 2013-03-08 09:05:53 -0500
+Served asset /box_white-top-right.png - 200 OK (1ms)
+
+
+Started GET "/assets/box_white-top.png" for 188.123.222.205 at 2013-03-08 09:05:53 -0500
+Served asset /box_white-top.png - 200 OK (1ms)
+
+
+Started GET "/assets/box-white-middle-right.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /box-white-middle-right.png - 200 OK (1ms)
+
+
+Started GET "/assets/header.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /header.png - 200 OK (1ms)
+
+
+Started GET "/assets/box-white-middle-left.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /box-white-middle-left.png - 200 OK (1ms)
+
+
+Started GET "/assets/search/search.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /search/search.png - 200 OK (1ms)
+
+
+Started GET "/assets/button/search.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /button/search.png - 200 OK (1ms)
+
+
+Started GET "/assets/search/separator.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /search/separator.png - 200 OK (1ms)
+
+
+Started GET "/assets/button/order.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /button/order.png - 200 OK (1ms)
+
+
+Started GET "/assets/header_right.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /header_right.png - 200 OK (1ms)
+
+
+Started GET "/assets/button/add_thread.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /button/add_thread.png - 200 OK (1ms)
+
+
+Started GET "/assets/button/vote.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /button/vote.png - 200 OK (1ms)
+
+
+Started GET "/assets/footer.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /footer.png - 200 OK (1ms)
+
+
+Started GET "/assets/button/discuss.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /button/discuss.png - 200 OK (1ms)
+
+
+Started GET "/assets/button/page.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /button/page.png - 200 OK (1ms)
+
+
+Started GET "/assets/button/prev.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /button/prev.png - 200 OK (1ms)
+
+
+Started GET "/assets/box_white-bottom-left.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /box_white-bottom-left.png - 200 OK (1ms)
+
+
+Started GET "/assets/footer_right.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /footer_right.png - 200 OK (1ms)
+
+
+Started GET "/assets/box_white-bottom-right.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /box_white-bottom-right.png - 200 OK (1ms)
+
+
+Started GET "/assets/box_white-bottom.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /box_white-bottom.png - 200 OK (1ms)
+
+
+Started GET "/assets/foot_bg.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /foot_bg.png - 200 OK (1ms)
+
+
+Started GET "/assets/footer_gold.png" for 188.123.222.205 at 2013-03-08 09:05:54 -0500
+Served asset /footer_gold.png - 200 OK (1ms)
+
+
+Started GET "/assets/footer_logo.png" for 188.123.222.205 at 2013-03-08 09:05:55 -0500
+Served asset /footer_logo.png - 200 OK (1ms)
+
+
+Started GET "/assets/popup-bottom.png" for 188.123.222.205 at 2013-03-08 09:05:55 -0500
+Served asset /popup-bottom.png - 200 OK (1ms)
+
+
+Started GET "/robots.txt" for 66.249.75.74 at 2013-03-08 09:05:55 -0500
+
+ActionController::RoutingError (No route matches [GET] "/robots.txt"):
+  
+
+
+
+Started GET "/robots.txt" for 66.249.75.74 at 2013-03-08 09:05:55 -0500
+
+ActionController::RoutingError (No route matches [GET] "/robots.txt"):
+  
+
+
+
+Started GET "/" for 66.249.75.74 at 2013-03-08 09:05:55 -0500
+  Processing by TopicsController#list as */*
+Rendered topics/list.html.erb within layouts/application (75.9ms)
+Completed 200 OK in 90ms (Views: 62.8ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/?_=1362751583190" for 188.123.222.205 at 2013-03-08 09:05:55 -0500
+  Processing by TopicsController#list as TEXT
+  Parameters: {"_"=>"1362751583190"}
+Rendered topics/list.html.erb (75.6ms)
+Completed 200 OK in 86ms (Views: 60.9ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/topics/get_header?_=1362751583543" for 188.123.222.205 at 2013-03-08 09:05:55 -0500
+  Processing by TopicsController#get_header as TEXT
+  Parameters: {"_"=>"1362751583543"}
+Rendered topics/get_header.html.erb (2.2ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 2.0ms)
+Compiled admin.js  (30ms)  (pid 9893)
+Compiled application.js  (2ms)  (pid 9893)
+Compiled jquery.js  (0ms)  (pid 9893)
+Compiled jquery_ujs.js  (0ms)  (pid 9893)
+Compiled comments.js  (0ms)  (pid 9893)
+Compiled jquery.scrollto.js  (0ms)  (pid 9893)
+Compiled script.js  (0ms)  (pid 9893)
+Compiled topic.js  (0ms)  (pid 9893)
+Compiled topics.js  (0ms)  (pid 9893)
+Compiled user.js  (0ms)  (pid 9893)
+Compiled admin.css  (1ms)  (pid 9893)
+Compiled style.css  (0ms)  (pid 9893)
+Compiled jquery-ui.js  (14ms)  (pid 9893)
+Compiled jquery-ui.min.js  (0ms)  (pid 9893)
+Compiled jquery.min.js  (0ms)  (pid 9893)
+Compiled admin.js  (30ms)  (pid 9886)
+Compiled application.js  (2ms)  (pid 9886)
+Compiled jquery.js  (10ms)  (pid 9886)
+Compiled jquery_ujs.js  (0ms)  (pid 9886)
+Compiled comments.js  (0ms)  (pid 9886)
+Compiled jquery.scrollto.js  (0ms)  (pid 9886)
+Compiled script.js  (0ms)  (pid 9886)
+Compiled topic.js  (0ms)  (pid 9886)
+Compiled topics.js  (0ms)  (pid 9886)
+Compiled user.js  (0ms)  (pid 9886)
+Compiled admin.css  (1ms)  (pid 9886)
+Compiled style.css  (0ms)  (pid 9886)
+Compiled jquery-ui.js  (1ms)  (pid 9886)
+Compiled jquery-ui.min.js  (0ms)  (pid 9886)
+Compiled jquery.min.js  (0ms)  (pid 9886)
+Compiled admin.js  (31ms)  (pid 10795)
+Compiled application.js  (2ms)  (pid 10795)
+Compiled jquery.js  (0ms)  (pid 10795)
+Compiled jquery_ujs.js  (0ms)  (pid 10795)
+Compiled comments.js  (0ms)  (pid 10795)
+Compiled jquery.scrollto.js  (0ms)  (pid 10795)
+Compiled script.js  (0ms)  (pid 10795)
+Compiled topic.js  (0ms)  (pid 10795)
+Compiled topics.js  (0ms)  (pid 10795)
+Compiled user.js  (0ms)  (pid 10795)
+Compiled admin.css  (1ms)  (pid 10795)
+Compiled style.css  (0ms)  (pid 10795)
+Compiled jquery-ui.js  (15ms)  (pid 10795)
+Compiled jquery-ui.min.js  (0ms)  (pid 10795)
+Compiled jquery.min.js  (0ms)  (pid 10795)
+Compiled admin.js  (30ms)  (pid 10790)
+Compiled application.js  (2ms)  (pid 10790)
+Compiled jquery.js  (10ms)  (pid 10790)
+Compiled jquery_ujs.js  (0ms)  (pid 10790)
+Compiled comments.js  (0ms)  (pid 10790)
+Compiled jquery.scrollto.js  (0ms)  (pid 10790)
+Compiled script.js  (0ms)  (pid 10790)
+Compiled topic.js  (0ms)  (pid 10790)
+Compiled topics.js  (0ms)  (pid 10790)
+Compiled user.js  (0ms)  (pid 10790)
+Compiled admin.css  (1ms)  (pid 10790)
+Compiled style.css  (0ms)  (pid 10790)
+Compiled jquery-ui.js  (1ms)  (pid 10790)
+Compiled jquery-ui.min.js  (0ms)  (pid 10790)
+Compiled jquery.min.js  (0ms)  (pid 10790)
+Compiled admin.js  (31ms)  (pid 11696)
+Compiled application.js  (2ms)  (pid 11696)
+Compiled jquery.js  (0ms)  (pid 11696)
+Compiled jquery_ujs.js  (0ms)  (pid 11696)
+Compiled comments.js  (0ms)  (pid 11696)
+Compiled jquery.scrollto.js  (0ms)  (pid 11696)
+Compiled script.js  (0ms)  (pid 11696)
+Compiled topic.js  (0ms)  (pid 11696)
+Compiled topics.js  (0ms)  (pid 11696)
+Compiled user.js  (0ms)  (pid 11696)
+Compiled admin.css  (1ms)  (pid 11696)
+Compiled style.css  (0ms)  (pid 11696)
+Compiled jquery-ui.js  (14ms)  (pid 11696)
+Compiled jquery-ui.min.js  (0ms)  (pid 11696)
+Compiled jquery.min.js  (0ms)  (pid 11696)
+Compiled admin.js  (30ms)  (pid 11691)
+Compiled application.js  (2ms)  (pid 11691)
+Compiled jquery.js  (10ms)  (pid 11691)
+Compiled jquery_ujs.js  (0ms)  (pid 11691)
+Compiled comments.js  (0ms)  (pid 11691)
+Compiled jquery.scrollto.js  (0ms)  (pid 11691)
+Compiled script.js  (0ms)  (pid 11691)
+Compiled topic.js  (0ms)  (pid 11691)
+Compiled topics.js  (0ms)  (pid 11691)
+Compiled user.js  (0ms)  (pid 11691)
+Compiled admin.css  (1ms)  (pid 11691)
+Compiled style.css  (0ms)  (pid 11691)
+Compiled jquery-ui.js  (1ms)  (pid 11691)
+Compiled jquery-ui.min.js  (0ms)  (pid 11691)
+Compiled jquery.min.js  (0ms)  (pid 11691)
+Compiled admin.js  (31ms)  (pid 12087)
+Compiled application.js  (2ms)  (pid 12087)
+Compiled jquery.js  (0ms)  (pid 12087)
+Compiled jquery_ujs.js  (0ms)  (pid 12087)
+Compiled comments.js  (0ms)  (pid 12087)
+Compiled jquery.scrollto.js  (0ms)  (pid 12087)
+Compiled script.js  (0ms)  (pid 12087)
+Compiled topic.js  (0ms)  (pid 12087)
+Compiled topics.js  (0ms)  (pid 12087)
+Compiled user.js  (0ms)  (pid 12087)
+Compiled admin.css  (1ms)  (pid 12087)
+Compiled style.css  (0ms)  (pid 12087)
+Compiled jquery-ui.js  (15ms)  (pid 12087)
+Compiled jquery-ui.min.js  (0ms)  (pid 12087)
+Compiled jquery.min.js  (0ms)  (pid 12087)
+Compiled admin.js  (30ms)  (pid 12081)
+Compiled application.js  (2ms)  (pid 12081)
+Compiled jquery.js  (10ms)  (pid 12081)
+Compiled jquery_ujs.js  (0ms)  (pid 12081)
+Compiled comments.js  (0ms)  (pid 12081)
+Compiled jquery.scrollto.js  (0ms)  (pid 12081)
+Compiled script.js  (0ms)  (pid 12081)
+Compiled topic.js  (0ms)  (pid 12081)
+Compiled topics.js  (0ms)  (pid 12081)
+Compiled user.js  (0ms)  (pid 12081)
+Compiled admin.css  (1ms)  (pid 12081)
+Compiled style.css  (0ms)  (pid 12081)
+Compiled jquery-ui.js  (1ms)  (pid 12081)
+Compiled jquery-ui.min.js  (0ms)  (pid 12081)
+Compiled jquery.min.js  (0ms)  (pid 12081)
+Compiled admin.js  (30ms)  (pid 12302)
+Compiled application.js  (2ms)  (pid 12302)
+Compiled jquery.js  (0ms)  (pid 12302)
+Compiled jquery_ujs.js  (0ms)  (pid 12302)
+Compiled comments.js  (0ms)  (pid 12302)
+Compiled jquery.scrollto.js  (0ms)  (pid 12302)
+Compiled script.js  (0ms)  (pid 12302)
+Compiled topic.js  (0ms)  (pid 12302)
+Compiled topics.js  (0ms)  (pid 12302)
+Compiled user.js  (0ms)  (pid 12302)
+Compiled admin.css  (1ms)  (pid 12302)
+Compiled style.css  (0ms)  (pid 12302)
+Compiled jquery-ui.js  (14ms)  (pid 12302)
+Compiled jquery-ui.min.js  (0ms)  (pid 12302)
+Compiled jquery.min.js  (0ms)  (pid 12302)
+Compiled admin.js  (30ms)  (pid 12296)
+Compiled application.js  (2ms)  (pid 12296)
+Compiled jquery.js  (10ms)  (pid 12296)
+Compiled jquery_ujs.js  (0ms)  (pid 12296)
+Compiled comments.js  (0ms)  (pid 12296)
+Compiled jquery.scrollto.js  (0ms)  (pid 12296)
+Compiled script.js  (0ms)  (pid 12296)
+Compiled topic.js  (0ms)  (pid 12296)
+Compiled topics.js  (0ms)  (pid 12296)
+Compiled user.js  (0ms)  (pid 12296)
+Compiled admin.css  (1ms)  (pid 12296)
+Compiled style.css  (0ms)  (pid 12296)
+Compiled jquery-ui.js  (1ms)  (pid 12296)
+Compiled jquery-ui.min.js  (0ms)  (pid 12296)
+Compiled jquery.min.js  (0ms)  (pid 12296)
+Compiled admin.js  (30ms)  (pid 6234)
+Compiled application.js  (2ms)  (pid 6234)
+Compiled jquery.js  (0ms)  (pid 6234)
+Compiled jquery_ujs.js  (0ms)  (pid 6234)
+Compiled comments.js  (0ms)  (pid 6234)
+Compiled jquery.scrollto.js  (0ms)  (pid 6234)
+Compiled script.js  (0ms)  (pid 6234)
+Compiled topic.js  (0ms)  (pid 6234)
+Compiled topics.js  (0ms)  (pid 6234)
+Compiled user.js  (0ms)  (pid 6234)
+Compiled admin.css  (1ms)  (pid 6234)
+Compiled style.css  (0ms)  (pid 6234)
+Compiled jquery-ui.js  (15ms)  (pid 6234)
+Compiled jquery-ui.min.js  (0ms)  (pid 6234)
+Compiled jquery.min.js  (0ms)  (pid 6234)
+Compiled admin.js  (31ms)  (pid 6229)
+Compiled application.js  (2ms)  (pid 6229)
+Compiled jquery.js  (10ms)  (pid 6229)
+Compiled jquery_ujs.js  (0ms)  (pid 6229)
+Compiled comments.js  (0ms)  (pid 6229)
+Compiled jquery.scrollto.js  (0ms)  (pid 6229)
+Compiled script.js  (0ms)  (pid 6229)
+Compiled topic.js  (0ms)  (pid 6229)
+Compiled topics.js  (0ms)  (pid 6229)
+Compiled user.js  (0ms)  (pid 6229)
+Compiled admin.css  (1ms)  (pid 6229)
+Compiled style.css  (0ms)  (pid 6229)
+Compiled jquery-ui.js  (1ms)  (pid 6229)
+Compiled jquery-ui.min.js  (0ms)  (pid 6229)
+Compiled jquery.min.js  (0ms)  (pid 6229)
+Compiled admin.js  (30ms)  (pid 7888)
+Compiled application.js  (2ms)  (pid 7888)
+Compiled jquery.js  (0ms)  (pid 7888)
+Compiled jquery_ujs.js  (0ms)  (pid 7888)
+Compiled comments.js  (0ms)  (pid 7888)
+Compiled jquery.scrollto.js  (0ms)  (pid 7888)
+Compiled script.js  (0ms)  (pid 7888)
+Compiled topic.js  (0ms)  (pid 7888)
+Compiled topics.js  (0ms)  (pid 7888)
+Compiled user.js  (0ms)  (pid 7888)
+Compiled admin.css  (1ms)  (pid 7888)
+Compiled style.css  (0ms)  (pid 7888)
+Compiled jquery-ui.js  (15ms)  (pid 7888)
+Compiled jquery-ui.min.js  (0ms)  (pid 7888)
+Compiled jquery.min.js  (0ms)  (pid 7888)
+Compiled admin.js  (31ms)  (pid 7882)
+Compiled application.js  (2ms)  (pid 7882)
+Compiled jquery.js  (10ms)  (pid 7882)
+Compiled jquery_ujs.js  (0ms)  (pid 7882)
+Compiled comments.js  (0ms)  (pid 7882)
+Compiled jquery.scrollto.js  (0ms)  (pid 7882)
+Compiled script.js  (0ms)  (pid 7882)
+Compiled topic.js  (0ms)  (pid 7882)
+Compiled topics.js  (0ms)  (pid 7882)
+Compiled user.js  (0ms)  (pid 7882)
+Compiled admin.css  (1ms)  (pid 7882)
+Compiled style.css  (0ms)  (pid 7882)
+Compiled jquery-ui.js  (1ms)  (pid 7882)
+Compiled jquery-ui.min.js  (0ms)  (pid 7882)
+Compiled jquery.min.js  (0ms)  (pid 7882)
+Compiled admin.js  (31ms)  (pid 8393)
+Compiled application.js  (2ms)  (pid 8393)
+Compiled jquery.js  (0ms)  (pid 8393)
+Compiled jquery_ujs.js  (0ms)  (pid 8393)
+Compiled comments.js  (0ms)  (pid 8393)
+Compiled jquery.scrollto.js  (0ms)  (pid 8393)
+Compiled script.js  (0ms)  (pid 8393)
+Compiled topic.js  (0ms)  (pid 8393)
+Compiled topics.js  (0ms)  (pid 8393)
+Compiled user.js  (0ms)  (pid 8393)
+Compiled admin.css  (1ms)  (pid 8393)
+Compiled style.css  (0ms)  (pid 8393)
+Compiled jquery-ui.js  (15ms)  (pid 8393)
+Compiled jquery-ui.min.js  (0ms)  (pid 8393)
+Compiled jquery.min.js  (0ms)  (pid 8393)
+Compiled admin.js  (31ms)  (pid 8387)
+Compiled application.js  (2ms)  (pid 8387)
+Compiled jquery.js  (10ms)  (pid 8387)
+Compiled jquery_ujs.js  (0ms)  (pid 8387)
+Compiled comments.js  (0ms)  (pid 8387)
+Compiled jquery.scrollto.js  (0ms)  (pid 8387)
+Compiled script.js  (0ms)  (pid 8387)
+Compiled topic.js  (0ms)  (pid 8387)
+Compiled topics.js  (0ms)  (pid 8387)
+Compiled user.js  (0ms)  (pid 8387)
+Compiled admin.css  (1ms)  (pid 8387)
+Compiled style.css  (0ms)  (pid 8387)
+Compiled jquery-ui.js  (1ms)  (pid 8387)
+Compiled jquery-ui.min.js  (0ms)  (pid 8387)
+Compiled jquery.min.js  (0ms)  (pid 8387)
+Compiled admin.js  (30ms)  (pid 8793)
+Compiled application.js  (2ms)  (pid 8793)
+Compiled jquery.js  (0ms)  (pid 8793)
+Compiled jquery_ujs.js  (0ms)  (pid 8793)
+Compiled comments.js  (0ms)  (pid 8793)
+Compiled jquery.scrollto.js  (0ms)  (pid 8793)
+Compiled script.js  (0ms)  (pid 8793)
+Compiled topic.js  (0ms)  (pid 8793)
+Compiled topics.js  (0ms)  (pid 8793)
+Compiled user.js  (0ms)  (pid 8793)
+Compiled admin.css  (1ms)  (pid 8793)
+Compiled style.css  (0ms)  (pid 8793)
+Compiled jquery-ui.js  (15ms)  (pid 8793)
+Compiled jquery-ui.min.js  (0ms)  (pid 8793)
+Compiled jquery.min.js  (0ms)  (pid 8793)
+Compiled admin.js  (30ms)  (pid 8744)
+Compiled application.js  (2ms)  (pid 8744)
+Compiled jquery.js  (10ms)  (pid 8744)
+Compiled jquery_ujs.js  (0ms)  (pid 8744)
+Compiled comments.js  (0ms)  (pid 8744)
+Compiled jquery.scrollto.js  (0ms)  (pid 8744)
+Compiled script.js  (0ms)  (pid 8744)
+Compiled topic.js  (0ms)  (pid 8744)
+Compiled topics.js  (0ms)  (pid 8744)
+Compiled user.js  (0ms)  (pid 8744)
+Compiled admin.css  (1ms)  (pid 8744)
+Compiled style.css  (0ms)  (pid 8744)
+Compiled jquery-ui.js  (1ms)  (pid 8744)
+Compiled jquery-ui.min.js  (0ms)  (pid 8744)
+Compiled jquery.min.js  (0ms)  (pid 8744)
+Compiled admin.js  (30ms)  (pid 19275)
+Compiled application.js  (2ms)  (pid 19275)
+Compiled jquery.js  (0ms)  (pid 19275)
+Compiled jquery_ujs.js  (0ms)  (pid 19275)
+Compiled comments.js  (0ms)  (pid 19275)
+Compiled jquery.scrollto.js  (0ms)  (pid 19275)
+Compiled script.js  (0ms)  (pid 19275)
+Compiled topic.js  (0ms)  (pid 19275)
+Compiled topics.js  (0ms)  (pid 19275)
+Compiled user.js  (0ms)  (pid 19275)
+Compiled admin.css  (1ms)  (pid 19275)
+Compiled style.css  (0ms)  (pid 19275)
+Compiled jquery-ui.js  (14ms)  (pid 19275)
+Compiled jquery-ui.min.js  (0ms)  (pid 19275)
+Compiled jquery.min.js  (0ms)  (pid 19275)
+Compiled admin.js  (31ms)  (pid 19269)
+Compiled application.js  (2ms)  (pid 19269)
+Compiled jquery.js  (10ms)  (pid 19269)
+Compiled jquery_ujs.js  (0ms)  (pid 19269)
+Compiled comments.js  (0ms)  (pid 19269)
+Compiled jquery.scrollto.js  (0ms)  (pid 19269)
+Compiled script.js  (0ms)  (pid 19269)
+Compiled topic.js  (0ms)  (pid 19269)
+Compiled topics.js  (0ms)  (pid 19269)
+Compiled user.js  (0ms)  (pid 19269)
+Compiled admin.css  (1ms)  (pid 19269)
+Compiled style.css  (0ms)  (pid 19269)
+Compiled jquery-ui.js  (1ms)  (pid 19269)
+Compiled jquery-ui.min.js  (0ms)  (pid 19269)
+Compiled jquery.min.js  (0ms)  (pid 19269)
+Compiled admin.js  (30ms)  (pid 31991)
+Compiled application.js  (2ms)  (pid 31991)
+Compiled jquery.js  (0ms)  (pid 31991)
+Compiled jquery_ujs.js  (0ms)  (pid 31991)
+Compiled comments.js  (0ms)  (pid 31991)
+Compiled jquery.scrollto.js  (0ms)  (pid 31991)
+Compiled script.js  (0ms)  (pid 31991)
+Compiled topic.js  (0ms)  (pid 31991)
+Compiled topics.js  (0ms)  (pid 31991)
+Compiled user.js  (0ms)  (pid 31991)
+Compiled admin.css  (1ms)  (pid 31991)
+Compiled style.css  (0ms)  (pid 31991)
+Compiled jquery-ui.js  (15ms)  (pid 31991)
+Compiled jquery-ui.min.js  (0ms)  (pid 31991)
+Compiled jquery.min.js  (0ms)  (pid 31991)
+Compiled admin.js  (30ms)  (pid 31986)
+Compiled application.js  (2ms)  (pid 31986)
+Compiled jquery.js  (10ms)  (pid 31986)
+Compiled jquery_ujs.js  (0ms)  (pid 31986)
+Compiled comments.js  (0ms)  (pid 31986)
+Compiled jquery.scrollto.js  (0ms)  (pid 31986)
+Compiled script.js  (0ms)  (pid 31986)
+Compiled topic.js  (0ms)  (pid 31986)
+Compiled topics.js  (0ms)  (pid 31986)
+Compiled user.js  (0ms)  (pid 31986)
+Compiled admin.css  (1ms)  (pid 31986)
+Compiled style.css  (0ms)  (pid 31986)
+Compiled jquery-ui.js  (1ms)  (pid 31986)
+Compiled jquery-ui.min.js  (0ms)  (pid 31986)
+Compiled jquery.min.js  (0ms)  (pid 31986)
+Compiled admin.js  (31ms)  (pid 29012)
+Compiled application.js  (2ms)  (pid 29012)
+Compiled jquery.js  (0ms)  (pid 29012)
+Compiled jquery_ujs.js  (0ms)  (pid 29012)
+Compiled comments.js  (0ms)  (pid 29012)
+Compiled jquery.scrollto.js  (0ms)  (pid 29012)
+Compiled script.js  (0ms)  (pid 29012)
+Compiled topic.js  (0ms)  (pid 29012)
+Compiled topics.js  (0ms)  (pid 29012)
+Compiled user.js  (0ms)  (pid 29012)
+Compiled admin.css  (1ms)  (pid 29012)
+Compiled style.css  (0ms)  (pid 29012)
+Compiled jquery-ui.js  (15ms)  (pid 29012)
+Compiled jquery-ui.min.js  (0ms)  (pid 29012)
+Compiled jquery.min.js  (0ms)  (pid 29012)
+Compiled admin.js  (30ms)  (pid 29006)
+Compiled application.js  (2ms)  (pid 29006)
+Compiled jquery.js  (10ms)  (pid 29006)
+Compiled jquery_ujs.js  (0ms)  (pid 29006)
+Compiled comments.js  (0ms)  (pid 29006)
+Compiled jquery.scrollto.js  (0ms)  (pid 29006)
+Compiled script.js  (0ms)  (pid 29006)
+Compiled topic.js  (0ms)  (pid 29006)
+Compiled topics.js  (0ms)  (pid 29006)
+Compiled user.js  (0ms)  (pid 29006)
+Compiled admin.css  (1ms)  (pid 29006)
+Compiled style.css  (0ms)  (pid 29006)
+Compiled jquery-ui.js  (1ms)  (pid 29006)
+Compiled jquery-ui.min.js  (0ms)  (pid 29006)
+Compiled jquery.min.js  (0ms)  (pid 29006)
