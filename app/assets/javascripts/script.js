@@ -65,6 +65,7 @@ ajax_request = function (event)
 				else if( params.url != '/topics/get_header' && $(container).attr('id') == 'content' ) {
 
 					if( typeof(window.history.pushState) != "undefined" && $(self).hasClass('no_history') == false ) {
+
 						window.history.pushState(
 							{ page: $('title').text() },
 							$('title').text(),
@@ -164,6 +165,13 @@ function header() {
 }
 
 $(function(event) {
+
+	$('span.go_back').live('click', function(event){
+		if( typeof event != 'undefined' ) {
+			event.preventDefault();
+		}
+		window.history.back();
+	});
 	
 	$('div.navigation a.ajax_request[rel="content"], table.topics span.topic a').live('click',function(){$.scrollTo(0,$('#content'));});
 	

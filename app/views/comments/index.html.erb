@@ -12,7 +12,7 @@
 
 				<div class="header">
 					<div class="vote">
-						<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic.id}, :class=>"ajax_request" %></span>
+						<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic.id}, :class=>"ajax_request no_history" %></span>
 						vote
 					</div>
 
@@ -36,7 +36,7 @@
 						<div class="in">
 							<div class="in">
 								
-								<span class="go_back"><%= link_to "go back", {:controller=>'topics',:action=>'list'}, :class=>"ajax_request" %></span>
+								<span class="go_back"><%= link_to "go back", {:controller=>'topics',:action=>'list'} %></span>
 							</div>
 						</div>
 					</div>
@@ -66,7 +66,7 @@
 
 								<p>Your comment:</p>
 
-								<%=form_for(:comment, :url=>{:action => 'create',:topic_id=>topic.id,:reply=>'false'}, :html => {:class=>"ajax_request"}) do |f| %>
+								<%=form_for(:comment, :url=>{:action => 'create',:topic_id=>topic.id,:reply=>'false'}, :html => {:class=>"ajax_request no_history"}) do |f| %>
 
 								<%= f.text_area :comment %>
 
