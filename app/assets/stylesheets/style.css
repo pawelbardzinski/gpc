@@ -116,7 +116,11 @@ div.head div.logo {
 	float: left;
 	width: 262px;
 	height: 88px;
-	background: url(logo.gif) no-repeat;
+/*	background: url(logo.gif) no-repeat;*/
+}
+
+div.head a {
+	display: block;
 }
 
 div.head div.info {
