@@ -188,9 +188,22 @@ div.foot div.in {
 
 div.foot div.logo {
 	float: left;
-	width: 239px;
+	width: 70px;
 	height: 100%;
 	background: url(footer_logo.png) 0 40% no-repeat;
+}
+
+div.foot div.copyright {
+	color: #0a7d63;
+	font-size: 11px;
+	font-weight: bold;
+	float: left;
+	padding: 55px 0 0 0;
+}
+
+div.foot div.copyright p {
+	margin: 0;
+	padding: 0;
 }
 
 div.foot div.navigation {
