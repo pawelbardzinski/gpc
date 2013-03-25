@@ -12,8 +12,10 @@
 
 				<div class="header">
 					<div class="vote">
+						<% if( session[:user_id] != nil && session[:user_id] != topic.user_id && !(topic.upvoted_by.include? session[:login] if topic.upvoted_by != nil)) %>
 						<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic.id}, :class=>"ajax_request no_history" %></span>
 						vote
+						<% end %>
 					</div>
 
 					<div class="topic"><br>
@@ -44,7 +46,11 @@
 				<div class="comment">
 					<div class="left">
 					<% if topic.url != '' %>
-						<div class="snippet"><%= topic.snippet %></div><br>
+						<div class="snippet">
+							<% if defined? topic.snippet %>
+								<%= topic.snippet %>
+							<% end%>
+						</div><br>
 						<div class="source">Source:</div>
 						<div class="url_link"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
 					<% end %>
