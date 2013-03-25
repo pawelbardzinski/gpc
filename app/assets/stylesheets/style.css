@@ -188,9 +188,22 @@ div.foot div.in {
 
 div.foot div.logo {
 	float: left;
-	width: 239px;
+	width: 70px;
 	height: 100%;
 	background: url(footer_logo.png) 0 40% no-repeat;
+}
+
+div.foot div.copyright {
+	color: #0a7d63;
+	font-size: 11px;
+	font-weight: bold;
+	float: left;
+	padding: 55px 0 0 0;
+}
+
+div.foot div.copyright p {
+	margin: 0;
+	padding: 0;
 }
 
 div.foot div.navigation {
@@ -306,11 +319,13 @@ table.topics td.topic {
 }
 
 .topic span.topic,
-.topic span a {
+.topic span a,
+.topic h2 {
 	font-size: 17px;
 	color: #494a3a;
 	font-weight: bold;
 	text-decoration: none;
+	margin: 0;
 }
 
 .topic span a:hover {
@@ -318,10 +333,19 @@ table.topics td.topic {
 }
 
 table.topics td.comments_count {
-	width: 80px;
+	width: 90px;
 	text-align: right;
 	vertical-align: middle;
 	color: #9f9e8e;
+}
+
+table.topics td.comments_count a {
+	text-align: right;
+	color: #9f9e8e;
+	text-decoration: none;
+	vertical-align: middle;
+	padding-right: 6px;
+	display: block;
 }
 
 table.topics td.discuss {
@@ -1424,6 +1448,15 @@ div#dialog_content.login_content a.dialog_close {
 	left: 246px;
 }
 
+#dialog_shadow {
+	background: #000000 url(ajax-loader.gif) 50% 50% no-repeat;
+	display: none;
+	position: absolute;
+	top: 0;
+	z-index: 999;
+	border-radius: 7px;
+}
+
 div.notice {
 	position: absolute;
 	width: 586px;
@@ -1521,3 +1554,9 @@ div.reply div.gpu {
 	top: -7px;
 	left: 50%;
 }
+
+h1 {
+	text-indent: -3000px;
+	overflow: hidden;
+}
+

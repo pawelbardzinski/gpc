@@ -28,7 +28,7 @@ ajax_request = function (event)
 	if( typeof event != 'undefined' ) {
 		event.preventDefault();
 	}
-	
+
 	var self = this;
 
 	var params = {
@@ -60,6 +60,7 @@ ajax_request = function (event)
 				else if( result.indexOf('id="dialog_content"') > -1 ) {
 					$('#dialog > div:first').hide().replaceWith( result /*.content */ );
 					dialog_show();
+					$('#dialog_shadow').stop(true, false).animate({opacity: 0}, 500, function(){$('#dialog_shadow').css('display', 'none')});
 					return;
 				}
 				else if( params.url != '/topics/get_header' && $(container).attr('id') == 'content' ) {
@@ -81,6 +82,7 @@ ajax_request = function (event)
 		error: function(result, textStatus)
 		{
 			header();
+			$('#dialog_shadow').stop(true, false).animate({opacity: 0}, 500, function(){$('#dialog_shadow').css('display', 'none')});
 			if( textStatus == 'error' && result.status == 0 ) {
 				return;
 			}
@@ -111,6 +113,16 @@ ajax_request = function (event)
 				return false;
 			}
 	}
+
+	if( $(self).parents('#dialog').length > 0 ) {
+		
+		$('#dialog_shadow')
+			.css('width', $(self).parents('#dialog').width())
+			.css('height', $(self).parents('#dialog').height())
+			.css('display', 'block')
+			.css('opacity', 0)
+			.animate({opacity: 0.6}, 500);
+	}
 	
 	$.ajax(params);
 
@@ -139,6 +151,7 @@ function dialog_hide(event) {
 
 	$('#dialog').animate({opacity: 0}, 500, function(){$(this).css('display', 'none').css('opacity', 0)});
 	$('#dialog_overall').animate({opacity: 0}, 500, function(){$(this).css('display', 'none').css('opacity', 0)});
+	$('#dialog_shadow').stop(true, false).animate({opacity: 0}, 500, function(){$('#dialog_shadow').css('display', 'none')});
 }
 
 function dialog_show() {
@@ -146,6 +159,7 @@ function dialog_show() {
 		$('#dialog, #dialog_overall').css('display', 'block').css('opacity', 0);
 		$('#dialog_overall').animate({opacity: 0.7}, 500);
 		$('#dialog').animate({opacity: 1}, 500);
+		$('#dialog_shadow').stop(true, false).css('display', 'none');
 	}
 }
 

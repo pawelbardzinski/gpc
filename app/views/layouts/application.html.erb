@@ -59,7 +59,10 @@
 	</div>
 	<div class="wrap">
 		<div id="header" class="head" rel="header">
-			<div class="logo"><a href="/" title="live gold spot prices" rel="container" class="ajax_request"><img src="/assets/logo.gif" alt="live gold spot prices"/></a></div>
+			<div class="logo">
+				<a href="/" title="live gold spot prices" rel="container"><img src="/assets/logo.gif" alt="live gold spot prices"/></a>
+				<h1>Live gold spot prices</h1>
+			</div>
 			<div class="info">
 			<% if session[:login] != nil %>
 				<span class="points">
@@ -120,7 +123,11 @@
 	</div>
 	<div class="foot">
 		<div class="in">
-			<div class="logo">&nbsp;</div>
+			<div class="logo"></div>
+			<div class="copyright">
+				<p>Copyright &copy 2013 GoldPriceCafe.com</p>
+				<p>All rights reserved</p>
+			</div>
 			<div class="navigation">
 				<a href="/" class="news ajax_request" rel="content">News</a>
 				<a href="/topics/guidelines" class="news ajax_request" rel="content">Guidelines</a>
@@ -130,6 +137,9 @@
 		</div>
 	</div>
 	<div id="dialog_overall"></div>
-	<div id="dialog"><div id="dialog_content"></div></div>
+	<div id="dialog">
+		<div id="dialog_content"></div>
+		<div id="dialog_shadow"></div>
+	</div>
 </body>
 </html>
