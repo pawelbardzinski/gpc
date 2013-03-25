@@ -1435,6 +1435,15 @@ div#dialog_content.login_content a.dialog_close {
 	left: 246px;
 }
 
+#dialog_shadow {
+	background: #000000 url(ajax-loader.gif) 50% 50% no-repeat;
+	display: none;
+	position: absolute;
+	top: 0;
+	z-index: 999;
+	border-radius: 7px;
+}
+
 div.notice {
 	position: absolute;
 	width: 586px;
