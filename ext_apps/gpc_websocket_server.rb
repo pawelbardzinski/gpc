@@ -3,7 +3,7 @@ require 'em-websocket'
 EM.run {
   EM::WebSocket.run(:host => "localhost", :port => 8080) do |ws|
     mtime = prev_mtime = File.mtime("/tmp5/touch.txt") 
-    while (1) {
+    while (1) do
       mtime = File.mtime("/tmp5/touch.txt") 
       if mtime != prev_mtime
         prev_mtime = mtime
@@ -17,14 +17,14 @@ EM.run {
       # Publish message to the client
           ws.send data
         }
-      }
+      end
 
 #    ws.onclose { puts "Connection closed" }
 
 #    ws.onmessage { |msg|
 #      puts "Recieved message: #{msg}"
 #      ws.send "Pong: #{msg}"
-    }
+  end
     sleep 1
   end
 }
