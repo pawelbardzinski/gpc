@@ -320,10 +320,19 @@ table.topics td.topic {
 }
 
 table.topics td.comments_count {
-	width: 80px;
+	width: 90px;
 	text-align: right;
 	vertical-align: middle;
 	color: #9f9e8e;
+}
+
+table.topics td.comments_count a {
+	text-align: right;
+	color: #9f9e8e;
+	text-decoration: none;
+	vertical-align: middle;
+	padding-right: 6px;
+	display: block;
 }
 
 table.topics td.discuss {

@@ -110,13 +110,15 @@
 							<span class="by">by <%= User.where(:id => topic_user_id).first.login %></span>
 						</td>
 						<td class="comments_count">
-							<% cs = Comment.where(:topic_id=>topic_id).size %>
-							<%= cs %>
-							<% if cs <= 1 %>
-								comment&nbsp;
-							<% else %>
-								comments&nbsp;
-							<% end %>
+							<%
+								cs = Comment.where(:topic_id=>topic_id).size
+								if cs <= 1 
+									cs = cs.to_s.concat(" comment")
+								else
+									cs = cs.to_s.concat(" comments")
+								end
+							%>
+							<%= link_to cs, {:controller=>'comments',:action=>'index',:topic_id=>topic_id,:sort=>@sort_by}, :class => "discuss ajax_request" %>
 						</td>
 						<td class="discuss">
 							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic_id,:sort=>@sort_by}, :class => "discuss ajax_request" %></span>
