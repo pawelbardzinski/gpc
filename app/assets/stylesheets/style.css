@@ -306,11 +306,13 @@ table.topics td.topic {
 }
 
 .topic span.topic,
-.topic span a {
+.topic span a,
+.topic h2 {
 	font-size: 17px;
 	color: #494a3a;
 	font-weight: bold;
 	text-decoration: none;
+	margin: 0;
 }
 
 .topic span a:hover {
@@ -1521,3 +1523,9 @@ div.reply div.gpu {
 	top: -7px;
 	left: 50%;
 }
+
+h1 {
+	text-indent: -3000px;
+	overflow: hidden;
+}
+
