@@ -18,7 +18,7 @@ class TopicsController < ApplicationController
           @topics = ActiveRecord::Base.connection.execute(sql).to_a 
           @topics.uniq!
         else
-          sql = 'select * from topics order by position DESC'
+          sql = 'select * from topics order by position ASC'
           @topics = ActiveRecord::Base.connection.execute(sql).to_a 
           @topics.uniq!
         end
@@ -38,9 +38,9 @@ class TopicsController < ApplicationController
           @topics.uniq!
         else
           # for perfomance issues check: http://stackoverflow.com/questions/7005302/postgresql-how-to-make-not-case-sensitive-queries
-          sql_search_in_subject = 'select * from topics where lower(subject) like lower(\''+search_string+'\') at time zone \'utc\' order by position DESC'
-          sql_search_in_text = 'select * from topics where lower(text) like lower(\''+search_string+'\') at time zone \'utc\' order by position DESC'
-          sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where lower(comment) like lower(\''+search_string+'\')) at time zone \'utc\' order by position DESC'
+          sql_search_in_subject = 'select * from topics where lower(subject) like lower(\''+search_string+'\') at time zone \'utc\' order by position ASC'
+          sql_search_in_text = 'select * from topics where lower(text) like lower(\''+search_string+'\') at time zone \'utc\' order by position ASC'
+          sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where lower(comment) like lower(\''+search_string+'\')) at time zone \'utc\' order by position ASC'
           @topics = ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_text).to_a + ActiveRecord::Base.connection.execute(sql_search_in_comments).to_a
           @topics.uniq!
         end
@@ -81,6 +81,15 @@ class TopicsController < ApplicationController
           return
         end
         flash[:notice] = "User #{new_user.login} created."
+        if params[:notice] == 'You need to be logged in to upvote.'
+          if params[:topic_id] != nil
+            redirect_to(:action=>:upvote,:id=>params[:topic_id])
+            return
+          else
+            redirect_to(:action=>:upvote,:id=>params[:id])
+            return
+          end
+        end        
         if params[:comment] != '' && params[:comment] != nil && params[:topic_id] != nil
           if params[:reply] == "false"
             redirect_to(:controller=>'comments',:action=>'create',:topic_id=>params[:topic_id],:comment=>params[:comment],:notice=>'Your comment has been published. User \''+new_user.login+'\' created successfuly.',:reply=>params[:reply])
@@ -130,9 +139,18 @@ class TopicsController < ApplicationController
     if (authorized_user)
       session[:user_id] = authorized_user.id
       session[:login] = authorized_user.login
-      if params[:topic] != nil
+      if params[:topic] != nil 
         redirect_to(:action=>'create',:topic=>params[:topic])
         return
+      end
+      if params[:notice] == 'You need to be logged in to upvote.'
+        if params[:topic_id] != nil
+          redirect_to(:action=>:upvote,:id=>params[:topic_id])
+          return
+        else
+          redirect_to(:action=>:upvote,:id=>params[:id])
+          return
+        end
       end
       flash[:notice] = "You are now logged in."
       if @topic_id == '' || @topic_id == nil 
@@ -165,21 +183,25 @@ class TopicsController < ApplicationController
   
   def upvote
     if session[:user_id] == nil    
-      redirect_to(:controller=>'topics',:action=>'login',:notice=>'You need to be logged in to upvote.')
+      redirect_to(:controller=>'topics',:action=>'login',:notice=>'You need to be logged in to upvote.', :topic_id=>params[:id])
       return
     end
-    @topic = Topic.find(params[:id])
+    if (params[:id] != nil)
+      @topic = Topic.find(params[:id])
+    else
+      @topic = Topic.find(params[:topic_id])
+    end
     if session[:user_id] == @topic.user_id
       redirect_to(:action=>'list',:notice=>'You can\'t upvote your own Posts.')
       return
     end
-    @topic.position = (@topic.points+1).to_f/(((Time.now.to_f+60000-@topic.created_at.strftime("%s").to_f)/1000))
+    @topic.position = ((@topic.points+1)/(Time.now - @topic.created_at))
     @topic.points = @topic.points+1
     @topic.upvoted_by = ' ' if @topic.upvoted_by == nil
     @topic.upvoted_by << session[:login].to_s+' '
     @topic.save
     User.upvote(@topic.user_id)    
-    @topics = Topic.order("topics.position DESC") 
+    @topics = Topic.order("topics.position ASC") 
     redirect_to(:action=>'list')
   end
   
@@ -252,7 +274,7 @@ class TopicsController < ApplicationController
         @topic.snippet = @topic.text.slice(0,600)
       end
       if @topic.save
-        @topic.position = (@topic.points+1).to_f/(((Time.now.to_f+60000-@topic.created_at.strftime("%s").to_f)/1000))
+        @topic.position = ((@topic.points+1)/(Time.now - @topic.created_at))
         @topic.points = @topic.points+1
         @topic.save       
         User.upvote(@topic.user_id)   

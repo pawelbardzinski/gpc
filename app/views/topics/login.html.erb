@@ -1,5 +1,5 @@
 <div id="dialog_content" class="login_content">
-
+	
 	<div class="header">
 		<p class="login">Login</p>
 		<p class="register">Create account</p>
@@ -11,9 +11,8 @@
 	</div>
 	<% end %>
 
-
 	<div class="login">
-		<%= form_tag({:controller=>'topics',:action => 'attempt_login',:topic_id=>params[:topic_id],:reply=>params[:reply]}, {:class => 'dialog', :rel=>'dialog_content'}) do %>
+		<%= form_tag({:controller=>'topics',:action => 'attempt_login', :topic_id=>params[:topic_id], :reply=>params[:reply], :notice=>params[:notice]}, {:class => 'dialog', :rel=>'dialog_content'}) do %>
 			<div><%= label_tag(:login) %> <%= text_field_tag(:login) %></div>
 			<div class="clear"><%= label_tag(:password) %> <%= password_field_tag(:password) %></div>
 		<%= submit_tag("login")%>
@@ -21,7 +20,7 @@
 	</div>
 
 	<div class="register">
-		<%= form_tag({:controller=>'topics',:action => 'create_account',:topic_id=>params[:topic_id],:comment=>params[:comment]}, {:class => 'dialog', :rel=>'dialog_content'}) do %>
+		<%= form_tag({:controller=>'topics',:action => 'create_account',:topic_id=>params[:topic_id],:comment=>params[:comment],:notice=>params[:notice]}, {:class => 'dialog', :rel=>'dialog_content'}) do %>
 			<div><%= label_tag(:login) %> <%= text_field_tag(:login) %></div>
 			<div><%= label_tag(:password) %> <%= password_field_tag(:password) %></div>
 		<%= submit_tag("create account")%>
