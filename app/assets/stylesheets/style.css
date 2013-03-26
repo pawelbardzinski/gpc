@@ -1392,6 +1392,14 @@ div#dialog div.form-buttons {
 	margin-top: 0px;
 }
 
+div#dialog .add_thread {
+	min-height: 400px;
+}
+
+div#dialog .add_thread textarea {
+	height: 304px;
+}
+
 div#dialog input[type="submit"],
 div#dialog a.dialog_close {
 	position: absolute;
