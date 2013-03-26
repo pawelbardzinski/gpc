@@ -150,6 +150,7 @@ div.head div.info span.points {
 }
 
 div.head div.navigation {
+	height: 38px;
 	clear: right;
 	float: right;
 	width: 70%;
@@ -1462,15 +1463,16 @@ div.notice {
 	width: 586px;
 	z-index: 999;
 	background: none;
-	background-color: #fad4d3;
-	border: solid 1px #e79796;
+	background-color: #00c393;
+	border: solid 1px #005f48;
 	border-radius: 4px;
 	height: 26px;
 	padding: 0 6px;
 	text-align: center;
 	margin: 10px 16px -38px 10px;
 /*	width: auto;*/
-	color: red;
+	color: #ffffff;
+	font-weight: bold;
 	line-height: 26px;
 }
 
