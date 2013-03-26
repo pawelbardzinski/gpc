@@ -872,6 +872,15 @@ div.comment div.right {
 	width: 62%;
 }
 
+div.comment div.full {
+	width: auto;
+	float: none;
+}
+
+div.comment div.full.left {
+	padding: 0 2% 0 2%;
+}
+
 div.comment div.text {
 	font-family: arial;
 	font-size: 12px;
@@ -933,6 +942,20 @@ div.box.green div.g {
 	min-height: inherit;
 	background: url(green-g.png) 0 50% no-repeat;
 }
+
+.full div.box.green {
+	margin-top: 10px;
+}
+
+.full div.box.green div.g {
+	background: url(gpu.png) 50% 0 no-repeat;
+	margin: -27px 0 27px 0;
+	float: none;
+	height: 11px;
+	min-height: 11px;
+	width: auto;
+}
+
 
 div.box.green div.content {
 	color: #f8f7f5;
