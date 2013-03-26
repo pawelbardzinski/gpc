@@ -9,6 +9,14 @@ window.onpopstate = function(event) {
 	content.url = document.location.toString();
 	content.ajax_request = ajax_request;
 	content.ajax_request();
+
+	try {
+ 		_gaq.push(['_trackPageview', document.location.pathname]);
+	}
+	catch(err)  {
+	}
+
+	
 };
 
 
@@ -66,6 +74,12 @@ ajax_request = function (event)
 				else if( params.url != '/topics/get_header' && $(container).attr('id') == 'content' ) {
 
 					if( typeof(window.history.pushState) != "undefined" && $(self).hasClass('no_history') == false ) {
+
+						try {
+					 		_gaq.push(['_trackPageview', document.location.pathname]);
+						}
+						catch(err)  {
+						}
 
 						window.history.pushState(
 							{ page: $('title').text() },
