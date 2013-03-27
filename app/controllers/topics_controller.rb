@@ -34,14 +34,16 @@ class TopicsController < ApplicationController
           sql_search_in_subject = 'select * from topics where lower(subject) like lower(\''+search_string+'\') order by created_at DESC' 
           sql_search_in_text = 'select * from topics where lower(text) like lower(\''+search_string+'\') order by created_at DESC'
           sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where lower(comment) like lower(\''+search_string+'\')) order by created_at DESC'
-          @topics = ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_text).to_a + ActiveRecord::Base.connection.execute(sql_search_in_comments).to_a
+          sql_search_in_snippets = 'select * from topics where lower(snippet) like lower(\''+search_string+'\') order by created_at DESC'
+          @topics = ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_text).to_a + ActiveRecord::Base.connection.execute(sql_search_in_comments).to_a
           @topics.uniq!
         else
           # for perfomance issues check: http://stackoverflow.com/questions/7005302/postgresql-how-to-make-not-case-sensitive-queries
           sql_search_in_subject = 'select * from topics where lower(subject) like lower(\''+search_string+'\') order by position ASC'
           sql_search_in_text = 'select * from topics where lower(text) like lower(\''+search_string+'\') order by position ASC'
           sql_search_in_comments = 'select * from topics where id in (select distinct topic_id from comments where lower(comment) like lower(\''+search_string+'\')) order by position ASC'
-          @topics = ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_text).to_a + ActiveRecord::Base.connection.execute(sql_search_in_comments).to_a
+          sql_search_in_snippets = 'select * from topics where lower(snippet) like lower(\''+search_string+'\') order by created_at ASC'
+          @topics = ActiveRecord::Base.connection.execute(sql_search_in_subject).to_a + ActiveRecord::Base.connection.execute(sql_search_in_snippets).to_a + ActiveRecord::Base.connection.execute(sql_search_in_text).to_a + ActiveRecord::Base.connection.execute(sql_search_in_comments).to_a
           @topics.uniq!
         end
         @next=params[:next].to_i+1
