@@ -133,7 +133,7 @@
 						<span class="by">by <%= User.find(comment.user_id).login %></span>
 
 						<% if session[:user_id] != nil && comment.user_id != session[:user_id] && !(comment.upvoted_by.include? session[:login] if comment.upvoted_by != nil) %>
-							<span class="vote"><%= link_to "upvote", {:action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!"}, :class=>"ajax_request", :rel=>"content" %></span>
+							<span class="vote"><%= link_to "upvote", {:action=>'upvote', :id=>comment.id, :notice=>"Comment upvoted!"}, :class=>"ajax_request no_history", :rel=>"content" %></span>
 						<% end %>
 						<span class="points">
 							<% cp=comment.points.to_i %>
@@ -146,14 +146,14 @@
 
 						<div class="actions">
 							<% if comment.user_id == session[:user_id] %>
-								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit ajax_request" %>
+								<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit ajax_request no_history" %>
 								<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete"%>
 								<div class="delete-box" style="display: none;">
 									<a href="/comments/destroy/<%= comment.id %>?topic_id=<%= params[:topic_id]%>" rel="content" class="yes no_history ajax_request">Yes</a>
 									<a href="#" class="no no_history">No</a>
 								</div>
 							<% end %>
-							<%= link_to "reply", {:action => "reply", :id => comment.id,}, :class => "reply ajax_request" %>
+							<%= link_to "reply", {:action => "reply", :id => comment.id,}, :class => "reply ajax_request no_history" %>
 						</div>
 						
 					</div></div></div>
