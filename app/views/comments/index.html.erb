@@ -55,14 +55,20 @@
 						<div class="url_link"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
 					<% end %>
 					<% if topic.text != '' %>
-						<div class="topic text">
 							<% if topic.text != nil %>
 								<% if topic.url != '' %>
 									Source:
 								<% end %>
 								<br>
+						<span class="topic_subject">
+							<%= word_wrap topic.subject %>
+						</span>
+						<span class="topic_by">
+							by <%= word_wrap User.where(:id => topic.user_id).first.login %>							
+						</span><br><br>
+						<span class="topic text">
 							<%= word_wrap topic.text %><% end %>
-						</div>
+						</span>
 					<% end %>
 					</div>
 

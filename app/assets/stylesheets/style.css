@@ -360,8 +360,25 @@ span.no {
 	font-size: 11px;
 }
 
+span.topic_subject {
+	display: block;
+	font-size: 30px;
+/*	font-family: 'Gilda Display', serif;*/
+	font-family: 'Playfair Display SC', serif;
+	font-style: italic;
+	color: black;
+}
+
+span.topic_by {
+	display: block;
+	font-size: 14px;
+	font-family: 'Gilda Display', serif;
+}
+
 span.topic {
 	display: block;
+	font-size: 18px;
+	font-family: 'Gilda Display', serif;
 }
 
 span.points {
