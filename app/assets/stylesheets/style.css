@@ -363,9 +363,7 @@ span.no {
 span.topic_subject {
 	display: block;
 	font-size: 30px;
-/*	font-family: 'Gilda Display', serif;*/
-	font-family: 'Playfair Display SC', serif;
-	font-style: italic;
+	font-family: 'Gilda Display', serif;
 	color: black;
 }
 
@@ -375,10 +373,14 @@ span.topic_by {
 	font-family: 'Gilda Display', serif;
 }
 
-span.topic {
+span.topic_text {
 	display: block;
 	font-size: 18px;
 	font-family: 'Gilda Display', serif;
+}
+
+span.topic {
+	display: block;
 }
 
 span.points {

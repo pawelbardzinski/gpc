@@ -66,7 +66,7 @@
 						<span class="topic_by">
 							by <%= word_wrap User.where(:id => topic.user_id).first.login %>							
 						</span><br><br>
-						<span class="topic text">
+						<span class="topic_text">
 							<%= word_wrap topic.text %><% end %>
 						</span>
 					<% end %>
