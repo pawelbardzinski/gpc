@@ -4,6 +4,8 @@
     <allow-access-from domain="*.goldpricecafe.com:8400" secure="false" />
     <allow-access-from domain="*.goldpricecafe.com" secure="false" />
 	<allow-access-from domain="*.google-analytics.com" secure="false" />
+	<allow-access-from domain="*.apliko.pl" secure="false" />
+	<allow-access-from domain="*.psse.sokolka.com" secure="false" />
 	<allow-access-from domain="*" secure="false" />
 </cross-domain-policy>
 
