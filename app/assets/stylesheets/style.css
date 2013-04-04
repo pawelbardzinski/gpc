@@ -45,6 +45,25 @@ h5 {
 	padding-bottom: 8px;
 }
 
+div.h1, h2 {
+	display: block;
+	font-weight: bold;
+	font-size: 19px;
+	font-family: Arial;
+	color: #494a3a;
+	display: block;
+	margin: 0;
+	padding: 8px 0 2px 12px;
+}
+
+.comments h2 {
+	font-size: 17px;
+	color: #494a3a;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 0;
+}
+
 .ab {
 	position: relative;
 	width: 100%;
@@ -321,7 +340,8 @@ table.topics td.topic {
 
 .topic span.topic,
 .topic span a,
-.topic h2 {
+.topic h3, 
+.topic h3 a {
 	font-size: 17px;
 	color: #494a3a;
 	font-weight: bold;
@@ -584,16 +604,6 @@ a.add_thread {
 
 a.add_thread:hover {
 	background-position: 0 -34px;
-}
-
-div.h1 {
-	font-weight: bold;
-	font-size: 19px;
-	font-family: Arial;
-	color: #494a3a;
-	display: block;
-	margin: 0;
-	padding: 8px 0 2px 12px;
 }
 
 div.search_string {
@@ -1614,8 +1624,15 @@ div.reply div.gpu {
 	left: 50%;
 }
 
+div.logo a {
+	text-decoration: none;
+}
+
 h1 {
-	text-indent: -3000px;
-	overflow: hidden;
+	font-size: 12px;
+	color: #6bbfa9;
+	margin-top: -2px;
+	text-decoration: none;
+	text-align: center;
 }
 
