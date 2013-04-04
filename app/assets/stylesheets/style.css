@@ -362,7 +362,7 @@ span.no {
 
 span.topic_subject {
 	display: block;
-	font-size: 30px;
+	font-size: 24px;
 	font-family: 'Gilda Display', serif;
 	color: black;
 }
@@ -375,7 +375,7 @@ span.topic_by {
 
 span.topic_text {
 	display: block;
-	font-size: 18px;
+	font-size: 16px;
 	font-family: 'Gilda Display', serif;
 }
 
