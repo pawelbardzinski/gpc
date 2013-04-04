@@ -98,6 +98,22 @@ class CommentsController < ApplicationController
     redirect_to(:action=>'index',:topic_id=>@comment.topic_id,:notice=>params[:notice])
   end
   
+  def upvote_topic
+    if session[:user_id] == nil    
+      redirect_to(:controller=>'topics',:action=>'login',:notice=>'You need to be logged in to upvote.')
+      return
+    end
+    @topic = Topic.find(params[:id])
+    @topic.position = ((@topic.points+1)/(Time.now - @topic.created_at))
+    @topic.points = @topic.points+1
+    @topic.upvoted_by = ' ' if @topic.upvoted_by == nil
+    @topic.upvoted_by << session[:login].to_s+' '
+    @topic.save
+    User.upvote(@topic.user_id)    
+    @topics = Topic.order("topics.position DESC") 
+    redirect_to(:action=>'index',:topic_id=>params[:id])
+  end
+  
   def reply
 
     @previous_comment = Comment.find(params[:id])

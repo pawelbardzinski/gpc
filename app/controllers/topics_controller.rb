@@ -206,7 +206,7 @@ class TopicsController < ApplicationController
     @topics = Topic.order("topics.position DESC") 
     redirect_to(:action=>'list')
   end
-  
+    
   def update
     @topic = Topic.find(params[:id])
     if @topic.user_id != session[:user_id] then
