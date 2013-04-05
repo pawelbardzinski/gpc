@@ -73,6 +73,8 @@ class TopicsController < ApplicationController
   end
   
   def create_account
+    @orig_from_comment = params[:orig_from_comment]
+    @topic_id = params[:topic_id]
     new_user = User.create(params[:login],params[:password])
     if (new_user)
       if new_user.save
@@ -84,6 +86,10 @@ class TopicsController < ApplicationController
         end
         flash[:notice] = "User #{new_user.login} created."
         if params[:notice] == 'You need to be logged in to upvote.'
+          if @orig_from_comment
+            redirect_to(:controller=>'comments',:action=>'upvote_topic',:id=>@topic_id)
+            return
+          end
           if params[:topic_id] != nil
             redirect_to(:action=>:upvote,:id=>params[:topic_id])
             return
@@ -137,6 +143,7 @@ class TopicsController < ApplicationController
   
   def attempt_login
     @topic_id = params[:topic_id]
+    @orig_from_comment = params[:orig_from_comment]
     authorized_user = User.authenticate(params[:login],params[:password])
     if (authorized_user)
       session[:user_id] = authorized_user.id
@@ -146,6 +153,10 @@ class TopicsController < ApplicationController
         return
       end
       if params[:notice] == 'You need to be logged in to upvote.'
+        if @orig_from_comment
+          redirect_to(:controller=>'comments',:action=>'upvote_topic',:id=>@topic_id)
+          return
+        end
         if params[:topic_id] != nil
           redirect_to(:action=>:upvote,:id=>params[:topic_id])
           return
@@ -175,6 +186,7 @@ class TopicsController < ApplicationController
   def login
     flash[:notice] = params[:notice]
     @topic_id = params[:topic_id]
+    @orig_from_comment = params[:comment]
   end
   
   def logout
@@ -185,7 +197,7 @@ class TopicsController < ApplicationController
   
   def upvote
     if session[:user_id] == nil    
-      redirect_to(:controller=>'topics',:action=>'login',:notice=>'You need to be logged in to upvote.', :topic_id=>params[:id])
+      redirect_to(:controller=>'topics',:action=>'login',:notice=>'You need to be logged in to upvote.', :topic_id=>params[:id],:orig_from_comment=>@orig_from_comment)
       return
     end
     if (params[:id] != nil)
@@ -204,7 +216,11 @@ class TopicsController < ApplicationController
     @topic.save
     User.upvote(@topic.user_id)    
     @topics = Topic.order("topics.position DESC") 
-    redirect_to(:action=>'list')
+    if @orig_from_comment == true
+      redirect_to(:controller=>'comments',:action=>'index',:id=>params[:id])
+    else
+      redirect_to(:action=>'list')
+    end
   end
     
   def update

@@ -100,7 +100,7 @@ class CommentsController < ApplicationController
   
   def upvote_topic
     if session[:user_id] == nil    
-      redirect_to(:controller=>'topics',:action=>'login',:notice=>'You need to be logged in to upvote.')
+      redirect_to(:controller=>'topics',:action=>'login',:notice=>'You need to be logged in to upvote.',:topic_id=>params[:id],:comment=>true)
       return
     end
     @topic = Topic.find(params[:id])
