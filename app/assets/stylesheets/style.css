@@ -1036,6 +1036,10 @@ div.box.green div.content textarea {
 	margin-bottom: 22px;
 }
 
+body table.mceLayout {
+	margin-bottom: 18px;
+}
+
 div.listing {
 }
 
@@ -1138,7 +1142,7 @@ div.listing div.comment div.actions {
 
 div.listing div.comment div.reply {
 	width: 100%;
-	height: 282px;
+	height: 284px;
 	display:block;	
 	background: url(box-green-bg.png) 0% 0% repeat-x #005b45;
 	position: relative;
@@ -1646,5 +1650,31 @@ h1 {
 
 .comment .left .url_link a {
 	word-break: break-all;
+}
+
+div.listing div.comment span.mceEditor {
+	margin: 0;
+}
+
+div.listing div.comment table.mceLayout span {
+	margin: 0;
+	float: none;
+}
+
+div.listing div.comment table.mceLayout {
+	margin-bottom: 0px;
+}
+
+div.listing div.comment div.reply textarea {
+	margin-bottom: 4px;
+}
+
+div#dialog .add_thread  textarea {
+	margin-bottom: 4px;
+}
+
+div#dialog table.mceLayout,
+div#dialog table.mceToolbar {
+	margin: 0;
 }
 

@@ -94,6 +94,7 @@ ajax_request = function (event)
 				}
 
 				$(container).hide().replaceWith( result /*.content */ );
+			//	wysiwyg();
 	//		}
 		},
 
@@ -196,6 +197,25 @@ function header() {
 	header.ajax_request();
 }
 
+function wysiwyg() {
+
+	$('#comment_comment').attr('id', "comment_comment"+Math.random())
+
+	tinyMCE.init({
+		// General options
+		mode : "textareas",
+		theme : "advanced",
+		plugins : "",
+
+		// Theme options
+		theme_advanced_buttons1 : "bold,italic,underline",
+		theme_advanced_toolbar_location : "top",
+		theme_advanced_toolbar_align : "left",
+		theme_advanced_statusbar_location : "none",
+		theme_advanced_resizing : false,
+	});
+}
+
 $(function(event) {
 
 	$('span.go_back').live('click', function(event){
@@ -244,4 +264,6 @@ $(function(event) {
 			$(box).animate({opacity: 0}, 500, function(){$(this).css('display', 'none').css('opacity', 0)});
 		}
 	});
+
+//	wysiwyg();
 });
