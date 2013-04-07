@@ -215,6 +215,11 @@ $(function(event) {
 
 	$('.dialog_close').live('click',dialog_hide);
 
+	$('.comment a.clear_textarea').live('click', function(event) {
+		event.preventDefault();
+		$(this).parents('form:first').find('textarea').val('');
+	});
+
 	$('.actions a.delete').live('click', function(event) {
 
 		event.preventDefault();

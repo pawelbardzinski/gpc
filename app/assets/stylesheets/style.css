@@ -1594,6 +1594,7 @@ div.delete-box a.no:hover {
 	background-position: -55px -28px;
 }
 
+div.comment a.cancel,
 div.reply a.cancel {
 	display: block;
 	float: left;
@@ -1607,6 +1608,11 @@ div.reply a.cancel {
 	height: 27px;
 }
 
+div.comment a.clear_textarea {
+	margin: 0;
+}
+
+div.comment a.cancel:hover,
 div.reply a.cancel:hover {
 	background-position: 0 -28px;
 }

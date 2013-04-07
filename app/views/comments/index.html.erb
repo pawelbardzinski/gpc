@@ -89,6 +89,7 @@
 								<%= f.text_area :comment %>
 
 								<div class="submit">
+									<%= link_to("clear", :back, :class=>"cancel clear_textarea") %>
 									<%= submit_tag("add comment")%>
 								</div>
 
