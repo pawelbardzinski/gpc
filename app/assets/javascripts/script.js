@@ -11,7 +11,7 @@ window.onpopstate = function(event) {
 	content.ajax_request();
 
 	try {
- 		_gaq.push(['_trackPageview', document.location.pathname]);
+ 		_gaq.push(['_trackPageview', document.location.pathname+document.location.search]);
 	}
 	catch(err)  {
 	}
@@ -71,21 +71,25 @@ ajax_request = function (event)
 					$('#dialog_shadow').stop(true, false).animate({opacity: 0}, 500, function(){$('#dialog_shadow').css('display', 'none')});
 					return;
 				}
-				else if( params.url != '/topics/get_header' && $(container).attr('id') == 'content' ) {
+				else if( params.url != '/topics/get_header' ) {
 
-					if( typeof(window.history.pushState) != "undefined" && $(self).hasClass('no_history') == false ) {
+					if( $(container).attr('id') == 'content' ) {
 
 						try {
-					 		_gaq.push(['_trackPageview', document.location.pathname]);
+					 		_gaq.push(['_trackPageview', document.location.pathname+document.location.search]);
 						}
 						catch(err)  {
 						}
 
-						window.history.pushState(
-							{ page: $('title').text() },
-							$('title').text(),
-							params.url
-						);
+
+						if( typeof(window.history.pushState) != "undefined" && $(self).hasClass('no_history') == false ) {
+
+							window.history.pushState(
+								{ page: $('title').text() },
+								$('title').text(),
+								params.url
+							);
+						}
 					}
 				}
 
