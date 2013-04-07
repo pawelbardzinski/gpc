@@ -804,6 +804,8 @@ div.header div.vote {
 	color: #a09d8c;
 	font-family: arial;
 	font-size: 10px;
+	min-width: 20px;
+	min-height: 18px;
 }
 
 div.header span.vote {
