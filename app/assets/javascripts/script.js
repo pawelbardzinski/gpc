@@ -76,7 +76,7 @@ ajax_request = function (event)
 					if( $(container).attr('id') == 'content' ) {
 
 						try {
-					 		_gaq.push(['_trackPageview', document.location.pathname+document.location.search]);
+					 		_gaq.push(['_trackPageview', params.url]);
 						}
 						catch(err)  {
 						}
