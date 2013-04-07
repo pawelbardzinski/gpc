@@ -1638,3 +1638,7 @@ h1 {
 	text-align: center;
 }
 
+.comment .left .url_link a {
+	word-break: break-all;
+}
+
