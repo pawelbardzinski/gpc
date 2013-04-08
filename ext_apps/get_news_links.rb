@@ -1,0 +1,1 @@
+url='https://www.google.com/search?hl=en&gl=us&tbm=nws&q=gold+price&oq=gold+price'
