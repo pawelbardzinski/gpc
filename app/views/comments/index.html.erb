@@ -80,8 +80,6 @@
 							<div class="content">
 								<div class="g"> </div>
 
-								<% if session[:user_id] %>
-
 								<p>Your comment:</p>
 
 								<%=form_for(:comment, :url=>{:action => 'create',:topic_id=>topic.id,:reply=>'false'}, :html => {:class=>"ajax_request no_history"}) do |f| %>
@@ -95,14 +93,6 @@
 
 								<% end %>
 
-								<% else %>
-									<div class="login">
-										<p>Login or Register to comment.</p>
-										<div class="actions">
-											<%= link_to("login", {:controller=>'topics',:action=>'login',:topic_id=>topic.id,:reply=>'false'}, :class => "login ajax_request") %> or <%= link_to("register", {:controller=>'topics',:action => 'login',:topic_id=>topic.id,:reply=>'false'}, :class => "register ajax_request") %>
-										</div>
-									</div>
-								<% end %>
 							</div>
 							<div class="f"><div><div> </div></div></div>
 						</div>
