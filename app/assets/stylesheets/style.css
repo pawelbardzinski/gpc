@@ -1688,7 +1688,7 @@ div.listing div.comment div.text span {
 
 div.app {
 	background: url(app.gif) no-repeat;
-	width: 660px;
+	width: 664px;
 	height: 44px;
 	display: block;
 	float: right;
@@ -1700,11 +1700,11 @@ div.app div.app-price {
 	color: #fd7200;
 	text-shadow: 2px 2px 2px #ffffff, -2px 2px 2px #ffffff, -2px -2px 2px #ffffff, 2px -2px 2px #ffffff;
 	float: left;
-	margin-left: 66px;
+	margin-left: 65px;
 }
 
 div.app div.app-info {
-	margin: 5px 0 0 8px;
+	margin: 5px 0 0 4px;
 	color: #ffd900;
 	font-size: 14px;
 	font-weight: bold;
@@ -1727,10 +1727,10 @@ div.app a.app-link {
 }
 
 div.app a.app-android {
-	margin-right: 5px;
+	margin-right: 3px;
 }
 
 div.app a.app-ios {
 	background-position: -95px 0;
-	margin-right: 4px;
+	margin-right: 5px;
 }
