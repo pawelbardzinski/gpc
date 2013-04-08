@@ -169,11 +169,11 @@ div.head div.info span.points {
 }
 
 div.head div.navigation {
-	height: 38px;
+	height: 34px;
 	clear: right;
 	float: right;
 	width: 70%;
-	margin: 18px 0 0 0;
+	margin: 10px 0 0 0;
 }
 
 div.head div.navigation a {
@@ -1686,3 +1686,51 @@ div.listing div.comment div.text span {
 
 }
 
+div.app {
+	background: url(app.gif) no-repeat;
+	width: 660px;
+	height: 44px;
+	display: block;
+	float: right;
+}
+
+div.app div.app-price {
+	font-size: 39px;
+	font-weight: bold;
+	color: #fd7200;
+	text-shadow: 2px 2px 2px #ffffff, -2px 2px 2px #ffffff, -2px -2px 2px #ffffff, 2px -2px 2px #ffffff;
+	float: left;
+	margin-left: 66px;
+}
+
+div.app div.app-info {
+	margin: 5px 0 0 8px;
+	color: #ffd900;
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+	text-align: right;
+}
+
+div.app div.app-info span {
+	color: white;
+}
+
+div.app a.app-link {
+	background: url(app_l.gif) no-repeat;
+	width: 91px;
+	display: block;
+	float: right;
+	height: 31px;
+	display: block;
+	margin-top: 6px;
+}
+
+div.app a.app-android {
+	margin-right: 5px;
+}
+
+div.app a.app-ios {
+	background-position: -95px 0;
+	margin-right: 4px;
+}
