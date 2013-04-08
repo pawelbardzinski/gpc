@@ -94,7 +94,7 @@ ajax_request = function (event)
 				}
 
 				$(container).hide().replaceWith( result /*.content */ );
-			//	wysiwyg();
+				wysiwyg();
 	//		}
 		},
 
@@ -199,21 +199,49 @@ function header() {
 
 function wysiwyg() {
 
-	$('#comment_comment').attr('id', "comment_comment"+Math.random())
+	$('#comment_comment').attr('id', "comment_comment"+(Math.random().toString().substring(2)))
+
+	tinyMCE.init({
+		// General options
+		mode : "specific_textareas",
+		theme : "advanced",
+		plugins : "",
+		editor_selector: "add_thread",
+		editor_deselector: /(htcm)/,
+
+		// Theme options
+		theme_advanced_buttons1 : "bold,italic,underline,|,fontselect,fontsizeselect",
+		theme_advanced_toolbar_location : "top",
+		theme_advanced_toolbar_align : "left",
+		theme_advanced_statusbar_location : "bottom",
+		theme_advanced_resizing : true,
+		theme_advanced_resize_horizontal: false,
+		theme_advanced_font_sizes : "Small=12px,Normal=14px,Large=16px,X-Large=24px",
+		 theme_advanced_fonts : "Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;",
+		
+	});
 
 	tinyMCE.init({
 		// General options
 		mode : "textareas",
 		theme : "advanced",
 		plugins : "",
+		editor_deselector: /(add_thread|htcm)/,
 
 		// Theme options
-		theme_advanced_buttons1 : "bold,italic,underline",
+		theme_advanced_buttons1 : "bold,italic,underline,|,fontselect,fontsizeselect",
 		theme_advanced_toolbar_location : "top",
 		theme_advanced_toolbar_align : "left",
 		theme_advanced_statusbar_location : "none",
 		theme_advanced_resizing : false,
+		theme_advanced_font_sizes : "Small=12px,Normal=14px,Large=16px,X-Large=24px",
+		 theme_advanced_fonts : "Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;",
+		
 	});
+	$('textarea').addClass('htcm');
+
+	$('table[aria-valuenow="advanced.fontdefault"] a.mceTitle').html('Font');
+	$('table[aria-valuenow="advanced.font_size"] a.mceTitle').html('Font Size');
 }
 
 $(function(event) {
@@ -238,6 +266,8 @@ $(function(event) {
 	$('.comment a.clear_textarea').live('click', function(event) {
 		event.preventDefault();
 		$(this).parents('form:first').find('textarea').val('');
+console.log($(this).parents('form:first').find('textarea').attr('id'));
+		tinyMCE.get($(this).parents('form:first').find('textarea').attr('id')).setContent('');
 	});
 
 	$('.actions a.delete').live('click', function(event) {
@@ -265,5 +295,5 @@ $(function(event) {
 		}
 	});
 
-//	wysiwyg();
+	wysiwyg();
 });

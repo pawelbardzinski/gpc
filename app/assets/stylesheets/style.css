@@ -1291,9 +1291,9 @@ div#dialog {
 	/*height: 400px;*/
 	min-height: 402px;
 	position: fixed;
-	top: 50%;
+	top: 10%;
 	left: 50%;
-	margin: -250px 0 0 -310px;
+	margin: 0px 0 0 -310px;
 	border-radius: 8px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
@@ -1676,5 +1676,13 @@ div#dialog .add_thread  textarea {
 div#dialog table.mceLayout,
 div#dialog table.mceToolbar {
 	margin: 0;
+}
+
+div.listing div.comment div.text span {
+	margin: none;
+	padding: none;
+	float: none;
+	width: auto;
+
 }
 
