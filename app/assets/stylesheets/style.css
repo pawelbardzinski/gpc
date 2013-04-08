@@ -1674,6 +1674,7 @@ div#dialog .add_thread  textarea {
 }
 
 div#dialog table.mceLayout,
+div#dialog table.mceLayout table,
 div#dialog table.mceToolbar {
 	margin: 0;
 }

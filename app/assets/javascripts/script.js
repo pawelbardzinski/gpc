@@ -199,15 +199,17 @@ function header() {
 
 function wysiwyg() {
 
-	$('#comment_comment').attr('id', "comment_comment"+(Math.random().toString().substring(2)))
+	$('#topic_text').attr('id', "topic_text"+(Math.random().toString().substring(2)));
+	$('#comment_comment').attr('id', "comment_comment"+(Math.random().toString().substring(2)));
 
 	tinyMCE.init({
 		// General options
-		mode : "specific_textareas",
+		mode : "textareas",
 		theme : "advanced",
 		plugins : "",
 		editor_selector: "add_thread",
 		editor_deselector: /(htcm)/,
+		language : "en",
 
 		// Theme options
 		theme_advanced_buttons1 : "bold,italic,underline,|,fontselect,fontsizeselect",
@@ -227,6 +229,7 @@ function wysiwyg() {
 		theme : "advanced",
 		plugins : "",
 		editor_deselector: /(add_thread|htcm)/,
+		language : "en",
 
 		// Theme options
 		theme_advanced_buttons1 : "bold,italic,underline,|,fontselect,fontsizeselect",
@@ -239,9 +242,6 @@ function wysiwyg() {
 		
 	});
 	$('textarea').addClass('htcm');
-
-	$('table[aria-valuenow="advanced.fontdefault"] a.mceTitle').html('Font');
-	$('table[aria-valuenow="advanced.font_size"] a.mceTitle').html('Font Size');
 }
 
 $(function(event) {
