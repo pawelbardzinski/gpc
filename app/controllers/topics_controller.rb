@@ -99,7 +99,7 @@ class TopicsController < ApplicationController
           end
         end        
         if params[:comment] != '' && params[:comment] != nil && params[:topic_id] != nil
-          if params[:reply] == "false"
+          if !(params[:reply]) 
             redirect_to(:controller=>'comments',:action=>'create',:topic_id=>params[:topic_id],:comment=>params[:comment],:notice=>'Your comment has been published. User \''+new_user.login+'\' created successfuly.',:reply=>params[:reply])
             return
           else
@@ -130,7 +130,7 @@ class TopicsController < ApplicationController
         else
           notice="The username already exists. Please choose a different one."
         end
-#          redirect_to(:action=>'login',:notice=>notice,:topic_id=>params[:topic_id])       
+#          redirect_to(:action=>'login',:notice=>notice,:topic_id=>params[:topic_id])     
             if params[:topic_id] != '' && params[:topic_id] != nil
               redirect_to(:controller=>'comments',:action=>'create_acc_and_post',:notice=>notice,:topic_id=>params[:topic_id],:comment=>params[:comment])
             else
