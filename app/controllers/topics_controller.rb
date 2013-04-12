@@ -260,7 +260,12 @@ class TopicsController < ApplicationController
   def create
     if session[:user_id] != nil
       @topic = Topic.new(params[:topic])
+      @comment = Comment.new(params[:comment])
       @topic.user_id = session[:user_id]
+=begin
+      @topic.text.gsub!('<p>','')
+      @topic.text.gsub!('</p>','')
+=end
       if @topic.url != '' and @topic.text != ''
         redirect_to(:action=>'new',:notice=>'submit text -or- link.')
         return
@@ -284,10 +289,6 @@ class TopicsController < ApplicationController
       if @topic.url != '' && @topic.url != nil
         html_snippet = `python -m readability.readability -u #{@topic.url}` 
         @topic.snippet = Nokogiri::HTML(html_snippet).text.slice(0,600) + '...'
-=begin
-        @topic.snippet.gsub!("\n",'<br />')
-        @topic.snippet.gsub!("\t"," ")   
-=end
       else
         @topic.snippet = @topic.text.slice(0,600)
       end

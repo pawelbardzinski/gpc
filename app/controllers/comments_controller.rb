@@ -33,17 +33,9 @@ class CommentsController < ApplicationController
   def create
     if session[:user_id] != '' && session[:user_id] != nil then
 =begin
-      @contents = params[:comment].to_
-      @contents=@contents.slice("\<p\>")
-=end
-      puts 'BEFORE: '+params[:comment].values[0].to_s
       params[:comment].values[0].to_s.gsub! '<p>',''
       params[:comment].values[0].to_s.gsub! '</p>',''
-=begin
-      params[:comment].values[0].to_s.gsub! '<span>',''
-      params[:comment].values[0].to_s.gsub! '</span>',''
 =end
-      puts 'AFTER: '+params[:comment].values[0].to_s
       @comment = Comment.new(params[:comment])
       @comment.user_id = session[:user_id]
       @comment.topic_id = params[:topic_id]

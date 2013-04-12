@@ -19,8 +19,12 @@
 					</div>
 
 					<div class="topic">
-						<h2><%= topic.subject.slice(0,77)+'...' %>&nbsp;</h2>
-						<span class="points"><%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %></span>
+						<% if topic.subject.size > 76 %>
+							<h2><%= topic.subject.slice(0,77)+'...' %>&nbsp;</h2>
+						<% else %>
+							<h2><%= topic.subject %>&nbsp;</h2>
+						<% end %>
+						<span class="points">&nbsp;&nbsp;&nbsp;&nbsp;<%= tp=topic.points %> <% if tp==1 %> point <% else %> points <% end %></span>
 						<span class="date">
 							<% 
 								@blob = ((DateTime.now.change(:offset=>"+0000").to_i - topic.created_at.strftime("%s").to_i)/60) 
@@ -67,7 +71,7 @@
 							by <%= word_wrap User.where(:id => topic.user_id).first.login %>							
 						</span><br><br>
 						<span class="topic_text">
-							<%= word_wrap topic.text %><% end %>
+							<%= raw topic.text %><% end %>
 						</span>
 					<% end %>
 					</div>
