@@ -1745,3 +1745,7 @@ div.listing div.comment div.text span {
     padding: 0;
 }
 
+.defaultSkin table.mceLayout tr.mceLast td span,
+.defaultSkin table.mceLayout tr.mceLast td span a {
+	color: #F0F0EE !important;
+}
