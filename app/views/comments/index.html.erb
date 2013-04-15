@@ -12,7 +12,7 @@
 
 				<div class="header">
 					<div class="vote">
-						<% if (!(topic.upvoted_by != nil && session[:login] != nil && (topic.upvoted_by.include? session[:login]))) %>
+						<% if (!(topic.upvoted_by != nil && session[:login] != nil && (topic.upvoted_by.include? session[:login])) && (topic.user_id != session[:user_id])) %>
 							<span class="vote"><%= link_to "vote", {:action=>'upvote_topic',:id=>topic.id}, :class=>"ajax_request no_history" %></span>
 						vote
 						<% end %>
