@@ -212,7 +212,7 @@ function wysiwyg() {
 		language : "en",
 
 		// Theme options
-		theme_advanced_buttons1 : "bold,italic,underline,|,fontselect,fontsizeselect",
+		theme_advanced_buttons1 : "bold,italic,underline,|,fontsizeselect",
 		theme_advanced_toolbar_location : "top",
 		theme_advanced_toolbar_align : "left",
 		theme_advanced_statusbar_location : "bottom",
@@ -232,7 +232,7 @@ function wysiwyg() {
 		language : "en",
 
 		// Theme options
-		theme_advanced_buttons1 : "bold,italic,underline,|,fontselect,fontsizeselect",
+		theme_advanced_buttons1 : "bold,italic,underline,|,fontsizeselect",
 		theme_advanced_toolbar_location : "top",
 		theme_advanced_toolbar_align : "left",
 		theme_advanced_statusbar_location : "none",

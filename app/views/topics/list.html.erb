@@ -102,7 +102,7 @@
 								<!--% t.gsub!('<p>',' ') %-->
 								<!--% t.gsub!('</p>',' ') %-->
 								<!--% t.gsub!('&nbsp;',' ') %-->
-								<% t = topic_snippet %>
+								<% t = sanitize(topic_snippet, :tags => %w(), :attributes => %w()) %>
 								<span class="snippet"><%= if topic_snippet.size > 300 then t.slice(0,300)+'...' else t end %></span>
 							<% end %>
 							<span class="points"><%= tp=topic_points %> <% if tp==1 %> point <% else %> points <% end %></span>

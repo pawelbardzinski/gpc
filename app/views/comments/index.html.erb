@@ -59,20 +59,21 @@
 						<div class="url_link"><%= link_to(topic.subject,topic.url,:target=>'_blank') %></div>
 					<% end %>
 					<% if topic.text != '' %>
-							<% if topic.text != nil %>
-								<% if topic.url != '' %>
-									Source:
-								<% end %>
-								<br>
-						<span class="topic_subject">
-							<%= word_wrap topic.subject %>
-						</span>
-						<span class="topic_by">
-							by <%= word_wrap User.where(:id => topic.user_id).first.login %>							
-						</span><br><br>
-						<span class="topic_text">
-							<%= raw topic.text %><% end %>
-						</span>
+                        <% if topic.text != nil %>
+                            <% if topic.url != '' %>
+                                Source:
+                            <% end %>
+                            <br>
+                            <span class="topic_subject">
+                                <%= word_wrap topic.subject %>
+                            </span>
+                            <span class="topic_by">
+                                by <%= word_wrap User.where(:id => topic.user_id).first.login %>
+                            </span><br><br>
+                            <span class="topic_text">
+                                <%= sanitize(topic.text, :tags => %w(p strong span), :attributes => %w(style)) %>
+                            </span>
+                        <% end %>
 					<% end %>
 					</div>
 
@@ -112,7 +113,7 @@
 						<div class="h"><div><div> </div></div></div>
 						
 						<div class="m"><div class="m"><div class="m">
-							<div class="text"><%= simple_format(comment.comment) %></div>
+							<div class="text"><%= sanitize(comment.comment, :tags => %w(p strong span), :attributes => %w(style)) %></div>
 						</div></div></div>
 
 						<div class="f container"><div class="f"><div class="f">
