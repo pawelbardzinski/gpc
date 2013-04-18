@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120126044121) do
+ActiveRecord::Schema.define(:version => 20130304212931) do
 
   create_table "comments", :force => true do |t|
     t.text     "comment"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120126044121) do
     t.datetime "updated_at"
     t.text     "text"
     t.text     "upvoted_by"
+    t.text     "snippet"
   end
 
   add_index "topics", ["user_id"], :name => "index_topics_on_user_id"

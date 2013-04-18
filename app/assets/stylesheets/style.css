@@ -1745,7 +1745,13 @@ div.listing div.comment div.text span {
     padding: 0;
 }
 
+div.comment span.topic_text p,
+div.listing div.comment div.text p {
+    display: block;
+}
+
 .defaultSkin table.mceLayout tr.mceLast td span,
 .defaultSkin table.mceLayout tr.mceLast td span a {
 	color: #F0F0EE !important;
+    visibility: hidden;
 }

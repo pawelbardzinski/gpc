@@ -210,6 +210,7 @@ function wysiwyg() {
 		editor_selector: "add_thread",
 		editor_deselector: /(htcm)/,
 		language : "en",
+        content_css: "assets/editor.css",
 
 		// Theme options
 		theme_advanced_buttons1 : "bold,italic,underline,|,fontsizeselect",
@@ -230,6 +231,7 @@ function wysiwyg() {
 		plugins : "",
 		editor_deselector: /(add_thread|htcm)/,
 		language : "en",
+        content_css: "assets/editor.css",
 
 		// Theme options
 		theme_advanced_buttons1 : "bold,italic,underline,|,fontsizeselect",
