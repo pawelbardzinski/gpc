@@ -199,6 +199,8 @@ function header() {
 
 function wysiwyg() {
 
+	tinyMCE.baseURL = "/assets/tiny_mce/";
+
 	$('#topic_text').attr('id', "topic_text"+(Math.random().toString().substring(2)));
 	$('#comment_comment').attr('id', "comment_comment"+(Math.random().toString().substring(2)));
 
