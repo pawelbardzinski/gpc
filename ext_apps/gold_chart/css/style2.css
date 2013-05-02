@@ -1,0 +1,64 @@
+html{
+    height: 100%;
+    background-color: #F0F0F0;
+    font-family: "Tahoma";
+}
+body{
+    height: 100%;
+    margin: 0 auto;
+}
+.chart{
+/*    top: 100px;
+    bottom: 100px;
+    left:100px;
+    right: 100px;*/
+
+    min-width: 100%;
+    min-height: 100%;
+ }
+
+.charts{
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    background-color: #ffffff;
+}
+
+#graphContainer{
+    background:#ffffff;
+    height: 400px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50;
+}
+
+#tabView{
+    background:#ffffff;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    padding-top: 50;
+    margin-bottom: 50;
+    padding-bottom: 50;
+}
+
+#tooltip{
+    background-color: #007758;
+    opacity: 0.9;
+    border-color: #EFB839 ;
+    border-width: 2px;
+    padding: 10;
+    margin-left: 300px;
+    margin-top: 500px;
+    z-index: 10;
+    position: absolute ;
+    display: block;
+}
+
+.navigation{
+    width: 100%;
+    height: 60px;
+}

@@ -1,0 +1,228 @@
+html{
+    height: 100%;
+    font-family: 'Open Sans', 'Tahoma', serif;
+
+}
+body{
+    height: 100%;
+    margin: 0 auto;
+    background-color: #007153;
+    font-family: 'Open Sans', 'Tahoma', serif;
+    /*background: url("assets/bg.png");*/
+}
+p{
+	font-family: 'Open Sans', 'Tahoma', serif;
+}
+.chart{
+      /*-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;*/
+      width: 915px;
+      height: 380px;
+      /*background-color: #ffffff;*/
+      margin: 0 auto;
+ }
+ 
+.progressRing{
+    z-index: 101;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -350px;
+ }
+ 
+ .updateInfo{
+ }
+
+.chartUpdatedInfo{
+    z-index: 100;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    margin-top: -380px;
+    margin-left: 395px;
+    background-color: #d3d3d3;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    color: #598e7f;
+    font-size: 12px;
+    border-width: thin; 
+    border-color: #9b9b9b;
+    border-style: solid;
+    background-image: linear-gradient(bottom, rgb(217,217,217) 18%, rgb(254,254,254) 80%);
+	background-image: -o-linear-gradient(bottom, rgb(217,217,217) 18%, rgb(254,254,254) 80%);
+	background-image: -moz-linear-gradient(bottom, rgb(217,217,217) 18%, rgb(254,254,254) 80%);
+	background-image: -webkit-linear-gradient(bottom, rgb(217,217,217) 18%, rgb(254,254,254) 80%);
+	background-image: -ms-linear-gradient(bottom, rgb(217,217,217) 18%, rgb(254,254,254) 80%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.18, rgb(217,217,217)),
+		color-stop(0.8, rgb(254,254,254))
+	);
+ }
+
+.bgImage{
+    top:0px;
+    left:50px;
+    //position: absolute;
+    z-index: -100;
+}
+
+.charts{
+    //-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    width: 915px;
+    height: 380px;
+    margin: 0 auto;
+    margin-top: 10px;
+    /*background-color: #ffffff;*/
+}
+
+.innerDiv{
+    width: 925px;
+    height: 635px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #ffffff;
+
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border-width: 5px;
+    border-color: #ffffff;
+
+    -webkit-box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.55);
+    -moz-box-shadow:    0px 0px 10px rgba(50, 50, 50, 0.55);
+    box-shadow:         0px 0px 10px rgba(50, 50, 50, 0.55);
+    /*    *//* For IE 8 *//*
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+        *//* For IE 5.5 - 7 *//*
+        filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');*/
+}
+
+.goldpriceView{
+    //-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    width: 960px;
+    height: 700px;
+    /*background-color: #aaaaaa;*/
+    margin: 0 auto;
+    margin-top: 50px;
+    
+    padding-top: 20px;
+
+    background-image: linear-gradient(bottom, rgb(236,237,231) 21%, rgb(255,255,255) 81%);
+    background-image: -o-linear-gradient(bottom, rgb(236,237,231) 21%, rgb(255,255,255) 81%);
+    background-image: -moz-linear-gradient(bottom, rgb(236,237,231) 21%, rgb(255,255,255) 81%);
+    background-image: -webkit-linear-gradient(bottom, rgb(236,237,231) 21%, rgb(255,255,255) 81%);
+    background-image: -ms-linear-gradient(bottom, rgb(236,237,231) 21%, rgb(255,255,255) 81%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(236,237,231)),
+        color-stop(0.81, rgb(255,255,255))
+    );
+
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border-width: 5px;
+    border-color: #e4e3dc;
+}
+
+.tooltip{
+    background-color: #007758;
+    opacity: 0.9;
+    border-color: #EFB839 ;
+    border-width: 2px;
+    padding: 10;
+    margin-left: 300px;
+    margin-top: 500px;
+    z-index: 10;
+    position: absolute ;
+    display: none;
+}
+
+.navigation{
+     width: 925px;
+     height: 46px;
+     margin: 0 auto;
+     margin-bottom:15px;
+     background-color: #F0F1EB;
+    -webkit-border-top-left-radius: 7px;
+    -webkit-border-top-right-radius: 7px;
+    -moz-border-radius-topleft: 7px;
+    -moz-border-radius-topright: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+ }
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 90px;
+    height: 50px;
+    padding-top: 9px;
+    width: 280px;
+    
+}
+
+.tabs{
+    width: 950px;
+    height: 41px;
+    margin: -100 0 0 0;
+    background-color: #006b4f;
+    position: absolute;
+    z-index: 1000;
+    margin-top: -40px;
+}
+
+.tabButton{
+    width: 100px;
+    height: 100px;
+}
+
+input.button_add {
+	 font-family: 'Open Sans', serif;
+     background-color: transparent; /* make the button transparent */
+     background-repeat: no-repeat;  /* make the background image appear only once */
+     background-position: 0px 0px;  /* equivalent to 'top left' */
+     border: none;           /* assuming we don't want any borders */
+     cursor: pointer;        /* make the cursor like hovering over an <a> element */
+     height: 16px;           /* make this the size of your image */
+     padding-left: 0;     /* make text start to the right of the image */
+     vertical-align: middle; /* align the text vertically centered */
+   		text-align: center;
+ }
+ 
+.customSelect {
+	width: 80px;
+	height: 20px;
+	padding-left: 30px;
+	padding-top: 10px;
+}
+/* line 133, ../sass/style.scss */
+.customSelect.customSelectHover {
+}
+/* line 138, ../sass/style.scss */
+.customSelect.customSelectFocus {
+}
+/* line 141, ../sass/style.scss */
+.customSelect.customSelectOpen {
+}
+
+select{
+		font-family: 'Open Sans', 'Tahoma', serif;
+        border: 1px solid #ABADB3;
+        margin: 0;
+        margin-top:10px;
+        padding: 20 0;
+        font-size:14px;
+        text-align: center;
+        vertical-align: middle;
+        line-height:10;
+}
+ 
+ 
