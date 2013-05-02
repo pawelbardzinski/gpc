@@ -1,5 +1,7 @@
 Sh1nyV1::Application.routes.draw do
   
+  get "html5_chart/index"
+
   get "admin/count_posts"
 
 #  get "comments/list"
@@ -67,5 +69,4 @@ Sh1nyV1::Application.routes.draw do
   match 'topics/list' => 'topics#list', :as => :topics
 #  resources :topics
   match ':controller(/:action(/:id(.:format)))'
-	
 end
