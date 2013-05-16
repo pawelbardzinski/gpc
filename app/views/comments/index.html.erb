@@ -41,7 +41,7 @@
 					<div class="rightBox">
 						<div class="in">
 							<div class="in">
-								<span class="go_back"><%= link_to "go back", {:controller=>'topics',:action=>'list'} %></span>
+								<span class="go_back"><%= link_to "", topics_path(:sort=>'date',:search_string=>@search_string) %></span>
 							</div>
 						</div>
 					</div>
@@ -151,6 +151,16 @@
 									<a href="#" class="no no_history">No</a>
 								</div>
 							<% end %>
+							
+							<% if session[:login] == 'admin' %>
+									<%= link_to "edit", {:action => 'edit', :id => comment.id}, :class => "edit ajax_request no_history" %>
+									<%= link_to "delete", {:action => 'delete', :id=>comment.id, :topic_id=>params[:topic_id]}, :class=>"delete"%>
+								<div class="delete-box" style="display: none;">
+									<a href="/comments/destroy/<%= comment.id %>?topic_id=<%= params[:topic_id]%>" rel="content" class="yes no_history ajax_request">Yes</a>
+									<a href="#" class="no no_history">No</a>
+								</div>
+							<% end %>
+							
 							<%= link_to "reply", {:action => "reply", :id => comment.id,}, :class => "reply ajax_request no_history" %>
 						</div>
 						

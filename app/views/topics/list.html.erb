@@ -132,6 +132,14 @@
 						<td class="discuss">
 							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic_id,:sort=>@sort_by}, :class => "discuss ajax_request" %></span>
 						</td>
+						<% if (topic_user_id == session[:user_id] && cs.to_i < 2) || User.find(session[:user_id]).login == 'admin' %>
+						<td class="edit">
+							<span class="edit"><%= link_to "edit", {:controller=>'topics',:action=>'edit',:id=>topic_id,:sort=>@sort_by} %></span>
+						</td>
+						<td class="delete">
+							<span class="delete"><%= link_to "delete", {:controller=>'topics',:action=>'delete',:id=>topic_id,:sort=>@sort_by} %></span>
+						</td>
+						<% end %>
 					</tr>
 					<% end %>
 				</table>
