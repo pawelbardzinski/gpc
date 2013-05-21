@@ -1755,3 +1755,41 @@ div.listing div.comment div.text p {
 	color: #F0F0EE !important;
     visibility: hidden;
 }
+
+div#dialog .update input[type="submit"] {
+	background: url(popup_update.png) no-repeat 0 0;
+}
+
+div#dialog .update input[type="submit"]:hover {
+	background-position: 0 -38px;
+}
+
+.edit a,
+.delete a.delete {
+	display: block;
+	float: left;
+	margin: 0 0 0 0;
+	padding: 0;
+	height: 28px;
+	background: url(button/actions.png) no-repeat;
+	text-indent: -3000px;
+	overflow: hidden;
+	text-decoration: none;
+	cursor: pointer;
+	width: 57px;
+}
+
+.edit a:hover {
+	background-position: 0 -30px;
+}
+
+.delete a.delete {
+	width: 72px;
+	background-position: -60px 0;
+}
+
+.delete a.delete:hover {
+	background-position: -60px -30px;
+}
+
+

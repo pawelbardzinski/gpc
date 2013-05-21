@@ -274,7 +274,7 @@ console.log($(this).parents('form:first').find('textarea').attr('id'));
 		tinyMCE.get($(this).parents('form:first').find('textarea').attr('id')).setContent('');
 	});
 
-	$('.actions a.delete').live('click', function(event) {
+	$('.actions a.delete, .delete a').live('click', function(event) {
 
 		event.preventDefault();
 		var box = $(this).parent().find('.delete-box');
@@ -289,7 +289,7 @@ console.log($(this).parents('form:first').find('textarea').attr('id'));
 		}
 	});
 
-	$('.actions .delete-box a.no').live('click', function(event) {
+	$('.delete-box a.no').live('click', function(event) {
 		event.preventDefault();
 		var box = $(this).parents('.delete-box:first');
 
