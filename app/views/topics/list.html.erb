@@ -134,10 +134,12 @@
 						</td>
 
 						<% if (topic_user_id == session[:user_id] && cs.to_i < 2) || ( !session[:user_id].nil? && User.find(session[:user_id]).login == 'admin') %>
-						<td class="edit">
+						<td class="edit" style="width:1px;">
 							<span class="edit"><%= link_to "edit", {:controller=>'topics',:action=>'edit',:id=>topic_id,:sort=>@sort_by}, :class=>'dialog', :rel=>'dialog_content' %></span>
 						</td>
-						<td class="delete" style="position: relative;">
+						<td class="delete"
+						    style="position:relative;
+							width:1px;">
 							<%= link_to "delete", '', :class=>"delete" %>
 <div class="delete-box" style="display: none;">
 									<a href="/topics/destroy/<%= topic_id %>/<%= @sort_by %>" rel="content" class="yes no_history ajax_request">Yes</a>
@@ -145,8 +147,8 @@
 								</div>
 						</td>
 						<% else %>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
+						<td style="width:1px;">&nbsp;</td>
+						<td style="width:1px;">&nbsp;</td>
 						<% end %>
 					</tr>
 					<% end %>
