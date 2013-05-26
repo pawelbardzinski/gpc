@@ -132,7 +132,7 @@
 						<td class="discuss">
 							<span class="discuss"><%= link_to "discuss", {:controller=>'comments',:action=>'index',:topic_id=>topic_id,:sort=>@sort_by}, :class => "discuss ajax_request" %></span>
 						</td>
-
+						
 						<% if (topic_user_id == session[:user_id] && cs.to_i < 2) || ( !session[:user_id].nil? && User.find(session[:user_id]).login == 'admin') %>
 						<td class="edit" style="width:1px;">
 							<span class="edit"><%= link_to "edit", {:controller=>'topics',:action=>'edit',:id=>topic_id,:sort=>@sort_by}, :class=>'dialog', :rel=>'dialog_content' %></span>

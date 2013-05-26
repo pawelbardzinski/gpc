@@ -16,6 +16,7 @@
 	<%= javascript_include_tag "script" %>
 	<%= csrf_meta_tags %>
 	<script type="text/javascript">
+	  window.addEventListener("load", init, false);
 
 	  var _gaq = _gaq || [];
 	  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
@@ -28,7 +29,6 @@
 	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
-
 	</script>
 </head>
 <body>
@@ -95,9 +95,26 @@
 			<div class="clear"></div>
 		</div>
 
-		<iframe id="alive" title="gold prices chart" alt="gold price"  src="http://www.goldpricecafe.com:8400/alive5/Alive6_HiRes/Alive6.html?wmode=transparent" style="" frameborder="0" allowfullscreen></iframe>
+		<iframe id="alive" title="gold prices chart" alt="gold price"  src="http://www.goldpricecafe.com:8400/alive5/Alive6_HiRes/Alive6.html?wmode=transparent" style="" frameborder="0" allowfullscreen='true' align="top" scrolling="no"></iframe>
 
-		<!--iframe id="alive" title="gold prices chart" alt="gold price" src="http://www.goldpricecafe.com:88/" style="" frameborder="0" allowfullscreen></iframe-->
+		<script type="text/javascript">
+			var wsUri = "ws://echo.websocket.org/"; 
+			var output;
+			websocket = new WebSocket(wsUri); 
+			websocket.onopen = function(evt) 		{ onOpen(evt) }; 
+			websocket.onclose = function(evt) { onClose(evt) }; 
+			websocket.onmessage = 	function(evt) { onMessage(evt) }; 
+			websocket.onerror = function(evt) { onError(evt) }; 
+			function onOpen(evt) { doSend("WebSocket rocks"); }
+			function onClose(evt) {  }
+			function onMessage(evt) { if (evt.data == 'WebSocket rocks')
+					{
+						document.getElementById('alive').src = 'http://www.goldpricecafe.com:88/?wmode=transparent';	
+					}
+			websocket.close(); }
+			function onError(evt) {  }
+			function doSend(message) { websocket.send(message); }
+		</script>
 
 		<div class="ab2">
 			<div class="bg">&nbsp;</div>
