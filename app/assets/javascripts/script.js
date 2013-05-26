@@ -19,6 +19,14 @@ window.onpopstate = function(event) {
 	
 };
 
+function has_websocket() {
+
+    if( "WebSocket" in window ) {
+	return true;
+    }
+
+    return false;
+}
 
 $.ajaxSetup( {
 	dataType: 'text',
