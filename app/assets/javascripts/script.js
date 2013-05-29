@@ -258,12 +258,17 @@ function wysiwyg() {
 
 $(function(event) {
 
-/*	$('span.go_back').live('click', function(event){
+	$('span.go_back').live('click', function(event){
 		if( typeof event != 'undefined' ) {
 			event.preventDefault();
 		}
-		window.history.back();
-	}); */
+		
+		if (document.referrer == "") {
+			window.location = 'http://www.goldpricecafe.com';
+		} else {
+    		window.history.back()
+		}
+	}); 
 	
 	$('div.navigation a.ajax_request[rel="content"], table.topics span.topic a').live('click',function(){$.scrollTo(0,$('#content'));});
 	
