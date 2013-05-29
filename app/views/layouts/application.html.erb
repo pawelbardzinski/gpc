@@ -96,11 +96,11 @@
 		</div>
 <div id="gpcg">
 <script type="text/javascript">
-var gpcg = '<iframe id="alive" title="gold prices chart" alt="gold price" src="http://www.goldpricecafe.com:8400/alive5/Alive6_HiRes/Alive6.html?wmode=transparent" style="" frameborder="0" allowfullscreen></iframe>';
+var gpcg = '<div position="fixed"><iframe id="alive" title="gold prices chart" alt="gold price" src="http://www.goldpricecafe.com:8400/alive5/Alive6_HiRes/Alive6.html?wmode=transparent" style="" frameborder="0" allowfullscreen></iframe></div>';
 
 try{
   if( has_websocket() ) {
-    gpcg = '<iframe id="alive" title="gold prices chart" alt="gold price" src="http://www.goldpricecafe.com:88/" style="" frameborder="0" allowfullscreen></iframe>';
+    gpcg = '<div position="fixed"><iframe id="alive" title="gold prices chart" alt="gold price" src="http://www.goldpricecafe.com:88/" style="" frameborder="0" allowfullscreen></div></iframe>';
   }
 }catch(e){console.log(e);}
 
