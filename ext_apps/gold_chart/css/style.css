@@ -8,6 +8,7 @@ body{
     margin: 0 auto;
     background-color: #007153;
     font-family: 'Open Sans', 'Tahoma', serif;
+	overflow: hidden;
     /*background: url("assets/bg.png");*/
 }
 p{
@@ -107,7 +108,7 @@ p{
     height: 700px;
     /*background-color: #aaaaaa;*/
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
     
     padding-top: 20px;
 
