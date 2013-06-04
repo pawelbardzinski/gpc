@@ -196,6 +196,7 @@ input.button_add {
      padding-left: 0;     /* make text start to the right of the image */
      vertical-align: middle; /* align the text vertically centered */
    		text-align: center;
+		font-weight: bold;
  }
  
 .customSelect {
