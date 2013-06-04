@@ -343,7 +343,8 @@ table.topics td.topic {
 .topic h3,
 .topic h3 a {
 	font-size: 17px;
-	color: #494a3a;
+/*	color: #494a3a; */
+	color: #000000;
 	font-weight: bold;
 	text-decoration: none;
 	margin: 0;

@@ -85,12 +85,12 @@
 						<td class="no"><span class="no"><%= i %></span></td>
 						<td class="vote">
 							<% if( session[:user_id] != nil && session[:user_id] != topic_user_id && !(topic_upvoted_by.include? session[:login] if topic_upvoted_by != nil)) %>
-								<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic_id}, :class => "vote ajax_request no_history" %></span>
-								vote
+								<span class="vote"><%= link_to "upvote", {:action=>'upvote',:id=>topic_id}, :class => "vote ajax_request no_history" %></span>
+								upvote
 							<% end %>
 							<% if (session[:user_id] == nil) %>
-								<span class="vote"><%= link_to "vote", {:action=>'upvote',:id=>topic_id}, :class => "vote ajax_request no_history" %></span>
-								vote
+								<span class="vote"><%= link_to "upvote", {:action=>'upvote',:id=>topic_id}, :class => "vote ajax_request no_history" %></span>
+								upvote
 							<% end %>
 						</td>
 						<td class="topic">
