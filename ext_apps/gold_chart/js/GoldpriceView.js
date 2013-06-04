@@ -132,7 +132,7 @@ function GoldpriceView() {
 
         var percent = (120-time)/120;
         if(!AppModel.getInstance().isWeekend()){
-			updateInfo.html('<div id="updateInfo"><p style="display:inline">Next live price update:</p><p style="display: inline;font-weight: bold;color: #ff0000"> '+val+'</p></div>');
+			updateInfo.html('<div id="updateInfo"><p style="display:inline, color: #000000">Next live price update:</p><p style="display: inline;font-weight: bold;color: #ff0000"> '+val+'</p></div>');
 
 	        progressRing.setPeriod(120 * 1000)
 	        progressRing.reset(percent);
@@ -142,10 +142,10 @@ function GoldpriceView() {
             AppModel.getInstance().setRemainingTime(AppModel.getInstance().getRemainingTime()-1)
             	var val = formatTime(AppModel.getInstance().getRemainingTime());
 	
-            	updateInfo.html('<div id="updateInfo"><p style="display:inline">Next live price update:</p><p style="display: inline;font-weight: bold;color: #ff0000"> '+val+'</p></div>');
+            	updateInfo.html('<div id="updateInfo"><p style="display:inline, color: #000000">Next live price update:</p><p style="display: inline;font-weight: bold;color: #ff0000"> '+val+'</p></div>');
         	},1000);
         }else{
-        	updateInfo.html('<div id="updateInfo"><p style="display:inline"><b>Weekend. The Market is Closed.</b></div>');
+        	updateInfo.html('<div id="updateInfo"><p style="display:inline, color: #000000"><b>Weekend. The Market is Closed.</b></div>');
         }
 
 		if( time == 120)
